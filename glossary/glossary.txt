@@ -1,0 +1,10 @@
+raster	ラスター
+abstract	抽象
+data model	データモデル
+vector	ベクター
+library	ライブラリ
+driver	ドライバ
+tutorial	チュートリアル
+Projections	投影法
+Spatial Reference Systems	空間参照系
+Mailing List	メーリングリスト
