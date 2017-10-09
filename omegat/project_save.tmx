@@ -4,6 +4,30 @@
   <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.1.2_2_10096:10098" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
+    <tu>
+      <tuv lang="EN-US">
+        <seg>&lt;g1&gt;&lt;g2&gt;Select language&lt;/g2&gt;: [English]&lt;g3&gt;[Russian]&lt;/g3&gt;&lt;g4&gt;[Portuguese]&lt;/g4&gt;&lt;g5&gt;[French/Francais]&lt;/g5&gt;&lt;/g1&gt;</seg>
+      </tuv>
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
+        <seg>&lt;g1&gt;&lt;g2&gt; 言語選択 &lt;/g2&gt;:[英語]&lt;g3&gt;[ロシア語]&lt;/g3&gt;&lt;g4&gt;[ポルトガル語]&lt;/g4&gt;&lt;g5&gt;フランス語&lt;/g5&gt;&lt;/g1&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>As a library, it presents a &lt;g4&gt; single raster abstract data model&lt;/g4&gt; and &lt;g5&gt; single vector abstract data model&lt;/g5&gt; to the calling application for all supported formats.</seg>
+      </tuv>
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
+        <seg>ライブラリは、&lt;g4&gt;単一のラスター抽象データモデル&lt;/g4&gt;と&lt;g5&gt;単一のベクター抽象データモデル&lt;/g5&gt;を定義して、アプリケーションから全てのサポートされているデータ形式を利用できるようにします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>is a translator library for raster and vector geospatial data formats that is released under an &lt;g1&gt;X/MIT&lt;/g1&gt; style &lt;g2&gt; Open Source&lt;/g2&gt; license by the &lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;.</seg>
+      </tuv>
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
+        <seg>は、ラスターおよびベクター地理データ形式の変換ライブラリで、&lt;g1&gt;X/MIT&lt;/g1&gt;スタイルの&lt;g2&gt;Open Source&lt;/g2&gt;ライセンスで、&lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;からリリースされています。</seg>
+      </tuv>
+    </tu>
 <!-- Alternative translations -->
   </body>
 </tmx>
