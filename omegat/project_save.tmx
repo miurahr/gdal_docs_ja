@@ -14,10 +14,26 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>&lt;x1/&gt; Building GDAL From Source</seg>
+      </tuv>
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T123058Z" creationid="miurahr" creationdate="20171009T123058Z">
+        <seg>&lt;x1/&gt;ソースからGDALをビルドする</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>As a library, it presents a &lt;g4&gt; single raster abstract data model&lt;/g4&gt; and &lt;g5&gt; single vector abstract data model&lt;/g5&gt; to the calling application for all supported formats.</seg>
       </tuv>
       <tuv lang="JA" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
         <seg>ライブラリは、&lt;g4&gt;単一のラスター抽象データモデル&lt;/g4&gt;と&lt;g5&gt;単一のベクター抽象データモデル&lt;/g5&gt;を定義して、アプリケーションから全てのサポートされているデータ形式を利用できるようにします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This topic now lives in the Wiki at: http://trac.osgeo.org/gdal/wiki/BuildHints</seg>
+      </tuv>
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
+        <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
       </tuv>
     </tu>
     <tu>
