@@ -45,3 +45,27 @@ Team translation
   - Enter URL: https://github.com/miurahr/gdal_docs_ja.git
 
 * Start translation.
+
+Generate localization sources
+-----------------------------
+
+* install doc tools
+
+```
+$ cd gdal/doc
+$ pip install -r requirements.txt
+$ pip install sphinx-intl
+```
+
+* generate gettext files
+
+```
+$ make gettext
+```
+
+* generate message catalog
+
+```
+$ sphinx-intl update -l ja
+```
+
