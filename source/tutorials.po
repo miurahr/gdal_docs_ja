@@ -1,0 +1,4030 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 1998-2020
+# This file is distributed under the same license as the GDAL package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: GDAL \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-19 07:39+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/tutorials/gdal_grid_tut.rst:5
+msgid "GDAL Grid Tutorial"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:8
+msgid "Introduction to Gridding"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:10
+msgid ""
+"Gridding is a process of creating a regular grid (or call it a raster "
+"image) from the scattered data. Typically you have a set of arbitrary "
+"scattered over the region of survey measurements and you would like to "
+"convert them into the regular grid for further processing and combining "
+"with other grids."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:25
+msgid ""
+"This problem can be solved using data interpolation or approximation "
+"algorithms. But you are not limited by interpolation here. Sometimes you "
+"don't need to interpolate your data but rather compute some statistics or"
+" data metrics over the region. Statistics is valuable itself or could be "
+"used for better choosing the interpolation algorithm and parameters."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:31
+msgid ""
+"That is what GDAL Grid API is about. It helps you to interpolate your "
+"data (see `Interpolation of the Scattered Data`_) or compute data metrics"
+" (see `Data Metrics Computation`_)."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:35
+msgid ""
+"There are two ways of using this interface. Programmatically it is "
+"available through the :cpp:func:`GDALGridCreate` C function; for end "
+"users there is a :ref:`gdal_grid` utility. The rest of this document "
+"discusses details on algorithms and their parameters implemented in GDAL "
+"Grid API."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:41
+msgid "Interpolation of the Scattered Data"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:44
+msgid "Inverse Distance to a Power"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:46
+msgid ""
+"The Inverse Distance to a Power gridding method is a weighted average "
+"interpolator. You should supply the input arrays with the scattered data "
+"values including coordinates of every data point and output grid "
+"geometry. The function will compute interpolated value for the given "
+"position in output grid."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:52
+msgid ""
+"For every grid node the resulting value :math:`Z` will be calculated "
+"using formula:"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:55
+msgid "Z=\\frac{\\sum_{i=1}^n{\\frac{Z_i}{r_i^p}}}{\\sum_{i=1}^n{\\frac{1}{r_i^p}}}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:59
+#: ../../source/tutorials/gdal_grid_tut.rst:102
+#: ../../source/tutorials/gdal_grid_tut.rst:138
+#: ../../source/tutorials/gdal_grid_tut.rst:154
+#: ../../source/tutorials/gdal_grid_tut.rst:171
+msgid "where:"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:61
+#: ../../source/tutorials/gdal_grid_tut.rst:105
+#: ../../source/tutorials/gdal_grid_tut.rst:141
+#: ../../source/tutorials/gdal_grid_tut.rst:157
+#: ../../source/tutorials/gdal_grid_tut.rst:174
+msgid ":math:`Z_i` is a known value at point :math:`i`,"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:62
+msgid ":math:`r_i` is a distance from the grid node to point :math:`i`,"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:63
+msgid ":math:`p` is a weighting power,"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:64
+#: ../../source/tutorials/gdal_grid_tut.rst:142
+#: ../../source/tutorials/gdal_grid_tut.rst:158
+#: ../../source/tutorials/gdal_grid_tut.rst:175
+msgid ":math:`n` is a number of points in `Search Ellipse`_."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:66
+msgid ""
+"The smoothing parameter :math:`s` is used as an additive term in the "
+"Euclidean distance calculation:"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:68
+msgid "{r_i}=\\sqrt{{r_{ix}}^2 + {r_{iy}}^2 + s^2}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:72
+msgid ""
+"where :math:`r_{ix}` and :math:`r_{iy}` are the horizontal and vertical "
+"distances between the grid node to point :math:`i` respectively."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:75
+msgid "In this method the weighting factor :math:`w` is"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:77
+msgid "w=\\frac{1}{r^p}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:81
+msgid ""
+"See :cpp:class:`GDALGridInverseDistanceToAPowerOptions` for the list of "
+":cpp:func:`GDALGridCreate` parameters and :ref:`gdal_grid_invdist` for "
+"the list of :ref:`gdal_grid` options."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:86
+msgid "Moving Average"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:88
+msgid ""
+"The Moving Average is a simple data averaging algorithm. It uses a moving"
+" window of elliptic form to search values and averages all data points "
+"within the window. `Search Ellipse`_ can be rotated by specified angle, "
+"the center of ellipse located at the grid node. Also the minimum number "
+"of data points to average can be set, if there are not enough points in "
+"window, the grid node considered empty and will be filled with specified "
+"NODATA value."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:96
+msgid "Mathematically it can be expressed with the formula:"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:98
+msgid "Z=\\frac{\\sum_{i=1}^n{Z_i}}{n}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:104
+#: ../../source/tutorials/gdal_grid_tut.rst:140
+#: ../../source/tutorials/gdal_grid_tut.rst:156
+#: ../../source/tutorials/gdal_grid_tut.rst:173
+msgid ":math:`Z` is a resulting value at the grid node,"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:106
+msgid ":math:`n` is a number of points in search `Search Ellipse`_."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:108
+msgid ""
+"See :cpp:class:`GDALGridMovingAverageOptions` for the list of "
+":cpp:func:`GDALGridCreate` parameters and  :ref:`gdal_grid_average` for "
+"the list of :ref:`gdal_grid` options."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:112
+msgid "Nearest Neighbor"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:114
+msgid ""
+"The Nearest Neighbor method doesn't perform any interpolation or "
+"smoothing, it just takes the value of nearest point found in grid node "
+"search ellipse and returns it as a result. If there are no points found, "
+"the specified NODATA value will be returned."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:119
+msgid ""
+"See :cpp:class:`GDALGridNearestNeighborOptions` for the list of "
+":cpp:func:`GDALGridCreate` parameters and :ref:`gdal_grid_nearest` for "
+"the list of :ref:`gdal_grid` options."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:123
+msgid "Data Metrics Computation"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:125
+msgid ""
+"All the metrics have the same set controlling options. See the "
+":cpp:class:`GDALGridDataMetricsOptions`."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:129
+msgid "Minimum Data Value"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:131
+msgid ""
+"Minimum value found in grid node `Search Ellipse`_. If there are no "
+"points found, the specified NODATA value will be returned."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:134
+msgid "Z=\\min{(Z_1,Z_2,\\ldots,Z_n)}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:145
+msgid "Maximum Data Value"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:147
+msgid ""
+"Maximum value found in grid node `Search Ellipse`_. If there are no "
+"points found, the specified NODATA value will be returned."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:150
+msgid "Z=\\max{(Z_1,Z_2,\\ldots,Z_n)}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:161
+msgid "Data Range"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:163
+msgid ""
+"A difference between the minimum and maximum values found in grid `Search"
+" Ellipse`_. If there are no points found, the specified NODATA value will"
+" be returned."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:167
+msgid "Z=\\max{(Z_1,Z_2,\\ldots,Z_n)}-\\min{(Z_1,Z_2,\\ldots,Z_n)}"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:178
+msgid "Search Ellipse"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:180
+msgid ""
+"Search window in gridding algorithms specified in the form of rotated "
+"ellipse. It is described by the three parameters:"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:183
+msgid ""
+":math:`radius_1` is the first radius (:math:`x` axis if rotation angle is"
+" 0),"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:184
+msgid ""
+":math:`radius_2` is the second radius (:math:`y` axis if rotation angle "
+"is 0),"
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:185
+msgid ""
+":math:`angle` is a search ellipse rotation angle (rotated counter "
+"clockwise)."
+msgstr ""
+
+#: ../../source/tutorials/gdal_grid_tut.rst:197
+msgid ""
+"Only points located inside the search ellipse (including its border line)"
+" will be used for computation."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:5
+msgid "GNM API tutorial"
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:9
+msgid ""
+"This document is intended to describe using the GNM C++ classes to work "
+"with networks. It is advised to read the :ref:`gnm_data_model` before to "
+"understand the purpose and structure of GNM classes."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:12
+msgid "Managing networks"
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:14
+msgid ""
+"In the first example we will create a small water network on the base of "
+"the set of spatial data (two shapefiles: pipes and wells which are "
+"situated at the GDAL source tree: autotest\\\\gnm\\\\data). The use of "
+"the common network format - :cpp:class:`GNMGdalNetwork` class - will "
+"allow us to select one of the GDAL-supported vector formats for our "
+"network - ESRI Shapefile. After the creation we will build a topology and"
+" add some additional data: pumps layer, in order to manually edit network"
+" topology."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:16
+msgid ""
+"Initially we register GDAL drivers and create some options (string "
+"pairs), which will be passed as parameters during network creation. Here "
+"we create a network's name."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:33
+msgid ""
+"Some options are obligatory. The following parameters must be specified "
+"during the network creation: the path/name; format of network storage; "
+"spatial reference system (EPSG, WKT, etc.). The according dataset with "
+"the \"network part\" will be created and the resulting network will be "
+"returned."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:43
+msgid ""
+"For now we have a void network consisted of only \"system layers\". We "
+"need to populate it with \"class layers\" full of features, so we open a "
+"certain foreign dataset and copy layers from it to our network. Note, "
+"that we use GDALDataset:: methods for working with \"class layers\", "
+"because :cpp:class:`GNMNetwork` inherited from GDALDataset."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:58
+msgid ""
+"After the successful copying we have the network full of features, but "
+"with no topology. The features were added and registered in the network "
+"but they are still not connected with each other. Now it is time to build"
+" the network topology. There are two ways of doing this in GNM: manually "
+"or automatically. In the most cases automatic building is more "
+"convenient, while manual is useful for small editings. Automatic building"
+" requires some parameters: we must specify which \"class layers\" will "
+"participate in topology building (we select our two layers), a snap "
+"tolerance, direct and inverse cost, direction, which is equal 0.00005 in "
+"our case. If the building will be successful the network's graph will be "
+"filled with the according connections."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:81
+msgid ""
+"At this point we have a ready network with topological and spatial data, "
+"which can be used now for different purposes (analysis, converting into "
+"different formats, etc). But sometimes it is necessary to modify some "
+"network's data. For example we need to add additional features and attach"
+" them to our built topology (modify topology). We create a new \"class "
+"layer\" in the network and add one feature to it."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:114
+msgid ""
+"After the successful creation the feature will be registered in the "
+"network and we can connect it with others. There can be two possible ways"
+" to do this. In the first case we need a real feature which will be an "
+"edge in the connection, while in the second case we do not need such "
+"feature, and passing -1 into the "
+":cpp:func:`GNMGenericNetwork::ConnectFeatures` method means that the "
+"special system edge will be created for this connection and added to the "
+"graph automatically. In our case we had added only one point feature and "
+"we have not got the line one to be an edge, so we will use the "
+"\"virtual\" connection. We pass the GFID of our point as the source, the "
+"GFID of one of the existed features as the target and -1 as the "
+"connector. Note that we also set the costs (direct and inverse) and the "
+"direction of our edge manually and these values will be written to the "
+"graph. When we used the automatic connection (which also uses "
+"ConnectFeatures() internally) such vales were set automatically according"
+" to the rule which we also set before."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:124
+msgid ""
+"After all we correctly close the network which frees the allocated "
+"resources."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:131
+#: ../../source/tutorials/gnm_api_tut.rst:299
+msgid "All in one block:"
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:237
+msgid "Analysing networks"
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:239
+msgid ""
+"In the second example we will analyse the network which we have built in "
+"the first example. We will calculate the shortest path between two points"
+" via Dijkstra algorithm performing the feature blockings and saving the "
+"resulting path into the file."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:241
+msgid "Initially we open our network, passing the path to its Shapefile dataset."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:259
+msgid ""
+"Before any calculations we open the dataset which will hold the layer "
+"with the resulting path."
+msgstr ""
+
+#: ../../source/tutorials/gnm_api_tut.rst:275
+msgid ""
+"Finally we use the Dijkstra shortest path method to calculations. This "
+"path will be found passing over the blocked feature and saved into "
+"internal memory OGRLayer, which we copy to the real dataset. Now it can "
+"be visualized by GIS."
+msgstr ""
+
+#: ../../source/tutorials/index.rst:5
+msgid "Tutorials"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:8
+msgid "Raster"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:19
+msgid "Multidimensional raster"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:27
+msgid "Vector"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:37
+msgid "Geographic Network Model"
+msgstr ""
+
+#: ../../source/tutorials/index.rst:45
+msgid ""
+"Projections and Spatial Reference Systems tutorial (OSR - "
+"OGRSpatialReference)"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:5
+msgid "Multidimensional raster API tutorial"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:8
+msgid "Read the content of an array"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:11
+msgid "In C++"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:53
+msgid "In C"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:131
+msgid "In Python"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:141
+msgid "If NumPy is available:"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:153
+#: ../../source/tutorials/vector_python_driver.rst:628
+msgid "Other examples"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:155
+msgid "Test scripts from the GDAL autotest suite"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:157
+msgid "https://raw.githubusercontent.com/OSGeo/gdal/master/autotest/gdrivers/memmultidim.py"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:158
+msgid "https://raw.githubusercontent.com/OSGeo/gdal/master/autotest/gdrivers/netcdf_multidim.py"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:159
+msgid "https://raw.githubusercontent.com/OSGeo/gdal/master/autotest/gdrivers/vrtmultidim.py"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:160
+msgid "https://raw.githubusercontent.com/OSGeo/gdal/master/autotest/utilities/test_gdalmdiminfo_lib.py"
+msgstr ""
+
+#: ../../source/tutorials/multidimensional_api_tut.rst:161
+msgid "https://raw.githubusercontent.com/OSGeo/gdal/master/autotest/utilities/test_gdalmdimtranslate_lib.py"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:5
+msgid "OGR Coordinate Reference Systems and Coordinate Transformation tutorial"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:16
+#: ../../source/tutorials/vector_python_driver.rst:12
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:18
+msgid ""
+"The :cpp:class:`OGRSpatialReference` and "
+":cpp:class:`OGRCoordinateTransformation` classes provide respectively "
+"services to represent coordinate reference systems (known as CRS or SRS, "
+"such as typically a projected CRS associating a map projection with a "
+"geodetic datums) and to transform between them.  These services are "
+"loosely modeled on the OpenGIS Coordinate Transformations specification, "
+"and rely on the Well Known Text (WKT) format (in its various versions: "
+"OGC WKT 1, ESRI WKT, WKT2:2015 and WKT2:2018) for describing coordinate "
+"systems."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:27
+msgid "References and applicable standards"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:29
+msgid ""
+"`PROJ documentation <https://proj4.org>`_: projection methods and "
+"coordinate operations"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:30
+msgid ""
+"`ISO:19111 and WKT standards "
+"<https://proj4.org/development/reference/cpp/cpp_general.html#standards>`_"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:31
+msgid ""
+"`GeoTIFF Projections Transform List "
+"<http://geotiff.maptools.org/proj_list>`_: understanding formulations of "
+"projections in WKT for GeoTIFF"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:32
+msgid "`EPSG Geodesy web page <http://www.epsg.org>`_ is also a useful resource"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:35
+msgid "Defining a Geographic Coordinate Reference System"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:37
+msgid ""
+"CRS are encapsulated in the :cpp:class:`OGRSpatialReference` class. There"
+" are a number of ways of initializing an OGRSpatialReference object to a "
+"valid coordinate reference system.  There are two primary kinds of CRS. "
+"The first is geographic (positions are measured in long/lat) and the "
+"second is projected (such as UTM - positions are measured in meters or "
+"feet)."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:43
+msgid ""
+"A Geographic CRS contains information on the datum (which implies an "
+"spheroid described by a semi-major axis, and inverse flattening), prime "
+"meridian (normally Greenwich), and an angular units type which is "
+"normally degrees.  The following code initializes a geographic CRS on "
+"supplying all this information along with a user visible name for the "
+"geographic CRS."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:63
+msgid ""
+"The abbreviation CS in :cpp:func:`OGRSpatialReference::SetGeogCS` is not "
+"appropriate according to current geodesic terminology, and should be "
+"understood as CRS"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:66
+msgid ""
+"Of these values, the names \"My geographic CRS\", \"My WGS84 Spheroid\", "
+"\"Greenwich\" and \"degree\" are not keys, but are used for display to "
+"the user.  However, the datum name \"World Geodetic System 1984\" is used"
+" as a key to identify the datum, and should be set to a known value from "
+"the EPSG registry, so that appropriate datum transformations can be done "
+"during coordinate operations. The list of valid geodetic datum can be "
+"seen in the 3rd column of the `geodetic_datum.sql "
+"<https://github.com/OSGeo/PROJ/blob/master/data/sql/geodetic_datum.sql>`_"
+" file."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:77
+msgid ""
+"In WKT 1, space characters in datum names are normally replaced by "
+"underscore. And WGS_1984 is used as an alias of \"World Geodetic System "
+"1984\""
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:80
+msgid ""
+"The OGRSpatialReference has built in support for a few well known CRS, "
+"which include \"NAD27\", \"NAD83\", \"WGS72\" and \"WGS84\" which can be "
+"defined in a single call to "
+":cpp:func:`OGRSpatialReference::SetWellKnownGeogCS`."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:91
+msgid ""
+"The abbreviation CS in SetWellKnownGeogCS() is not appropriate according "
+"to current geodesic terminology, and should be understood as CRS"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:94
+msgid ""
+"Furthermore, any geographic CRS in the EPSG database can be set by its "
+"GCS code number if the EPSG database is available."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:101
+msgid ""
+"For serialization, and transmission of projection definitions to other "
+"packages, the OpenGIS Well Known Text format for coordinate systems is "
+"used.  An OGRSpatialReference can be initialized from WKT, or converted "
+"back into WKT. As of GDAL 3.0, the default format for WKT export is still"
+" OGC WKT 1."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:115
+msgid "outputs:"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:125
+msgid "or in more readable form:"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:142
+msgid ""
+"Starting with GDAL 3.0, the :cpp:func:`OGRSpatialReference::exportToWkt` "
+"method accepts options,"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:170
+msgid ""
+"This method with options is available in C as the "
+":cpp:func:`OSRExportToWktEx` function."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:172
+msgid ""
+"The :cpp:func:`OGRSpatialReference::importFromWkt` method can be used to "
+"set an OGRSpatialReference from a WKT CRS definition."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:176
+msgid "CRS and axis order"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:178
+msgid ""
+"One \"detail\" that has been omitted in previous sections is the topic of"
+" the order of coordinate axis in a CRS. A Geographic CRS is, according to"
+" ISO:19111 modeling, made of two main components: a geodetic datum and a "
+"`coordinate system "
+"<http://docs.opengeospatial.org/as/18-005r4/18-005r4.html#42>`_. For 2D "
+"geographic CRS, the coordinate system axes are the longitude and the "
+"latitude, and the values along those axes are expressed generally in "
+"degree (ancient French-based CRS may use grad)."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:185
+msgid ""
+"The order in which they are specified, that is latitude first, longitude "
+"second, or the reverse, is a constant matter of confusion and vary "
+"depending on conventions used by geodetic authorities, GIS user, file "
+"format and protocol specifications, etc... This is the source of various "
+"interoperability issues."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:190
+msgid ""
+"Before GDAL 3.0, the :cpp:class:`OGRSpatialReference` class did not "
+"honour the axis order mandated by the authority defining a CRS and "
+"consequently stripped axis order information from the WKT string when the"
+" order was latitude first, longitude second. Coordinate transformations "
+"using the OGRCoordinateTransformation class also assumed that geographic "
+"coordinates passed or returned by the Transform() method of this class "
+"used the longitude, latitude order."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:197
+msgid ""
+"Starting with GDAL 3.0, the axis order mandated by the authority defining"
+" a CRS is by default honoured by the OGRCoordinateTransformation class, "
+"and always exported in WKT1. Consequently CRS created with the "
+"\"EPSG:4326\" or \"WGS84\" strings use the latitude first, longitude "
+"second axis order."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:202
+msgid ""
+"In order to help migration from code bases still using coordinates with "
+"the longitude, latitude order, it is possible to attach a metadata "
+"information to a OGRSpatialReference instance, to specify that for the "
+"purpose of coordinate transformations, the order of values effectively "
+"passed or returned, will be longitude, latitude. For that, the following "
+"must be called"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:212
+msgid ""
+"The argument passed to "
+":cpp:func:`OGRSpatialReference::SetAxisMappingStrategy` is the data axis "
+"to CRS axis mapping strategy."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:215
+msgid ""
+":c:macro:`OAMS_TRADITIONAL_GIS_ORDER` means that for geographic CRS with "
+"lat/long order, the data will still be long/lat ordered. Similarly for a "
+"projected CRS with northing/easting order, the data will still be "
+"easting/northing ordered."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:216
+msgid ""
+":c:macro:`OAMS_AUTHORITY_COMPLIANT` means that the data axis will be "
+"identical to the CRS axis. This is the fdefault value when instantiating "
+"OGRSpatialReference."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:217
+msgid ""
+":c:macro:`OAMS_CUSTOM` means that the data axis are customly defined with"
+" SetDataAxisToSRSAxisMapping()."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:219
+msgid ""
+"What has been discussed in this section for the particular case of "
+"Geographic CRS also applies to Projected CRS. While most of them use "
+"Easting first, Northing second convention, some defined in the EPSG "
+"registry use the reverse convention."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:224
+msgid "Defining a Projected CRS"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:226
+msgid ""
+"A projected CRS (such as UTM, Lambert Conformal Conic, etc) requires and "
+"underlying geographic CRS as well as a definition for the projection "
+"transform used to translate between linear positions (in meters or feet) "
+"and angular long/lat positions.  The following code defines a UTM zone 17"
+" projected CRS with an underlying geographic CRS (datum) of WGS84."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:241
+msgid ""
+"Calling :cpp:func:`OGRSpatialReference::SetProjCS` sets a user name for "
+"the projected CRS and establishes that the system is projected.  The "
+":cpp:func:`OGRSpatialReference::SetWellKnownGeogCS` associates a "
+"geographic coordinate system, and the "
+":cpp:func:`OGRSpatialReference::SetUTM` call sets detailed projection "
+"transformation parameters.  At this time the above order is important in "
+"order to create a valid definition, but in the future the object will "
+"automatically reorder the internal representation as needed to remain "
+"valid."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:251
+msgid "For now, be careful of the order of steps defining an OGRSpatialReference!"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:253
+msgid ""
+"The above definition would give a WKT version that looks something like "
+"the following.  Note that the UTM 17 was expanded into the details "
+"transverse mercator definition of the UTM zone."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:278
+msgid ""
+"There are methods for many projection methods including "
+":cpp:func:`OGRSpatialReference::SetTM` (Transverse Mercator), "
+":cpp:func:`OGRSpatialReference::SetLCC` (Lambert Conformal Conic), and "
+":cpp:func:`OGRSpatialReference::SetMercator`."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:282
+msgid "Querying Coordinate Reference System"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:284
+msgid ""
+"Once an OGRSpatialReference has been established, various information "
+"about it can be queried.  It can be established if it is a projected or "
+"geographic CRS using the :cpp:func:`OGRSpatialReference::IsProjected` and"
+" :cpp:func:`OGRSpatialReference::IsGeographic` methods.  The "
+":cpp:func:`OGRSpatialReference::GetSemiMajor`, "
+":cpp:func:`OGRSpatialReference::GetSemiMinor` and "
+":cpp:func:`OGRSpatialReference::GetInvFlattening` methods can be used to "
+"get information about the spheroid.  The "
+":cpp:func:`OGRSpatialReference::GetAttrValue` method can be used to get "
+"the PROJCS, GEOGCS, DATUM, SPHEROID, and PROJECTION names strings.  The "
+":cpp:func:`OGRSpatialReference::GetProjParm` method can be used to get "
+"the projection parameters.  The "
+":cpp:func:`OGRSpatialReference::GetLinearUnits` method can be used to "
+"fetch the linear units type, and translation to meters."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:295
+msgid ""
+"Note that the names of the projection method and parameters is the one of"
+" WKT 1."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:298
+msgid ""
+"The following code demonstrates use of "
+":cpp:func:`OGRSpatialReference::GetAttrValue` to get the projection, and "
+":cpp:func:`OGRSpatialReference::GetProjParm` to get projection "
+"parameters.  The GetAttrValue() method searches for the first \"value\" "
+"node associated with the named entry in the WKT text representation. The "
+"#define'ed constants for projection parameters (such as "
+"SRS_PP_CENTRAL_MERIDIAN) should be used when fetching projection "
+"parameter with GetProjParm(). The code for the Set methods of the various"
+" projections in ogrspatialreference.cpp can be consulted to find which "
+"parameters apply to which projections."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:332
+msgid "Coordinate Transformation"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:334
+msgid ""
+"The :cpp:class:`OGRCoordinateTransformation` class is used for "
+"translating positions between different CRS.  New transformation objects "
+"are created using :cpp:func:`OGRCreateCoordinateTransformation`, and then"
+" the :cpp:func:`OGRCoordinateTransformation::Transform` method can be "
+"used to convert points between CRS."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:365
+msgid ""
+"There are a couple of points at which transformations can fail.  First, "
+"OGRCreateCoordinateTransformation() may fail, generally because the "
+"internals recognise that no transformation between the indicated systems "
+"can be established, and will return a NULL pointer."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:371
+msgid ""
+"The OGRCoordinateTransformation::Transform() method itself can also fail."
+"  This may be as a delayed result of one of the above problems, or as a "
+"result of an operation being numerically undefined for one or more of the"
+" passed in points.  The Transform() function will return TRUE on success,"
+" or FALSE if any of the points fail to transform.  The point array is "
+"left in an indeterminate state on error."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:379
+msgid ""
+"Though not shown above, the coordinate transformation service can take 3D"
+" points, and will adjust elevations for elevation differences in "
+"spheroids, and datums. Elevations given on a geographic or projected CRS "
+"are assumed to be ellipsoidal heights. When using a compound CRS made of "
+"a horizontal CRS (geographic or projected) and a vertical CRS, elevations"
+" will be related to a vertical datum (mean sea level, gravity based, "
+"etc.)."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:386
+msgid ""
+"Starting with GDAL 3.0, a time value (generally as a vale in decimal "
+"years) can also be specified for time-dependent coordinate operations."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:389
+msgid ""
+"The following example shows how to conveniently create a long/lat "
+"coordinate system using the same geographic CRS as a projected coordinate"
+" system, and using that to transform between projected coordinates and "
+"long/lat. The returned coordinates will be in longitude, latitude order "
+"due to the call to SetAxisMappingStrategy(OAMS_TRADITIONAL_GIS_ORDER)"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:419
+msgid "Advanced Coordinate Transformation"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:421
+msgid ""
+"OGRCreateCoordinateTransformation() under-the-hood may determine several "
+"candidate coordinate operations transforming from the source CRS to the "
+"target CRS. Those candidate coordinate operations have each their own "
+"area of use. When Transform() is invoked, it will determine the most "
+"appropriate coordinate operation based on the coordinates of the point to"
+" transform and those area of use. For example, there are several dozens "
+"of possible coordinate operations for the NAD27 to WGS84 transformation."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:429
+msgid ""
+"If a bounding box of the area of interest into which coordinates to "
+"transform are located is known, it is possible to specify it to restrict "
+"the candidate coordinate operations to consider:"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:439
+msgid ""
+"For cases where a particular coordinate operation must be used, it is "
+"possible to specify it as as a PROJ string (single step operation or "
+"multiple step string starting with +proj=pipeline), a WKT2 string "
+"describing a CoordinateOperation, or a "
+"urn:ogc:def:coordinateOperation:EPSG::XXXX URN"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:465
+msgid "Alternate Interfaces"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:467
+msgid ""
+"A C interface to the coordinate system services is defined in "
+"ogr_srs_api.h, and Python bindings are available via the osr.py module. "
+"Methods are close analogs of the C++ methods but C and Python bindings "
+"are missing for some C++ methods."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:473
+msgid "C bindings"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:569
+msgid "Python bindings"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:596
+msgid "History and implementation considerations"
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:598
+msgid ""
+"Before GDAL 3.0, the OGRSpatialReference class was strongly tied to OGC "
+"WKT (WKT 1) format specified by `Coordinate Transformation Services (CT) "
+"specification (01-009) "
+"<http://portal.opengeospatial.org/files/?artifact_id=999>`_, and the way "
+"it was interpreted by GDAL, which various caveats detailed in the "
+":ref:`wktproblems` page. The class was mostly containing a in-memory "
+"tree-like representation of WKT 1 strings. The class used to directly "
+"implement import and export to OGC WKT 1, WKT-ESRI and PROJ.4 formats. "
+"Reprojection services were only available if GDAL had been build against "
+"the PROJ library."
+msgstr ""
+
+#: ../../source/tutorials/osr_api_tut.rst:608
+msgid ""
+"Starting with GDAL 3.0, the `PROJ <https://proj4.org>`_ >= 6.0 library "
+"has become a required dependency of GDAL. PROJ 6 has built-in support for"
+" OGC WKT 1, ESRI WKT, OGC WKT 2:2015 and OGC WKT 2:2018 representations. "
+"PROJ 6 also implements a C++ object class hierarchy of the ISO-19111 / "
+"OGC Abstract Topic 2 \"Referencing by coordinate\" standard. Consequently"
+" the OGRSpatialReference class has been modified to act mostly as a "
+"wrapper on top of PROJ PJ* CRS objects, and tries to abstract away from "
+"the OGC WKT 1 representation as much as possible. However, for backward "
+"compatibility, some methods still expect arguments or return values that "
+"are specific of OGC WKT 1. The design of th OGRSpatialReference class is "
+"also still monolithic. Users wanting direct and fine grained access to "
+"CRS representations might want to directly use the PROJ 6 C or C++ API."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:5
+msgid "Raster API tutorial"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:8
+msgid "Opening the File"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:10
+msgid ""
+"Before opening a GDAL supported raster datastore it is necessary to "
+"register drivers. There is a driver for each supported format. Normally "
+"this is accomplished with the :cpp:func:`GDALAllRegister` function which "
+"attempts to register all known drivers, including those auto-loaded from "
+".so files using :cpp:func:`GDALDriverManager::AutoLoadDrivers`. If for "
+"some applications it is necessary to limit the set of drivers it may be "
+"helpful to review the code from gdalallregister.cpp. Python automatically"
+" calls GDALAllRegister() when the gdal module is imported."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:12
+msgid ""
+"Once the drivers are registered, the application should call the free "
+"standing :cpp:func:`GDALOpen` function to open a dataset, passing the "
+"name of the dataset and the access desired (GA_ReadOnly or GA_Update)."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:14
+#: ../../source/tutorials/raster_api_tut.rst:78
+#: ../../source/tutorials/raster_api_tut.rst:143
+#: ../../source/tutorials/raster_api_tut.rst:221
+#: ../../source/tutorials/raster_api_tut.rst:294
+#: ../../source/tutorials/raster_api_tut.rst:349
+#: ../../source/tutorials/raster_api_tut.rst:390
+#: ../../source/tutorials/raster_api_tut.rst:438
+#: ../../source/tutorials/raster_api_tut.rst:465
+#: ../../source/tutorials/vector_api_tut.rst:801
+msgid "In C++:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:30
+#: ../../source/tutorials/raster_api_tut.rst:99
+#: ../../source/tutorials/raster_api_tut.rst:170
+#: ../../source/tutorials/raster_api_tut.rst:234
+#: ../../source/tutorials/raster_api_tut.rst:312
+#: ../../source/tutorials/raster_api_tut.rst:363
+#: ../../source/tutorials/raster_api_tut.rst:406
+#: ../../source/tutorials/raster_api_tut.rst:447
+#: ../../source/tutorials/raster_api_tut.rst:486
+#: ../../source/tutorials/vector_api_tut.rst:816
+msgid "In C:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:47
+#: ../../source/tutorials/raster_api_tut.rst:123
+#: ../../source/tutorials/raster_api_tut.rst:197
+#: ../../source/tutorials/raster_api_tut.rst:247
+#: ../../source/tutorials/raster_api_tut.rst:329
+#: ../../source/tutorials/raster_api_tut.rst:376
+#: ../../source/tutorials/raster_api_tut.rst:422
+#: ../../source/tutorials/raster_api_tut.rst:456
+#: ../../source/tutorials/raster_api_tut.rst:509
+#: ../../source/tutorials/vector_api_tut.rst:355
+#: ../../source/tutorials/vector_api_tut.rst:630
+msgid "In Python:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:56
+msgid ""
+"Note that if :cpp:func:`GDALOpen` returns NULL it means the open failed, "
+"and that an error messages will already have been emitted via "
+":cpp:func:`CPLError`. If you want to control how errors are reported to "
+"the user review the :cpp:func:`CPLError` documentation. Generally "
+"speaking all of GDAL uses :cpp:func:`CPLError` for error reporting. Also,"
+" note that pszFilename need not actually be the name of a physical file "
+"(though it usually is). It's interpretation is driver dependent, and it "
+"might be an URL, a filename with additional parameters added at the end "
+"controlling the open or almost anything. Please try not to limit GDAL "
+"file selection dialogs to only selecting physical files."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:59
+msgid "Getting Dataset Information"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:61
+msgid ""
+"As described in the :ref:`raster_data_model`, a :cpp:class:`GDALDataset` "
+"contains a list of raster bands, all pertaining to the same area, and "
+"having the same resolution. It also has metadata, a coordinate system, a "
+"georeferencing transform, size of raster and various other information."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:63
+msgid ""
+"In the particular, but common, case of a \"north up\" image without any "
+"rotation or shearing, the georeferencing transform takes the following "
+"form :"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:74
+msgid "In the general case, this is an affine transform."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:76
+msgid ""
+"If we wanted to print some general information about the dataset we might"
+" do the following:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:139
+msgid "Fetching a Raster Band"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:141
+msgid ""
+"At this time access to raster data via GDAL is done one band at a time. "
+"Also, there is metadata, block sizes, color tables, and various other "
+"information available on a band by band basis. The following codes "
+"fetches a :cpp:class:`GDALRasterBand` object from the dataset (numbered 1"
+" through :cpp:func:`GDALRasterBand::GetRasterCount`) and displays a "
+"little information about it."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:217
+msgid "Reading Raster Data"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:219
+msgid ""
+"There are a few ways to read raster data, but the most common is via the "
+":cpp:func:`GDALRasterBand::RasterIO` method. This method will "
+"automatically take care of data type conversion, up/down sampling and "
+"windowing. The following code will read the first scanline of data into a"
+" similarly sized buffer, converting it to floating point as part of the "
+"operation."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:232
+#: ../../source/tutorials/raster_api_tut.rst:245
+msgid ""
+"The pafScanline buffer should be freed with CPLFree() when it is no "
+"longer used."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:256
+msgid ""
+"Note that the returned scanline is of type string, and contains xsize*4 "
+"bytes of raw binary floating point data. This can be converted to Python "
+"values using the struct module from the standard library:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:263
+msgid "The RasterIO call takes the following arguments."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:274
+msgid ""
+"Note that the same RasterIO() call is used to read, or write based on the"
+" setting of eRWFlag (either GF_Read or GF_Write). The nXOff, nYOff, "
+"nXSize, nYSize argument describe the window of raster data on disk to "
+"read (or write). It doesn't have to fall on tile boundaries though access"
+" may be more efficient if it does."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:276
+msgid ""
+"The pData is the memory buffer the data is read into, or written from. "
+"It's real type must be whatever is passed as eBufType, such as "
+"GDT_Float32, or GDT_Byte. The RasterIO() call will take care of "
+"converting between the buffer's data type and the data type of the band. "
+"Note that when converting floating point data to integer RasterIO() "
+"rounds down, and when converting source values outside the legal range of"
+" the output the nearest legal value is used. This implies, for instance, "
+"that 16bit data read into a GDT_Byte buffer will map all values greater "
+"than 255 to 255, the data is not scaled!"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:278
+msgid ""
+"The nBufXSize and nBufYSize values describe the size of the buffer. When "
+"loading data at full resolution this would be the same as the window "
+"size. However, to load a reduced resolution overview this could be set to"
+" smaller than the window on disk. In this case the RasterIO() will "
+"utilize overviews to do the IO more efficiently if the overviews are "
+"suitable."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:280
+msgid ""
+"The nPixelSpace, and nLineSpace are normally zero indicating that default"
+" values should be used. However, they can be used to control access to "
+"the memory data buffer, allowing reading into a buffer containing other "
+"pixel interleaved data for instance."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:283
+msgid "Closing the Dataset"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:285
+msgid ""
+"Please keep in mind that :cpp:class:`GDALRasterBand` objects are owned by"
+" their dataset, and they should never be destroyed with the C++ delete "
+"operator. :cpp:class:`GDALDataset`'s can be closed by calling "
+":cpp:func:`GDALClose` (it is NOT recommended to use the delete operator "
+"on a GDALDataset for Windows users because of known issues when "
+"allocating and freeing memory across module boundaries. See the relevant "
+"topic on the FAQ). Calling GDALClose will result in proper cleanup, and "
+"flushing of any pending writes. Forgetting to call GDALClose on a dataset"
+" opened in update mode in a popular format like GTiff will likely result "
+"in being unable to open it afterwards."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:288
+msgid "Techniques for Creating Files"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:290
+msgid ""
+"New files in GDAL supported formats may be created if the format driver "
+"supports creation. There are two general techniques for creating files, "
+"using CreateCopy() and Create(). The CreateCopy method involves calling "
+"the CreateCopy() method on the format driver, and passing in a source "
+"dataset that should be copied. The Create method involves calling the "
+"Create() method on the driver, and then explicitly writing all the "
+"metadata, and raster data with separate calls. All drivers that support "
+"creating new files support the CreateCopy() method, but only a few "
+"support the Create() method."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:292
+msgid ""
+"To determine if a particular format supports Create or CreateCopy it is "
+"possible to check the DCAP_CREATE and DCAP_CREATECOPY metadata on the "
+"format driver object. Ensure that :cpp:func:`GDALAllRegister` has been "
+"called before calling :cpp:func:`GDALDriverManager::GetDriverByName`. In "
+"this example we fetch a driver, and determine whether it supports "
+"Create() and/or CreateCopy()."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:342
+msgid ""
+"Note that a number of drivers are read-only and won't support Create() or"
+" CreateCopy()."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:345
+msgid "Using CreateCopy()"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:347
+msgid ""
+"The :cpp:func:`GDALDriver::CreateCopy` method can be used fairly simply "
+"as most information is collected from the source dataset. However, it "
+"includes options for passing format specific creation options, and for "
+"reporting progress to the user as a long dataset copy takes place. A "
+"simple copy from the a file named pszSrcFilename, to a new file named "
+"pszDstFilename using default options on a format whose driver was "
+"previously fetched might look like this:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:386
+msgid ""
+"Note that the CreateCopy() method returns a writable dataset, and that it"
+" must be closed properly to complete writing and flushing the dataset to "
+"disk. In the Python case this occurs automatically when \"dst_ds\" goes "
+"out of scope. The FALSE (or 0) value used for the bStrict option just "
+"after the destination filename in the CreateCopy() call indicates that "
+"the CreateCopy() call should proceed without a fatal error even if the "
+"destination dataset cannot be created to exactly match the input dataset."
+" This might be because the output format does not support the pixel "
+"datatype of the input dataset, or because the destination cannot support "
+"writing georeferencing for instance."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:388
+msgid ""
+"A more complex case might involve passing creation options, and using a "
+"predefined progress monitor like this:"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:434
+msgid "Using Create()"
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:436
+msgid ""
+"For situations in which you are not just exporting an existing file to a "
+"new file, it is generally necessary to use the "
+":cpp:func:`GDALDriver::Create` method (though some interesting options "
+"are possible through use of virtual files or in-memory files). The "
+"Create() method takes an options list much like CreateCopy(), but the "
+"image size, number of bands and band type must be provided explicitly."
+msgstr ""
+
+#: ../../source/tutorials/raster_api_tut.rst:463
+msgid ""
+"Once the dataset is successfully created, all appropriate metadata and "
+"raster data must be written to the file. What this is will vary according"
+" to usage, but a simple case with a projection, geotransform and raster "
+"data is covered here."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:5
+msgid "Raster driver implementation tutorial"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:10
+#: ../../source/tutorials/vector_driver_tut.rst:10
+msgid "Overall Approach"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:12
+msgid ""
+"In general new formats are added to GDAL by implementing format specific "
+"drivers as subclasses of :cpp:class:`GDALDataset`, and band accessors as "
+"subclasses of :cpp:class:`GDALRasterBand`. As well, a "
+":cpp:class:`GDALDriver` instance is created for the format, and "
+"registered with the :cpp:class:`GDALDriverManager`, to ensure that the "
+"system knows about the format."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:14
+msgid ""
+"This tutorial will start with implementing a simple read-only driver "
+"(based on the JDEM driver), and then proceed to utilizing the "
+"RawRasterBand helper class, implementing creatable and updatable formats,"
+" and some esoteric issues."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:16
+msgid ""
+"It is strongly advised that the :ref:`raster_data_model` be reviewed and "
+"understood before attempting to implement a GDAL driver."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:19
+msgid "Implementing the Dataset"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:21
+msgid ""
+"We will start showing minimal implementation of a read-only driver for "
+"the Japanese DEM format (`jdemdataset.cpp "
+"<https://github.com/OSGeo/gdal/blob/master/gdal/frmts/jdem/jdemdataset.cpp>`_)."
+" First we declare a format specific dataset class, JDEMDataset in this "
+"case."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:39
+msgid ""
+"In general we provide capabilities for a driver, by overriding the "
+"various virtual methods on the GDALDataset base class. However, the "
+"Open() method is special. This is not a virtual method on the base class,"
+" and we will need a freestanding function for this operation, so we "
+"declare it static. Implementing it as a method in the JDEMDataset class "
+"is convenient because we have privileged access to modify the contents of"
+" the database object."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:41
+msgid "The open method itself may look something like this:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:100
+msgid ""
+"The first step in any database Open function is to verify that the file "
+"being passed is in fact of the type this driver is for.  It is important "
+"to realize that each driver's Open function is called in turn till one "
+"succeeds.  Drivers must quietly return NULL if the passed file is not of "
+"their format.  They should only produce an error if the file does appear "
+"to be of their supported format, but is for some reason unsupported or "
+"corrupt. The information on the file to be opened is passed in contained "
+"in a GDALOpenInfo object.  The GDALOpenInfo includes the following public"
+" data members:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:122
+msgid ""
+"The driver can inspect these to establish if the file is supported. If "
+"the `pszFilename` refers to an object in the file system, the `bStatOK` "
+"flag will be set to TRUE. As well, if the file was successfully opened, "
+"the first kilobyte or so is read in, and put in pabyHeader, with the "
+"exact size in `nHeaderBytes`."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:124
+msgid ""
+"In this typical testing example it is verified that the file was "
+"successfully opened, that we have at least enough header information to "
+"perform our test, and that various parts of the header are as expected "
+"for this format. In this case, there are no magic numbers for JDEM format"
+" so we check various date fields to ensure they have reasonable century "
+"values. If the test fails, we quietly return NULL indicating this file "
+"isn't of our supported format."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:126
+msgid "The identification is in fact delegated to a Identify() static function :"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:154
+msgid ""
+"It is important to make the \"is this my format\" test as stringent as "
+"possible.  In this particular case the test is weak, and a file that "
+"happened to have 19s or 20s at a few locations could be erroneously "
+"recognized as JDEM format, causing it to not be handled properly. Once we"
+" are satisfied that the file is of our format, we can do any other tests "
+"that are necessary to validate the file is usable, and in particular that"
+" we can provide the level of access desired.  Since the JDEM driver does "
+"not provide update support, error out in that case."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:173
+msgid ""
+"Next we need to create an instance of the database class in which we will"
+" set various information of interest."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:188
+msgid ""
+"At this point we \"borrow\" the file handle that was held by "
+"GDALOpenInfo*. This file pointer uses the VSI*L GDAL API to access files "
+"on disk. This virtualized POSIX-style API allows some special "
+"capabilities like supporting large files, in-memory files and zipped "
+"files."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:190
+msgid ""
+"Next the X and Y size are extracted from the header. The `nRasterXSize` "
+"and `nRasterYSize` are data fields inherited from the GDALDataset base "
+"class, and must be set by the Open() method."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:208
+msgid ""
+"All the bands related to this dataset must be created and attached using "
+"the SetBand() method. We will explore the JDEMRasterBand() class shortly."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:215
+msgid ""
+"Finally we assign a name to the dataset object, and call the "
+"GDALPamDataset TryLoadXML() method which can initialize auxiliary "
+"information from an .aux.xml file if available. For more details on these"
+" services review the GDALPamDataset and related classes."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:226
+msgid "Implementing the RasterBand"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:228
+msgid ""
+"Similar to the customized JDEMDataset class subclassed from GDALDataset, "
+"we also need to declare and implement a customized JDEMRasterBand derived"
+" from :cpp:class:`GDALRasterBand` for access to the band(s) of the JDEM "
+"file. For JDEMRasterBand the declaration looks like this:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:239
+msgid ""
+"The constructor may have any signature, and is only called from the "
+"Open() method. Other virtual methods, such as "
+":cpp:func:`GDALRasterBand::IReadBlock` must be exactly matched to the "
+"method signature in gdal_priv.h."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:241
+msgid "The constructor implementation looks like this:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:254
+msgid ""
+"The following data members are inherited from GDALRasterBand, and should "
+"generally be set in the band constructor."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:264
+msgid ""
+"The full set of possible GDALDataType values are declared in gdal.h, and "
+"include GDT_Byte, GDT_UInt16, GDT_Int16, and GDT_Float32. The block size "
+"is used to establish a natural or efficient block size to access the data"
+" with. For tiled datasets this will be the size of a tile, while for most"
+" other datasets it will be one scanline, as in this case."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:266
+msgid ""
+"Next we see the implementation of the code that actually reads the image "
+"data, IReadBlock()."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:299
+msgid "Key items to note are:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:301
+msgid ""
+"It is typical to cast the GDALRasterBand::poDS member to the derived type"
+" of the owning dataset. If your RasterBand class will need privileged "
+"access to the owning dataset object, ensure it is declared as a friend "
+"(omitted above for brevity)."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:302
+msgid ""
+"If an error occurs, report it with CPLError(), and return CE_Failure. "
+"Otherwise return CE_None."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:303
+msgid ""
+"The pImage buffer should be filled with one block of data. The block is "
+"the size declared in nBlockXSize and nBlockYSize for the raster band. The"
+" type of the data within pImage should match the type declared in "
+"eDataType in the raster band object."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:304
+msgid ""
+"The nBlockXOff and nBlockYOff are block offsets, so with 128x128 tiled "
+"datasets values of 1 and 1 would indicate the block going from (128,128) "
+"to (255,255) should be loaded."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:307
+msgid "The Driver"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:309
+msgid ""
+"While the JDEMDataset and JDEMRasterBand are now ready to use to read "
+"image data, it still isn't clear how the GDAL system knows about the new "
+"driver. This is accomplished via the :cpp:class:`GDALDriverManager`. To "
+"register our format we implement a registration function. The declaration"
+" goes in gcore/gdal_frmts.h: void CPL_DLL GDALRegister_JDEM(void);"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:312
+msgid "The definition in the driver file is:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:338
+msgid ""
+"Note the use of GDAL_CHECK_VERSION macro. This is an optional macro for "
+"drivers inside GDAL tree that don't depend on external libraries, but "
+"that can be very useful if you compile your driver as a plugin (that is "
+"to say, an out-of-tree driver). As the GDAL C++ ABI may, and will, change"
+" between GDAL releases (for example from GDAL 1.x to 1.y), it may be "
+"necessary to recompile your driver against the header files of the GDAL "
+"version with which you want to make it work. The GDAL_CHECK_VERSION macro"
+" will check that the GDAL version with which the driver was compiled and "
+"the version against which it is running are compatible."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:340
+msgid ""
+"The registration function will create an instance of a GDALDriver object "
+"when first called, and register it with the GDALDriverManager. The "
+"following fields can be set in the driver before registering it with the "
+"GDALDriverManager."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:342
+msgid ""
+"The description is the short name for the format. This is a unique name "
+"for this format, often used to identity the driver in scripts and command"
+" line programs. Normally 3-5 characters in length, and matching the "
+"prefix of the format classes. (mandatory)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:343
+msgid ""
+"GDAL_DCAP_RASTER: set to YES to indicate that this driver handles raster "
+"data. (mandatory)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:344
+msgid ""
+"GDAL_DMD_LONGNAME: A longer descriptive name for the file format, but "
+"still no longer than 50-60 characters. (mandatory)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:345
+msgid ""
+"GDAL_DMD_HELPTOPIC: The name of a help topic to display for this driver, "
+"if any. In this case JDEM format is contained within the various format "
+"web page held in gdal/html. (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:346
+msgid ""
+"GDAL_DMD_EXTENSION: The extension used for files of this type. If more "
+"than one pick the primary extension, or none at all. (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:347
+msgid ""
+"GDAL_DMD_MIMETYPE: The standard mime type for this file format, such as "
+"\"image/png\". (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:348
+msgid ""
+"GDAL_DMD_CREATIONOPTIONLIST: There is evolving work on mechanisms to "
+"describe creation options. See the geotiff driver for an example of this."
+" (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:349
+msgid ""
+"GDAL_DMD_CREATIONDATATYPES: A list of space separated data types "
+"supported by this create when creating new datasets. If a Create() method"
+" exists, these will be will supported. If a CreateCopy() method exists, "
+"this will be a list of types that can be losslessly exported but it may "
+"include weaker data types than the type eventually written. For instance,"
+" a format with a CreateCopy() method, and that always writes Float32 "
+"might also list Byte, Int16, and UInt16 since they can losslessly "
+"translated to Float32. An example value might be \"Byte Int16 UInt16\". "
+"(required - if creation supported)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:350
+msgid ""
+"GDAL_DCAP_VIRTUALIO: set to YES to indicate that this driver can deal "
+"with files opened with the VSI*L GDAL API. Otherwise this metadata item "
+"should not be defined. (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:351
+msgid ""
+"pfnOpen: The function to call to try opening files of this format. "
+"(optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:352
+msgid ""
+"pfnIdentify: The function to call to try identifying files of this "
+"format. A driver should return 1 if it recognizes the file as being of "
+"its format, 0 if it recognizes the file as being NOT of its format, or -1"
+" if it cannot reach to a firm conclusion by just examining the header "
+"bytes. (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:353
+msgid ""
+"pfnCreate: The function to call to create new updatable datasets of this "
+"format. (optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:354
+msgid ""
+"pfnCreateCopy: The function to call to create a new dataset of this "
+"format copied from another source, but not necessary updatable. "
+"(optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:355
+msgid ""
+"pfnDelete: The function to call to delete a dataset of this format. "
+"(optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:356
+msgid ""
+"pfnUnloadDriver: A function called only when the driver is destroyed. "
+"Could be used to cleanup data at the driver level. Rarely used. "
+"(optional)"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:359
+msgid "Adding Driver to GDAL Tree"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:361
+msgid ""
+"Note that the GDALRegister_JDEM() method must be called by the higher "
+"level program in order to have access to the JDEM driver. Normal practice"
+" when writing new drivers is to:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:363
+msgid ""
+"Add a driver directory under gdal/frmts, with the directory name the same"
+" as the short name."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:364
+msgid ""
+"Add a GNUmakefile and makefile.vc in that directory modeled on those from"
+" other similar directories (i.e. the jdem directory)."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:365
+msgid ""
+"Add the module with the dataset, and rasterband implementation. Generally"
+" this is called <short_name>dataset.cpp, with all the GDAL specific code "
+"in one file, though that is not required."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:366
+msgid ""
+"Add the registration entry point declaration (i.e. GDALRegister_JDEM()) "
+"to gdal/gcore/gdal_frmts.h."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:367
+msgid ""
+"Add a call to the registration function to frmts/gdalallregister.cpp, "
+"protected by an appropriate #ifdef."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:368
+msgid ""
+"Add the format short name to the GDAL_FORMATS macro in GDALmake.opt.in "
+"(and to GDALmake.opt)."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:369
+msgid "Add a format specific item to the EXTRAFLAGS macro in frmts/makefile.vc."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:371
+msgid ""
+"Once this is all done, it should be possible to rebuild GDAL, and have "
+"the new format available in all the utilities. The :ref:`gdalinfo` "
+"utility can be used to test that opening and reporting on the format is "
+"working, and the :ref:`gdal_translate` utility can be used to test image "
+"reading."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:374
+msgid "Adding Georeferencing"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:376
+msgid ""
+"Now we will take the example a step forward, adding georeferencing "
+"support. We add the following two virtual method overrides to "
+"JDEMDataset, taking care to exactly match the signature of the method on "
+"the GDALDataset base class."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:383
+msgid ""
+"The implementation of :cpp:func:`GDALDataset::GetGeoTransform` just "
+"copies the usual geotransform matrix into the supplied buffer. Note that "
+":cpp:func:`GDALDataset::GetGeoTransform` may be called a lot, so it isn't"
+" generally wise to do a lot of computation in it. In many cases the "
+"Open() will collect the geotransform, and this method will just copy it "
+"over. Also note that the geotransform return is based on an anchor point "
+"at the top left corner of the top left pixel, not the center of pixel "
+"approach used in some packages."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:403
+msgid ""
+"The :cpp:func:`GDALDataset::GetProjectionRef` method returns a pointer to"
+" an internal string containing a coordinate system definition in OGC WKT "
+"format. In this case the coordinate system is fixed for all files of this"
+" format, but in more complex cases a definition may need to be composed "
+"on the fly, in which case it may be helpful to use the "
+":cpp:class:`OGRSpatialReference` class to help build the definition."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:418
+msgid ""
+"This completes explanation of the features of the JDEM driver. The full "
+"source for jdemdataset.cpp can be reviewed as needed."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:421
+msgid "Overviews"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:423
+msgid ""
+"GDAL allows file formats to make pre-built overviews available to "
+"applications via the :cpp:func:`GDALRasterBand::GetOverview` and related "
+"methods. However, implementing this is pretty involved, and goes beyond "
+"the scope of this document for now. The GeoTIFF driver "
+"(gdal/frmts/gtiff/geotiff.cpp) and related source can be reviewed for an "
+"example of a file format implementing overview reporting and creation "
+"support."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:425
+msgid ""
+"Formats can also report that they have arbitrary overviews, by overriding"
+" the :cpp:func:`GDALRasterBand::HasArbitraryOverviews` method on the "
+"GDALRasterBand, returning TRUE. In this case the raster band object is "
+"expected to override the :cpp:func:`GDALRasterBand::RasterIO` method "
+"itself, to implement efficient access to imagery with resampling. This is"
+" also involved, and there are a lot of requirements for correct "
+"implementation of the RasterIO() method. An example of this can be found "
+"in the OGDI and ECW formats."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:427
+msgid ""
+"However, by far the most common approach to implementing overviews is to "
+"use the default support in GDAL for external overviews stored in TIFF "
+"files with the same name as the dataset, but the extension .ovr appended."
+" In order to enable reading and creation of this style of overviews it is"
+" necessary for the GDALDataset to initialize the `oOvManager` object "
+"within itself. This is typically accomplished with a call like the "
+"following near the end of the Open() method (after the PAM "
+":cpp:func:`GDALDataset::TryLoadXML`)."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:433
+msgid ""
+"This will enable default implementations for reading and creating "
+"overviews for the format. It is advised that this be enabled for all "
+"simple file system based formats unless there is a custom overview "
+"mechanism to be tied into."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:436
+msgid "File Creation"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:438
+msgid ""
+"There are two approaches to file creation. The first method is called the"
+" :cpp:func:`GDALDriver::CreateCopy` method, and involves implementing a "
+"function that can write a file in the output format, pulling all imagery "
+"and other information needed from a source GDALDataset. The second "
+"method, the dynamic creation method, involves implementing a Create "
+"method to create the shell of the file, and then the application writes "
+"various information by calls to set methods."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:440
+msgid ""
+"The benefits of the first method are that that all the information is "
+"available at the point the output file is being created. This can be "
+"especially important when implementing file formats using external "
+"libraries which require information like color maps, and georeferencing "
+"information at the point the file is created. The other advantage of this"
+" method is that the CreateCopy() method can read some kinds of "
+"information, such as min/max, scaling, description and GCPs for which "
+"there are no equivalent set methods."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:442
+msgid ""
+"The benefits of the second method are that applications can create an "
+"empty new file, and write results to it as they become available. A "
+"complete image of the desired data does not have to be available in "
+"advance."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:444
+msgid ""
+"For very important formats both methods may be implemented, otherwise do "
+"whichever is simpler, or provides the required capabilities."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:447
+msgid "CreateCopy"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:449
+msgid ""
+"The GDALDriver::CreateCopy() method call is passed through directly, so "
+"that method should be consulted for details of arguments. However, some "
+"things to keep in mind are:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:451
+msgid ""
+"If the `bStrict` flag is FALSE the driver should try to do something "
+"reasonable when it cannot exactly represent the source dataset, "
+"transforming data types on the fly, dropping georeferencing and so forth."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:452
+msgid ""
+"Implementing progress reporting correctly is somewhat involved. The "
+"return result of the progress function needs always to be checked for "
+"cancellation, and progress should be reported at reasonable intervals. "
+"The JPEGCreateCopy() method demonstrates good handling of the progress "
+"function."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:453
+msgid ""
+"Special creation options should be documented in the on-line help. If the"
+" options take the format \"NAME=VALUE\" the papszOptions list can be "
+"manipulated with :cpp:func:`CPLFetchNameValue` as demonstrated in the "
+"handling of the QUALITY and PROGRESSIVE flags for JPEGCreateCopy()."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:454
+msgid ""
+"The returned GDALDataset handle can be in ReadOnly or Update mode. Return"
+" it in Update mode if practical, otherwise in ReadOnly mode is fine."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:456
+msgid ""
+"The full implementation of the CreateCopy function for JPEG (which is "
+"assigned to pfnCreateCopy in the GDALDriver object) is here. static "
+"GDALDataset *"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:564
+msgid "Dynamic Creation"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:566
+msgid ""
+"In the case of dynamic creation, there is no source dataset. Instead the "
+"size, number of bands, and pixel data type of the desired file is "
+"provided but other information (such as georeferencing, and imagery data)"
+" would be supplied later via other method calls on the resulting "
+"GDALDataset."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:568
+msgid ""
+"The following sample implement PCI .aux labeled raw raster creation. It "
+"follows a common approach of creating a blank, but valid file using non-"
+"GDAL calls, and then calling GDALOpen(,GA_Update) at the end to return a "
+"writable file handle. This avoids having to duplicate the various setup "
+"actions in the Open() function."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:673
+msgid ""
+"File formats supporting dynamic creation, or even just update-in-place "
+"access also need to implement an IWriteBlock() method on the raster band "
+"class. It has semantics similar to IReadBlock(). As well, for various "
+"esoteric reasons, it is critical that a FlushCache() method be "
+"implemented in the raster band destructor. This is to ensure that any "
+"write cache blocks for the band be flushed out before the destructor is "
+"called."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:676
+msgid "RawDataset/RawRasterBand Helper Classes"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:678
+msgid ""
+"Many file formats have the actual imagery data stored in a regular, "
+"binary, scanline oriented format. Rather than re-implement the access "
+"semantics for this for each formats, there are provided "
+":cpp:class:`RawDataset` and :cpp:class:`RawRasterBand` classes declared "
+"in gcore/ that can be utilized to implement efficient and convenient "
+"access."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:680
+msgid ""
+"In these cases the format specific band class may not be required, or if "
+"required it can be derived from RawRasterBand. The dataset class should "
+"be derived from RawDataset."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:682
+msgid ""
+"The Open() method for the dataset then instantiates raster bands passing "
+"all the layout information to the constructor. For instance, the PNM "
+"driver uses the following calls to create it's raster bands."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:705
+msgid "The RawRasterBand takes the following arguments."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:707
+msgid ""
+"poDS: The GDALDataset this band will be a child of. This dataset must be "
+"of a class derived from RawRasterDataset."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:708
+msgid "nBand: The band it is on that dataset, 1 based."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:709
+msgid "fpRaw: The FILE * handle to the file containing the raster data."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:710
+msgid ""
+"nImgOffset: The byte offset to the first pixel of raster data for the "
+"first scanline."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:711
+msgid ""
+"nPixelOffset: The byte offset from the start of one pixel to the start of"
+" the next within the scanline."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:712
+msgid ""
+"nLineOffset: The byte offset from the start of one scanline to the start "
+"of the next."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:713
+msgid "eDataType: The GDALDataType code for the type of the data on disk."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:714
+msgid ""
+"bNativeOrder: FALSE if the data is not in the same endianness as the "
+"machine GDAL is running on. The data will be automatically byte swapped."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:716
+msgid ""
+"Simple file formats utilizing the Raw services are normally placed all "
+"within one file in the gdal/frmts/raw directory. There are numerous "
+"examples there of format implementation."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:719
+msgid "Metadata, and Other Exotic Extensions"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:721
+msgid ""
+"There are various other items in the GDAL data model, for which virtual "
+"methods exist on the GDALDataset and GDALRasterBand. They include:"
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:723
+msgid ""
+"Metadata: Name/value text values about a dataset or band. The "
+"GDALMajorObject (base class for GDALRasterBand and GDALDataset) has "
+"built-in support for holding metadata, so for read access it only needs "
+"to be set with calls to SetMetadataItem() during the Open(). The SAR_CEOS"
+" (frmts/ceos2/sar_ceosdataset.cpp) and GeoTIFF drivers are examples of "
+"drivers implementing readable metadata."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:725
+msgid ""
+"ColorTables: GDT_Byte raster bands can have color tables associated with "
+"them. The frmts/png/pngdataset.cpp driver contains an example of a format"
+" that supports colortables."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:727
+msgid ""
+"ColorInterpretation: The PNG driver contains an example of a driver that "
+"returns an indication of whether a band should be treated as a Red, "
+"Green, Blue, Alpha or Greyscale band."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:729
+msgid ""
+"GCPs: GDALDatasets can have a set of ground control points associated "
+"with them (as opposed to an explicit affine transform returned by "
+"GetGeotransform()) relating the raster to georeferenced coordinates. The "
+"MFF2 (gdal/frmts/raw/hkvdataset.cpp) format is a simple example of a "
+"format supporting GCPs."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:731
+msgid ""
+"NoDataValue: Bands with known \"nodata\" values can implement the "
+"GetNoDataValue() method. See the PAux (frmts/raw/pauxdataset.cpp) for an "
+"example of this."
+msgstr ""
+
+#: ../../source/tutorials/raster_driver_tut.rst:733
+msgid ""
+"Category Names: Classified images with names for each class can return "
+"them using the GetCategoryNames() method though no formats currently "
+"implement this."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:5
+msgid "Vector API tutorial"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:7
+msgid ""
+"This document is intended to document using the OGR C++ classes to read "
+"and write data from a file.  It is strongly advised that the read first "
+"review the :ref:`vector_data_model` document describing the key classes "
+"and their roles in OGR."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:12
+msgid ""
+"It also includes code snippets for the corresponding functions in C and "
+"Python."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:15
+msgid "Reading From OGR"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:17
+msgid ""
+"For purposes of demonstrating reading with OGR, we will construct a small"
+" utility for dumping point layers from an OGR data source to stdout in "
+"comma-delimited format."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:21
+msgid ""
+"Initially it is necessary to register all the format drivers that are "
+"desired. This is normally accomplished by calling "
+":cpp:func:`GDALAllRegister` which registers all format drivers built into"
+" GDAL/OGR."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:25
+#: ../../source/tutorials/vector_api_tut.rst:57
+#: ../../source/tutorials/vector_api_tut.rst:88
+#: ../../source/tutorials/vector_api_tut.rst:252
+#: ../../source/tutorials/vector_api_tut.rst:300
+#: ../../source/tutorials/vector_api_tut.rst:396
+#: ../../source/tutorials/vector_api_tut.rst:488
+#: ../../source/tutorials/vector_api_tut.rst:681
+#: ../../source/tutorials/vector_api_tut.rst:762
+#: ../../source/tutorials/vector_api_tut.rst:854
+#: ../../source/tutorials/vector_api_tut.rst:878
+#: ../../source/tutorials/vector_api_tut.rst:904
+#: ../../source/tutorials/vector_api_tut.rst:944
+#: ../../source/tutorials/vector_api_tut.rst:1169
+#: ../../source/tutorials/vector_api_tut.rst:1239
+msgid "In C++ :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:37
+#: ../../source/tutorials/vector_api_tut.rst:70
+#: ../../source/tutorials/vector_api_tut.rst:96
+#: ../../source/tutorials/vector_api_tut.rst:210
+#: ../../source/tutorials/vector_api_tut.rst:275
+#: ../../source/tutorials/vector_api_tut.rst:330
+#: ../../source/tutorials/vector_api_tut.rst:403
+#: ../../source/tutorials/vector_api_tut.rst:556
+#: ../../source/tutorials/vector_api_tut.rst:701
+#: ../../source/tutorials/vector_api_tut.rst:744
+#: ../../source/tutorials/vector_api_tut.rst:776
+#: ../../source/tutorials/vector_api_tut.rst:863
+#: ../../source/tutorials/vector_api_tut.rst:889
+#: ../../source/tutorials/vector_api_tut.rst:917
+#: ../../source/tutorials/vector_api_tut.rst:1023
+#: ../../source/tutorials/vector_api_tut.rst:1198
+#: ../../source/tutorials/vector_api_tut.rst:1265
+msgid "In C :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:48
+msgid ""
+"Next we need to open the input OGR datasource.  Datasources can be files,"
+" RDBMSes, directories full of files, or even remote web services "
+"depending on the driver being used.  However, the datasource name is "
+"always a single string.  In this case we are hardcoded to open a "
+"particular shapefile. The second argument (GDAL_OF_VECTOR) tells the "
+":cpp:func:`OGROpen` method that we want a vector driver to be use and "
+"that don't require update access. On failure NULL is returned, and we "
+"report an error."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:83
+msgid ""
+"A GDALDataset can potentially have many layers associated with it.  The "
+"number of layers available can be queried with "
+":cpp:func:`GDALDataset::GetLayerCount` and individual layers fetched by "
+"index using :cpp:func:`GDALDataset::GetLayer`. However, we will just "
+"fetch the layer by name."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:105
+msgid ""
+"Now we want to start reading features from the layer.  Before we start we"
+" could assign an attribute or spatial filter to the layer to restrict the"
+" set of feature we get back, but for now we are interested in getting all"
+" features."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:109
+#: ../../source/tutorials/vector_api_tut.rst:155
+msgid "With GDAL 2.3 and C++11:"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:116
+msgid "With GDAL 2.3 and C:"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:123
+msgid ""
+"If using older GDAL versions, while it isn't strictly necessary in this "
+"circumstance since we are starting fresh with the layer, it is often wise"
+" to call :cpp:func:`OGRLayer::ResetReading` to ensure we are starting at "
+"the beginning of the layer.  We iterate through all the features in the "
+"layer using OGRLayer::GetNextFeature().  It will return NULL when we run "
+"out of features."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:129
+#: ../../source/tutorials/vector_api_tut.rst:181
+msgid "With GDAL > 2.3 and C++ :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:140
+msgid "With GDAL > 2.3 and C :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:150
+msgid ""
+"In order to dump all the attribute fields of the feature, it is helpful "
+"to get the :cpp:class:`OGRFeatureDefn`.  This is an object, associated "
+"with the layer, containing the definitions of all the fields.  We loop "
+"over all the fields, and fetch and report the attributes based on their "
+"type."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:241
+msgid ""
+"There are a few more field types than those explicitly handled above, but"
+" a reasonable representation of them can be fetched with the "
+":cpp:func:`OGRFeature::GetFieldAsString` method.  In fact we could "
+"shorten the above by using GetFieldAsString() for all the types."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:246
+msgid ""
+"Next we want to extract the geometry from the feature, and write out the "
+"point geometry x and y.   Geometries are returned as a generic "
+":cpp:class:`OGRGeometry` pointer. We then determine the specific geometry"
+" type, and if it is a point, we cast it to point and operate on it.  If "
+"it is something else we write placeholders."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:292
+msgid ""
+"The :cpp:func:`wkbFlatten` macro is used above to convert the type for a "
+"wkbPoint25D (a point with a z coordinate) into the base 2D geometry type "
+"code (wkbPoint). For each 2D geometry type there is a corresponding 2.5D "
+"type code.  The 2D and 2.5D geometry cases are handled by the same C++ "
+"class, so our code will handle 2D or 3D cases properly."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:298
+msgid "Several geometry fields can be associated to a feature."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:367
+msgid ""
+"Note that :cpp:func:`OGRFeature::GetGeometryRef` and "
+":cpp:func:`OGRFeature::GetGeomFieldRef` return a pointer to the internal "
+"geometry owned by the OGRFeature.  There we don't actually delete the "
+"return geometry."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:373
+msgid ""
+"With GDAL 2.3 and C++11, the looping over features is simply terminated "
+"by a closing curly bracket."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:380
+msgid ""
+"With GDAL 2.3 and C, the looping over features is simply terminated by "
+"the following."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:389
+msgid ""
+"For GDAL > 2.3, as the :cpp:func:`OGRLayer::GetNextFeature` method "
+"returns a copy of the feature that is now owned by us.  So at the end of "
+"use we must free the feature.  We could just \"delete\" it, but this can "
+"cause problems in windows builds where the GDAL DLL has a different "
+"\"heap\" from the main program.  To be on the safe side we use a GDAL "
+"function to delete the feature."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:411
+msgid ""
+"The OGRLayer returned by :cpp:func:`GDALDataset::GetLayerByName` is also "
+"a reference to an internal layer owned by the GDALDataset so we don't "
+"need to delete it.  But we do need to delete the datasource in order to "
+"close the input file. Once again we do this with a custom delete method "
+"to avoid special win32 heap issues."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:417
+#: ../../source/tutorials/vector_api_tut.rst:934
+msgid "In C/C++ :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:425
+msgid "All together our program looks like this."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:427
+msgid "With GDAL 2.3 and C++11 :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:672
+msgid "Writing To OGR"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:674
+msgid ""
+"As an example of writing through OGR, we will do roughly the opposite of "
+"the above.  A short program that reads comma separated values from input "
+"text will be written to a point shapefile via OGR."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:678
+msgid ""
+"As usual, we start by registering all the drivers, and then fetch the "
+"Shapefile driver as we will need it to create our output file."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:721
+msgid ""
+"Next we create the datasource.  The ESRI Shapefile driver allows us to "
+"create a directory full of shapefiles, or a single shapefile as a "
+"datasource.  In this case we will explicitly create a single file by "
+"including the extension in the name.  Other drivers behave differently. "
+"The second, third, fourth and fifth argument are related to raster "
+"dimensions (in case the driver has raster capabilities). The last "
+"argument to the call is a list of option values, but we will just be "
+"using defaults in this case.  Details of the options supported are also "
+"format specific."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:730
+msgid "In C ++ :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:757
+msgid ""
+"Now we create the output layer.  In this case since the datasource is a "
+"single file, we can only have one layer.  We pass wkbPoint to specify the"
+" type of geometry supported by this layer.  In this case we aren't "
+"passing any coordinate system information or other special layer creation"
+" options."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:790
+msgid ""
+"Now that the layer exists, we need to create any attribute fields that "
+"should appear on the layer.  Fields must be added to the layer before any"
+" features are written.  To create a field we initialize an "
+":cpp:union:`OGRField` object with the information about the field.  In "
+"the case of Shapefiles, the field width and precision is significant in "
+"the creation of the output .dbf file, so we set it specifically, though "
+"generally the defaults are OK.  For this example we will just have one "
+"attribute, a name string associated with the x,y point."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:798
+msgid ""
+"Note that the template OGRField we pass to "
+":cpp:func:`OGRLayer::CreateField` is copied internally. We retain "
+"ownership of the object."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:835
+msgid ""
+"The following snipping loops reading lines of the form \"x,y,name\" from "
+"stdin, and parsing them."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:838
+msgid "In C++ and in C :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:849
+msgid ""
+"To write a feature to disk, we must create a local OGRFeature, set "
+"attributes and attach geometry before trying to write it to the layer.  "
+"It is imperative that this feature be instantiated from the "
+"OGRFeatureDefn associated with the layer it will be written to."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:872
+msgid ""
+"We create a local geometry object, and assign its copy (indirectly) to "
+"the feature. The :cpp:func:`OGRFeature::SetGeometryDirectly` differs from"
+" :cpp:func:`OGRFeature::SetGeometry` in that the direct method gives "
+"ownership of the geometry to the feature. This is generally more "
+"efficient as it avoids an extra deep object copy of the geometry."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:901
+msgid ""
+"Now we create a feature in the file.  The "
+":cpp:func:`OGRLayer::CreateFeature` does not take ownership of our "
+"feature so we clean it up when done with it."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:931
+msgid ""
+"Finally we need to close down the datasource in order to ensure headers "
+"are written out in an orderly way and all resources are recovered."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:942
+msgid "The same program all in one block looks like this:"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:1102
+#: ../../source/tutorials/vector_api_tut.rst:1294
+msgid "In Python :"
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:1163
+msgid ""
+"Several geometry fields can be associated to a feature. This capability "
+"is just available for a few file formats, such as PostGIS."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:1166
+msgid ""
+"To create such datasources, geometry fields must be first created. "
+"Spatial reference system objects can be associated to each geometry "
+"field."
+msgstr ""
+
+#: ../../source/tutorials/vector_api_tut.rst:1234
+msgid ""
+"To write a feature to disk, we must create a local OGRFeature, set "
+"attributes and attach geometries before trying to write it to the layer."
+"  It is imperative that this feature be instantiated from the "
+"OGRFeatureDefn associated with the layer it will be written to."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:5
+msgid "Vector driver implementation tutorial"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:12
+msgid ""
+"In general new formats are added to OGR by implementing format specific "
+"drivers with instantiating a :cpp:class:`GDALDriver` and subclasses of "
+":cpp:class:`GDALDataset` and :cpp:class:`OGRLayer`.  The GDALDriver "
+"instance is registered with the :cpp:class:`GDALDriverManager` at "
+"runtime."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:17
+msgid ""
+"Before following this tutorial to implement an OGR driver, please review "
+"the :ref:`vector_data_model` document carefully."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:20
+msgid "The tutorial will be based on implementing a simple ascii point format."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:23
+msgid "Implementing GDALDriver"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:25
+msgid ""
+"The format specific driver class is implemented as a instance of "
+"GDALDriver. One instance of the driver will normally be created, and "
+"registered with the GDALDriverManager.  The instantiation of the driver "
+"is normally handled by a global C callable registration function, similar"
+" to the following placed in the same file as the driver class."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:55
+msgid ""
+"The :cpp:func:`GDALDriver::SetDescription` sets the name of the driver.  "
+"This name is specified on the commandline when creating datasources so it"
+" is generally good to keep it short and without any special characters or"
+" spaces."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:59
+msgid ""
+"SetMetadataItem( GDAL_DCAP_VECTOR, \"YES\" ) is specified to indicate "
+"that the driver will handle vector data."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:62
+msgid ""
+"SetMetadataItem( GDAL_DCAP_VIRTUALIO, \"YES\" ) is specified to indicate "
+"that the driver can deal with files opened with the VSI*L GDAL API. "
+"Otherwise this metadata item should not be defined."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:66
+msgid ""
+"The driver declaration generally looks something like this for a format "
+"with read or read and update access (the Open() method) and creation "
+"support (the Create() method)."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:79
+msgid ""
+"The Open() method is called by :cpp:func:`GDALOpenEx`. It should quietly "
+"return NULL if the passed filename is not of the format supported by the "
+"driver.  If it is the target format, then a new GDALDataset object for "
+"the dataset should be returned."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:83
+msgid ""
+"It is common for the Open() method to be delegated to an Open() method on"
+" the actual format's GDALDataset class."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:104
+msgid "The Identify() method is implemented as such :"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:116
+msgid ""
+"Examples of the Create() method is left for the section on creation and "
+"update."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:119
+msgid "Basic Read Only Data Source"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:121
+msgid ""
+"We will start implementing a minimal read-only datasource.  No attempt is"
+" made to optimize operations, and default implementations of many methods"
+" inherited from GDALDataset are used."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:125
+msgid ""
+"The primary responsibility of the datasource is to manage the list of "
+"layers. In the case of the SPF format a datasource is a single file "
+"representing one layer so there is at most one layer.  The \"name\" of a "
+"datasource should generally be the name passed to the Open() method."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:130
+msgid ""
+"The Open() method below is not overriding a base class method, but we "
+"have it to implement the open operation delegated by the driver class."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:133
+msgid ""
+"For this simple case we provide a stub "
+":cpp:func:`GDALDataset::TestCapability` that returns FALSE for all "
+"extended capabilities.  The TestCapability() method is pure virtual, so "
+"it does need to be implemented."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:157
+msgid ""
+"The constructor is a simple initializer to a default state.  The Open() "
+"will take care of actually attaching it to a file.  The destructor is "
+"responsible for orderly cleanup of layers."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:178
+msgid ""
+"The Open() method is the most important one on the datasource, though in "
+"this particular instance it passes most of its work off to the "
+"OGRSPFLayer constructor if it believes the file is of the desired format."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:182
+msgid ""
+"Note that Open() methods should try and determine that a file isn't of "
+"the identified format as efficiently as possible, since many drivers may "
+"be invoked with files of the wrong format before the correct driver is "
+"reached.  In this particular Open() we just test the file extension but "
+"this is generally a poor way of identifying a file format.  If available,"
+" checking \"magic header values\" or something similar is preferable."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:189
+msgid ""
+"In the case of the SPF format, update in place is not supported, so we "
+"always fail if bUpdate is FALSE."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:216
+msgid ""
+"A GetLayer() method also needs to be implemented.  Since the layer list "
+"is created in the Open() this is just a lookup with some safety testing."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:232
+msgid "Read Only Layer"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:234
+msgid ""
+"The OGRSPFLayer is implements layer semantics for an .spf file.  It "
+"provides access to a set of feature objects in a consistent coordinate "
+"system with a particular set of attribute columns.  Our class definition "
+"looks like this:"
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:261
+msgid ""
+"The layer constructor is responsible for initialization.  The most "
+"important initialization is setting up the :cpp:class:`OGRFeatureDefn` "
+"for the layer.  This defines the list of fields and their types, the "
+"geometry type and the coordinate system for the layer.  In the SPF format"
+" the set of fields is fixed - a single string field and we have no "
+"coordinate system info to set."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:267
+msgid ""
+"Pay particular attention to the reference counting of the OGRFeatureDefn."
+" As OGRFeature's for this layer will also take a reference to this "
+"definition, it is important that we also establish a reference on behalf "
+"of the layer itself."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:293
+msgid ""
+"Note that the destructor uses :cpp:func:`OGRFeatureDefn::Release` on the "
+"OGRFeatureDefn.  This will destroy the feature definition if the "
+"reference count drops to zero, but if the application is still holding "
+"onto a feature from this layer, then that feature will hold a reference "
+"to the feature definition and it will not be destroyed here (which is "
+"good!)."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:309
+msgid ""
+"The :cpp:func:`OGRLayer::GetNextFeature` method is usually the work horse"
+" of OGRLayer implementations.  It is responsible for reading the next "
+"feature according to the current spatial and attribute filters installed."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:313
+msgid ""
+"The while() loop is present to loop until we find a satisfactory feature."
+"  The first section of code is for parsing a single line of the SPF text "
+"file and establishing the x, y and name for the line."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:349
+msgid ""
+"The next section turns the x, y and name into a feature.  Also note that "
+"we assign a linearly incremented feature id.  In our case we started at "
+"zero for the first feature, though some drivers start at 1."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:362
+msgid ""
+"Next we check if the feature matches our current attribute or spatial "
+"filter if we have them.  Methods on the OGRLayer base class support "
+"maintain filters in the OGRLayer member fields "
+":cpp:member:`OGRLayer::m_poFilterGeom` (spatial filter) and "
+":cpp:member:`OGRLayer::m_poAttrQuery` (attribute filter) so we can just "
+"use these values here if they are non-NULL.  The following test is "
+"essentially \"stock\" and done the same in all formats.  Some formats "
+"also do some spatial filtering ahead of time using a spatial index."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:370
+msgid ""
+"If the feature meets our criteria we return it.  Otherwise we destroy it,"
+" and return to the top of the loop to fetch another to try."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:385
+msgid ""
+"While in the middle of reading a feature set from a layer, or at any "
+"other time the application can call :cpp:func:`OGRLayer::ResetReading` "
+"which is intended to restart reading at the beginning of the feature set."
+"  We implement this by seeking back to the beginning of the file, and "
+"resetting our feature id counter."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:398
+msgid ""
+"In this implementation we do not provide a custom implementation for the "
+"GetFeature() method.  This means an attempt to read a particular feature "
+"by its feature id will result in many calls to GetNextFeature() until the"
+" desired feature is found.  However, in a sequential text format like spf"
+" there is little else we could do anyway."
+msgstr ""
+
+#: ../../source/tutorials/vector_driver_tut.rst:404
+msgid "There! We have completed a simple read-only feature file format driver."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:5
+msgid "Vector driver in Python implementation tutorial"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:14
+msgid ""
+"Since GDAL 3.1, the capability of writing read-only vector drivers in "
+"Python has been added. It is strongly advised to read the "
+":ref:`vector_driver_tut` first, which will give the general principles of"
+" how a vector driver works."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:18
+msgid ""
+"This capability does not require the use of the GDAL/OGR SWIG Python "
+"bindings (but a vector Python driver may use them.)"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:21
+msgid ""
+"Note: per project policies, this is considered as an \"experimental\" "
+"feature and the GDAL project will not accept such Python drivers to be "
+"included in the GDAL repository. Drivers aiming at inclusion in GDAL "
+"master should priorly be ported to C++. The rationale for this is that:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:26
+msgid ""
+"the correctness of the Python code can mostly be checked at runtime, "
+"whereas C++ benefits from static analysis (at compile time, and other "
+"checkers)."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:28
+msgid ""
+"Python code is executed under the Python Global Interpreter Lock, which "
+"makes them not scale."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:30
+msgid "Not all builds of GDAL have Python available."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:34
+msgid "Linking mechanism to a Python interpreter"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:36
+msgid "See :ref:`linking_mechanism_to_python_interpreter`"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:39
+msgid "Driver location"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:41
+msgid ""
+"Driver filenames must start with `gdal_` or `ogr_` and have the `.py` "
+"extension. They will be searched in the following directies:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:44
+msgid ""
+"the directory pointed by the ``GDAL_PYTHON_DRIVER_PATH`` configuration "
+"option (there may be several paths separated by `:` on Unix or `;` on "
+"Windows)"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:46
+msgid ""
+"if not defined, the directory pointed by the ``GDAL_DRIVER_PATH`` "
+"configuration option."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:48
+msgid ""
+"if not defined, in the directory (hardcoded at compilation time on Unix "
+"builds) where native plugins are located."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:51
+msgid ""
+"GDAL does not try to manage Python dependencies that are imported by the "
+"driver .py script. It is up to the user to make sure its current Python "
+"environment has all required dependencies installed."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:56
+msgid "Import section"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:58
+msgid "Drivers must have the following import section to load the base classes."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:64
+msgid ""
+"The ``gdal_python_driver`` module is created dynamically by GDAL and is "
+"not present on the file system."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:68
+msgid "Metadata section"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:70
+msgid ""
+"In the first 1000 lines of the .py file, a number of required and "
+"optional KEY=VALUE driver directives must be defined. They are parsed by "
+"C++ code, without using the Python interpreter, so it is vital to respect"
+" the following constraints:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:75
+msgid ""
+"each declaration must be on a single line, and start with ``# gdal: "
+"DRIVER_`` (space character between sharp character and gdal, and between "
+"colon character and DRIVER\\_)"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:77
+msgid ""
+"the value must be a literal value of type string (except for # gdal: "
+"DRIVER_SUPPORTED_API_VERSION which can accept an array of integers), "
+"without expressions, function calls, escape sequences, etc."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:80
+msgid "strings may be single or double-quoted"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:82
+msgid "The following directives must be declared:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:84
+msgid "``# gdal: DRIVER_NAME`` = \"some_name\": the short name of the driver"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:85
+msgid ""
+"``# gdal: DRIVER_SUPPORTED_API_VERSION`` = [1]: the API version(s) "
+"supported by the driver. Must include 1, which is the only currently "
+"supported version in GDAL 3.1"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:87
+msgid "``# gdal: DRIVER_DCAP_VECTOR`` = \"YES\": declares a vector driver"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:88
+msgid "``# gdal: DRIVER_DMD_LONGNAME`` = \"a longer description of the driver\""
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:90
+msgid "Additional directives:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:92
+msgid ""
+"``# gdal: DRIVER_DMD_EXTENSIONS`` = \"ext1 ext2\": list of extension(s) "
+"recognized by the driver, without the dot, and separated by space"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:94
+msgid "``# gdal: DRIVER_DMD_HELPTOPIC`` = \"url_to_hep_page\""
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:95
+msgid ""
+"``# gdal: DRIVER_DMD_OPENOPTIONLIST`` = xml_value where xml_value is an "
+"OptionOptionList specification, like \"<OpenOptionList><Option "
+"name='OPT1' type='boolean' description='bla' "
+"default='NO'/></OpenOptionList>\"**"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:97
+msgid ""
+"and all other metadata items found in gdal.h starting with `GDAL_DMD_` "
+"(resp. `GDAL_DCAP`) by creating an item name which starts with `# gdal: "
+"DRIVER_` and the value of the `GDAL_DMD_` (resp. `GDAL_DCAP`) metadata "
+"item. For example ``#define GDAL_DMD_CONNECTION_PREFIX "
+"\"DMD_CONNECTION_PREFIX\"`` becomes ``# gdal: "
+"DRIVER_DMD_CONNECTION_PREFIX``"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:103
+#: ../../source/tutorials/vector_python_driver.rst:143
+#: ../../source/tutorials/vector_python_driver.rst:174
+#: ../../source/tutorials/vector_python_driver.rst:200
+msgid "Example:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:115
+msgid "Driver class"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:117
+msgid ""
+"The entry point .py script must contains a single class that inherits "
+"from ``gdal_python_driver.BaseDriver``."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:120
+msgid "That class must define the following methods:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:125
+#: ../../source/tutorials/vector_python_driver.rst:136
+msgid "File name, or more generally, connection string."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:126
+#: ../../source/tutorials/vector_python_driver.rst:137
+msgid ""
+"First bytes of the file (if it is a file). At least 1024 (if the file has"
+" at least 1024 bytes), or more if a native driver in the driver probe "
+"sequence has requested more previously."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:128
+#: ../../source/tutorials/vector_python_driver.rst:139
+msgid "Open flags. To be ignored for now."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:129
+#: ../../source/tutorials/vector_python_driver.rst:140
+msgid "Open options."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst
+msgid "Returns"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:130
+msgid ""
+"True if the file is recognized by the driver, False if not, or -1 if that"
+" cannot be known from the first bytes."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:141
+msgid "an object deriving from gdal_python_driver.BaseDataset or None"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:161
+msgid "Dataset class"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:163
+msgid ""
+"The Driver.open() method on success should return an object from a class "
+"that inherits from ``gdal_python_driver.BaseDataset``."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:167
+msgid "Layers"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:169
+msgid ""
+"The role of this object is to store vector layers. There are two "
+"implementation options. If the number of layers is small or they are fast"
+" to construct, then the ``__init__`` method can defined a ``layers`` "
+"attribute that is a sequence of objects from a class that inherits from "
+"``gdal_python_driver.BaseLayer``."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:183
+msgid "Otherwise, the following two methods should be defined:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:188
+msgid "the number of layers"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:193
+msgid ""
+"Index of the layer to return. Normally between 0 and self.layer_count() -"
+" 1, but calling code might pass any value. In case of invalid index, None"
+" should be returned."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:196
+msgid ""
+"an object deriving from gdal_python_driver.BaseLayer or None. The C++ "
+"code will take care of caching that object, and this method will only be "
+"called once for a given idx value."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:213
+msgid "Metadata"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:215
+msgid ""
+"The dataset may define a ``metadata`` dictionary, in ``__init__`` of key:"
+" value of type string, for the default metadata domain. Alternatively, "
+"the following method may be implemented."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:222
+msgid "metadata domain. Empty string for the default one"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:223
+msgid "None, or a dictionary of key:value pairs of type string;"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:226
+msgid "Other methods"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:228
+msgid "The following method may be optionally implemented:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:233
+msgid ""
+"Called at the destruction of the C++ peer GDALDataset object. Useful to "
+"close database connections for example."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:238
+msgid "Layer class"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:240
+msgid ""
+"The Dataset object will instantiate one or several objects from a class "
+"that inherits from ``gdal_python_driver.BaseLayer``."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:244
+msgid "Metadata, and other definitions"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:246
+msgid "The following attributes are required and must defined at __init__ time:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:251
+msgid "Layer name, of type string. If not set, a ``name`` method must be defined."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:256
+msgid ""
+"Sequence of field definitions (may be empty). Each field is a dictionary "
+"with the following properties:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:262
+msgid "Required"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:267
+msgid ""
+"A integer value of type ogr.OFT\\_ (from the SWIG Python bindings), or "
+"one of the following string values: ``String``, ``Integer``, "
+"``Integer16``, ``Integer64``, ``Boolean``, ``Real``, ``Float``, "
+"``Binary``, ``Date``, ``Time``, ``DateTime``"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:271
+msgid ""
+"If that attribute is not set, a ``fields`` method must be defined and "
+"return such a sequence."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:277
+msgid ""
+"Sequence of geometry field definitions (may be empty). Each field is a "
+"dictionary with the following properties:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:283
+msgid "Required. May be empty"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:288
+msgid ""
+"Required. A integer value of type ogr.wkb\\_ (from the SWIG Python "
+"bindings), or one of the following string values: ``Unknown``, ``Point``,"
+" ``LineString``, ``Polygon``, ``MultiPoint``, ``MultiLineString``, "
+"``MultiPolygon``, ``GeometryCollections`` or all other values returned by"
+" :cpp:func:`OGRGeometryTypeToName`"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:296
+msgid ""
+"The SRS attached to the geometry field as a string that can be ingested "
+"by :cpp:func:`OGRSpatialReference::SetFromUserInput`, such as a PROJ "
+"string, WKT string, or AUTHORITY:CODE."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:300
+msgid ""
+"If that attribute is not set, a ``geometry_fields`` method must be "
+"defined and return such a sequence."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:303
+msgid "The following attributes are optional:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:308
+msgid ""
+"Feature ID column name, of type string. May be empty string. If not set, "
+"a ``fid_name`` method may be defined."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:314
+msgid ""
+"A dictionary of key: value strings, corresponding to metadata of the "
+"default metadata domain. Alternatively, a ``metadata`` method that "
+"accepts a domain argument may be defined."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:321
+msgid ""
+"Can be set to True if the feature iterator takes into account the "
+"``attribute_filter`` attribute that can be set on the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:327
+msgid ""
+"Can be set to True if the feature iterator takes into account the "
+"``spatial_filter`` attribute that can be set on the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:333
+msgid ""
+"Can be set to True if the feature_count method takes into account the "
+"``attribute_filter`` attribute that can be set on the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:339
+msgid ""
+"Can be set to True if the feature_count method takes into account the "
+"``spatial_filter`` attribute that can be set on the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:343
+msgid "Feature iterator"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:345
+msgid ""
+"The Layer class must implement the iterator interface, so typically with "
+"a ``__iter__`` method."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:348
+msgid "The iterator must return a dictionary with the feature content."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:350
+msgid "Two keys allowed in the returned dictionary are:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:355
+msgid ""
+"Strongly recommended. The value must be of type int to be recognized as a"
+" FID by GDAL"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:360
+msgid "Required. The value must be the string \"OGRFeature\""
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:365
+msgid ""
+"Required. The value must be a dictionary whose keys are field names, or "
+"None"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:370
+msgid ""
+"Required. the value must be a dictionary whose keys are geometry field "
+"names (possibly the empty string for unnamed geometry columns), or None. "
+"The value of each key must be a geometry encoded as WKT, or None."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:377
+msgid ""
+"Optional. The value must be a string conforming to the "
+":ref:`ogr_feature_style`."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:380
+msgid "Filtering"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:382
+msgid ""
+"By default, any attribute or spatial filter set by the user of the OGR "
+"API will be evaluated by the generic C++ side of the driver, by iterating"
+" over all features of the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:386
+msgid ""
+"If the ``iterator_honour_attribute_filter`` (resp. "
+"``iterator_honour_spatial_filter``) attribute of the layer object is set "
+"to ``True``, the attribute filter (resp. spatial filter) must be honoured"
+" by the feature iterator method."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:390
+msgid ""
+"The attribute filter is set in the ``attribute_filter`` attribute of the "
+"layer object. It is a string conforming to :ref:`OGR SQL "
+"<ogr_sql_dialect>`. When the attribute filter is changed by the OGR API, "
+"the ``attribute_filter_changed`` optional method is called (see below "
+"paragraph about optional methods). An implementation of "
+"``attribute_filter_changed`` may decide to fallback on evaluation by the "
+"generic C++ side of the driver by calling the ``SetAttributeFilter`` "
+"method (see below passthrough example)"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:398
+msgid ""
+"The geometry filter is set in the ``spatial_filter`` attribute of the "
+"layer object. It is a string encoding as ISO WKT. It is the "
+"responsibility of the user of the OGR API to express it in the CRS of the"
+" layer. When the attribute filter is changed by the OGR API, the "
+"``spatial_filter_changed`` optional method is called (see below paragraph"
+" about optional methods). An implementation of ``spatial_filter_changed``"
+" may decide to fallback on evaluation by the generic C++ side of the "
+"driver by calling the ``SetSpatialFilter`` method (see below passthrough "
+"example)"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:408
+msgid "Optional methods"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:410
+msgid "The following methods may be optionally implemented:"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:415
+msgid "the list [xmin,ymin,xmax,ymax] with the spatial extent of the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:420
+msgid "the number of features of the layer."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:422
+msgid ""
+"If self.feature_count_honour_attribute_filter or "
+"self.feature_count_honour_spatial_filter are set to True, the attribute "
+"filter and/or spatial filter must be honoured by this method."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:429
+msgid "feature ID"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:430
+msgid ""
+"a feature object in one of the formats of the ``__next__`` method "
+"described above, or None if no object matches fid"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:436
+msgid ""
+"This method is called whenever self.attribute_filter has been changed. It"
+" is the opportunity for the driver to potentially chane the value of "
+"self.iterator_honour_attribute_filter or "
+"feature_count_honour_attribute_filter attributes."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:444
+msgid ""
+"This method is called whenever self.spatial_filter has been changed (its "
+"value is a geometry encoded in WKT) It is the opportunity for the driver "
+"to potentially chane the value of self.iterator_honour_spatial_filter or "
+"feature_count_honour_spatial_filter attributes."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:453
+msgid ""
+"potential values are BaseLayer.FastGetExtent, "
+"BaseLayer.FastSpatialFilter, BaseLayer.FastFeatureCount, "
+"BaseLayer.RandomRead, BaseLayer.StringsAsUTF8 or other strings supported "
+"by :cpp:func:`OGRLayer::TestCapability`"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:457
+msgid "True if the capability is supported, False otherwise."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:460
+msgid "Full example"
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:462
+msgid ""
+"The following example is a passthrough driver that forwards the calls to "
+"the SWIG Python GDAL API. It has no practical use, and is just intended "
+"to show case most possible uses of the API. A real-world driver will only"
+" use part of the API demonstrated. For example, the passthrough driver "
+"implements attribute and spatial filters in a completely dummy way, by "
+"calling back the C++ part of the driver. The "
+"``iterator_honour_attribute_filter`` and "
+"``iterator_honour_spatial_filter`` attributes, and the "
+"``attribute_filter_changed`` and ``spatial_filter_changed`` method "
+"implementations, could have omitted with the same result."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:471
+msgid ""
+"The connection strings recognized by the drivers are "
+"\"PASSHTROUGH:connection_string_supported_by_non_python_drivers\". Note "
+"that the prefixing by the driver name is absolutely not a requirement, "
+"but something specific to this particular driver which is a bit "
+"artificial (without the prefix, the connection string would go directly "
+"to the native driver). The CityJSON driver mentioned in the :ref:`Other "
+"examples <other_examples>` paragraph does not need it."
+msgstr ""
+
+#: ../../source/tutorials/vector_python_driver.rst:630
+msgid ""
+"Other examples, including a CityJSON driver, may be found at "
+"https://github.com/OSGeo/gdal/tree/master/gdal/examples/pydrivers"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:5
+msgid "GDAL Warp API tutorial (Reprojection, ...)"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:10
+msgid "Overview"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:12
+msgid ""
+"The GDAL Warp API (declared in :ref:`gdalwarper.h <gdalwarp_cpp>`) "
+"provides services for high performance image warping using application "
+"provided geometric transformation functions (GDALTransformerFunc), a "
+"variety of resampling kernels, and various masking options. Files much "
+"larger than can be held in memory can be warped."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:14
+msgid ""
+"This tutorial demonstrates how to implement an application using the Warp"
+" API. It assumes implementation in C++ as C and Python bindings are "
+"incomplete for the Warp API. It also assumes familiarity with the "
+":ref:`raster_data_model`, and the general GDAL API."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:16
+msgid ""
+"Applications normally perform a warp by initializing a "
+":cpp:class:`GDALWarpOptions` structure with the options to be utilized, "
+"instantiating a GDALWarpOperation based on these options, and then "
+"invoking the :cpp:func:`GDALWarpOperation::ChunkAndWarpImage` method to "
+"perform the warp options internally using the :cpp:class:`GDALWarpKernel`"
+" class."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:19
+msgid "A Simple Reprojection Case"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:20
+msgid ""
+"First we will construct a relatively simple example for reprojecting an "
+"image, assuming an appropriate output file already exists, and with "
+"minimal error checking."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:70
+msgid ""
+"This example opens the existing input and output files (in.tif and "
+"out.tif). A :cpp:class:`GDALWarpOptions` structure is allocated "
+"(:cpp:func:`GDALCreateWarpOptions` sets lots of sensible defaults for "
+"stuff, always use it for defaulting things), and the input and output "
+"file handles, and band lists are set. The panSrcBands and panDstBands "
+"lists are dynamically allocated here and will be free automatically by "
+":cpp:func:`GDALDestroyWarpOptions`. The simple terminal output progress "
+"monitor (GDALTermProgress) is installed for reporting completion progress"
+" to the user."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:72
+msgid ""
+":cpp:func:`GDALCreateGenImgProjTransformer` is used to initialize the "
+"reprojection transformation between the source and destination images. We"
+" assume that they already have reasonable bounds and coordinate systems "
+"set. Use of GCPs is disabled."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:74
+msgid ""
+"Once the options structure is ready, a GDALWarpOperation is instantiated "
+"using them, and the warp actually performed with "
+":cpp:func:`GDALWarpOperation::ChunkAndWarpImage`. Then the transformer, "
+"warp options and datasets are cleaned up."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:76
+msgid ""
+"Normally error check would be needed after opening files, setting up the "
+"reprojection transformer (returns NULL on failure), and initializing the "
+"warp."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:79
+msgid "Other Warping Options"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:81
+msgid ""
+"The GDALWarpOptions structures contains a number of items that can be set"
+" to control warping behavior. A few of particular interest are:"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:83
+msgid ""
+":cpp:member:`GDALWarpOptions::dfWarpMemoryLimit` - Set the maximum amount"
+" of memory to be used by the GDALWarpOperation when selecting a size of "
+"image chunk to operate on. The value is in bytes, and the default is "
+"likely to be conservative (small). Increasing the chunk size can help "
+"substantially in some situations but care should be taken to ensure that "
+"this size, plus the GDAL cache size plus the working set of GDAL, your "
+"application and the operating system are less than the size of RAM or "
+"else excessive swapping is likely to interfere with performance. On a "
+"system with 256MB of RAM, a value of at least 64MB (roughly 64000000 "
+"bytes) is reasonable. Note that this value does not include the memory "
+"used by GDAL for low level block caching."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:85
+msgid ""
+":cpp:member:`GDALWarpOpations::eResampleAlg` - One of "
+"GRA_NearestNeighbour (the default, and fastest), GRA_Bilinear (2x2 "
+"bilinear resampling) or GRA_Cubic. The GRA_NearestNeighbour type should "
+"generally be used for thematic or color mapped images. The other "
+"resampling types may give better results for thematic images, especially "
+"when substantially changing resolution."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:87
+msgid ""
+":cpp:member:`GDALWarpOptions::padfSrcNoDataReal` - This array (one entry "
+"per band being processed) may be setup with a \"nodata\" value for each "
+"band if you wish to avoid having pixels of some background value copied "
+"to the destination image."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:89
+msgid ""
+":cpp:member:`GDALWarpOptions::papszWarpOptions` - This is a string list "
+"of NAME=VALUE options passed to the warper. See the "
+":cpp:member:`GDALWarpOptions::papszWarpOptions` docs for all options. "
+"Supported values include:"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:91
+msgid ""
+"INIT_DEST=[value] or INIT_DEST=NO_DATA: This option forces the "
+"destination image to be initialized to the indicated value (for all "
+"bands) or indicates that it should be initialized to the NO_DATA value in"
+" padfDstNoDataReal/padfDstNoDataImag. If this value isn't set the "
+"destination image will be read and the source warp overlaid on it."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:93
+msgid ""
+"WRITE_FLUSH=YES/NO: This option forces a flush to disk of data after each"
+" chunk is processed. In some cases this helps ensure a serial writing of "
+"the output data otherwise a block of data may be written to disk each "
+"time a block of data is read for the input buffer resulting in a lot of "
+"extra seeking around the disk, and reduced IO throughput. The default at "
+"this time is NO."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:96
+msgid "Creating the Output File"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:98
+msgid ""
+"In the previous case an appropriate output file was already assumed to "
+"exist. Now we will go through a case where a new file with appropriate "
+"bounds in a new coordinate system is created. This operation doesn't "
+"relate specifically to the warp API. It is just using the transformation "
+"API."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:168
+msgid "Some notes on this logic:"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:170
+msgid ""
+"We need to create the transformer to output coordinates such that the "
+"output of the transformer is georeferenced, not pixel line coordinates "
+"since we use the transformer to map pixels around the source image into "
+"destination georeferenced coordinates."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:172
+msgid ""
+"The :cpp:func:`GDALSuggestedWarpOutput` function will return an "
+"adfDstGeoTransform, nPixels and nLines that describes an output image "
+"size and georeferenced extents that should hold all pixels from the "
+"source image. The resolution is intended to be comparable to the source, "
+"but the output pixels are always square regardless of the shape of input "
+"pixels."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:174
+msgid ""
+"The warper requires an output file in a format that can be \"randomly\" "
+"written to. This generally limits things to uncompressed formats that "
+"have an implementation of the Create() method (as opposed to "
+"CreateCopy()). To warp to compressed formats, or CreateCopy() style "
+"formats it is necessary to produce a full temporary copy of the image in "
+"a better behaved format, and then CreateCopy() it to the desired final "
+"format."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:176
+msgid ""
+"The Warp API copies only pixels. All color maps, georeferencing and other"
+" metadata must be copied to the destination by the application."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:179
+msgid "Performance Optimization"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:181
+msgid ""
+"There are a number of things that can be done to optimize the performance"
+" of the warp API:"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:183
+msgid ""
+"Increase the amount of memory available for the Warp API chunking so that"
+" larger chunks can be operated on at a time. This is the "
+":cpp:member:`GDALWarpOptions::dfWarpMemoryLimit` parameter. In theory the"
+" larger the chunk size operated on the more efficient the I/O strategy, "
+"and the more efficient the approximated transformation will be. However, "
+"the sum of the warp memory and the GDAL cache should be less than RAM "
+"size, likely around 2/3 of RAM size."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:185
+msgid ""
+"Increase the amount of memory for GDAL caching. This is especially "
+"important when working with very large input and output images that are "
+"scanline oriented. If all the input or output scanlines have to be re-"
+"read for each chunk they intersect performance may degrade greatly. Use "
+":cpp:func:`GDALSetCacheMax` to control the amount of memory available for"
+" caching within GDAL."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:187
+msgid ""
+"Use an approximated transformation instead of exact reprojection for each"
+" pixel to be transformed. This code illustrates how an approximated "
+"transformation could be created based on a reprojection transformation, "
+"but with a given error threshold (dfErrorThreshold in output pixels)."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:196
+msgid ""
+"When writing to a blank output file, use the INIT_DEST option in the "
+":cpp:member:`GDALWarpOptions::papszWarpOptions` to cause the output "
+"chunks to be initialized to a fixed value, instead of being read from the"
+" output. This can substantially reduce unnecessary IO work."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:198
+msgid ""
+"Use tiled input and output formats. Tiled formats allow a given chunk of "
+"source and destination imagery to be accessed without having to touch a "
+"great deal of extra image data. Large scanline oriented files can result "
+"in a great deal of wasted extra IO."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:200
+msgid ""
+"Process all bands in one call. This ensures the transformation "
+"calculations don't have to be performed for each band."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:202
+msgid ""
+"Use the :cpp:func:`GDALWarpOperation::ChunkAndWarpMulti` method instead "
+"of :cpp:func:`GDALWarpOperation::ChunkAndWarpImage`. It uses a separate "
+"thread for the IO and the actual image warp operation allowing more "
+"effective use of CPU and IO bandwidth. For this to work GDAL needs to "
+"have been built with multi-threading support (default on Win32, default "
+"on Unix, for previous versions -with-threads was required in configure)."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:204
+msgid ""
+"The resampling kernels vary is work required from nearest neighbour being"
+" least, then bilinear then cubic. Don't use a more complex resampling "
+"kernel than needed."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:206
+msgid ""
+"Avoid use of esoteric masking options so that special simplified logic "
+"case be used for common special cases. For instance, nearest neighbour "
+"resampling with no masking on 8bit data is highly optimized compared to "
+"the general case."
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:209
+msgid "Other Masking Options"
+msgstr ""
+
+#: ../../source/tutorials/warp_tut.rst:211
+msgid ""
+"The GDALWarpOptions include a bunch of esoteric masking capabilities, for"
+" validity masks, and density masks on input and output. Some of these are"
+" not yet implemented and others are implemented but poorly tested. Other "
+"than per-band validity masks it is advised that these features be used "
+"with caution at this time."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:5
+msgid "OGC WKT Coordinate System Issues"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:7
+msgid ""
+"This document is intended to discuss some issues that arrise in "
+"attempting to use OpenGIS Well Known Text descriptions of coordinate "
+"systems. It discusses various vendor implementations and issues between "
+"the original `\"Simple Features\" specification (ie. SF-SQL 99-049) "
+"<http://portal.opengeospatial.org/files/?artifact_id=829>`__ and the "
+"newer `Coordinate Transformation Services (CT) specification (01-009) "
+"<http://portal.opengeospatial.org/files/?artifact_id=999>`__ which "
+"defines an extended form of WKT."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:17
+msgid "WKT Implementations"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:19
+msgid ""
+"At this time I am aware of at least the following software packages that "
+"use some form of WKT internally, or for interchange of coordinate system "
+"descriptions:"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:23
+msgid "Oracle Spatial (WKT is used internally in MDSYS.WKT, loosely SFSQL based)"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:25
+msgid ""
+"ESRI - The Arc8 system's projection engine uses a roughly simple features"
+" compatible description for projections. I believe ESRI provided the WKT "
+"definition for the simple features spec."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:28
+msgid ""
+"Cadcorp - Has the ability to read and write CT 1.0 style WKT. Cadcorp "
+"wrote the CT spec."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:30
+msgid ""
+"OGR/GDAL - reads/writes WKT as its internal coordinate system description"
+" format. Attempts to support old and new forms as well as forms from "
+"ESRI."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:33
+msgid "FME - Includes WKT read/write capabilities built on OGR."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:34
+msgid "MapGuide - Uses WKT in the SDP data access API. Roughly SF compliant."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:35
+msgid ""
+"PostGIS - Keeps WKT in the spatial_ref_sys table, but it is up to clients"
+" to translate to PROJ.4 format for actual use. I believe the "
+"spatial_ref_sys table is populated using OGR generated translations."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:40
+msgid "Projection Parameters"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:42
+msgid ""
+"The various specs do not list a set of projections, and the parameters "
+"associated with them. This leads to various selection of parameter names "
+"(and sometimes projection names) from different vendors. I have attempted"
+" to maintain a list of WKT bindings for different projections as part of "
+"my `GeoTIFF Projections List "
+"<https://web.archive.org/web/20130728081442/http://www.remotesensing.org/geotiff/proj_list/>`__"
+" registry. Please try to adhere to the projection names and parameters "
+"listed there. That list also tries to relate the projections to the "
+"GeoTIFF, EPSG and PROJ.4 formulations where possible."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:52
+msgid ""
+"The one case where it isn't followed by a vendor that I am aware of ESRIs"
+" definition of Lambert Conformal Conic. In EPSG there is a 1SP and a 2SP "
+"form of this. ESRI merges them, and just have different parameters "
+"depending on the type."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:57
+msgid ""
+"One other issue is that the CT specification does explicitly list "
+"parameters for the Transverse Mercator, LCC 1SP and LCC 2SP projections; "
+"however, it lists standard_parallel1 and standard_parallel2 as parameters"
+" for LCC 2SP which conflicts with the existing usage of "
+"standard_parallel_1 and standard_parallel_2 and conflicts with examples "
+"in the same CT spec. My position is that the table in section 10.x of the"
+" CT spec is in error and that the widely used form is correct. Note that "
+"the table in the CT spec conflicts with other examples in the same spec."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:67
+msgid ""
+"A third issue is the formulation for Albers. While I have used "
+"longitude_of_center and latitude_of_center ESRI uses Central_meridian and"
+" latitude_of_origin."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:71
+msgid "ESRI:"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:83
+msgid "OGR:"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:96
+msgid "Datum Names"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:98
+msgid ""
+"In Simple Features style WKT, the name associated with a datum is the "
+"only way to identify the datum. In CT WKT the datum can also have a "
+"TOWGS84 parameter indicating its relationship to WGS84, and an AUTHORITY "
+"parameter relating it to EPSG or some other authority space. However, in "
+"SF WKT the name itself is the only key."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:104
+msgid ""
+"By convention OGR and Cadcorp have translated the datum names in a "
+"particular way from the EPSG database in order to produce comparible "
+"names. The rule is to convert all non alphanumeric characters to "
+"underscores, then to strip any leading, trailing or repeating "
+"underscores. This produces well behaved datum names like "
+"\"Nouvelle_Triangulation_Francaise\"."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:111
+msgid ""
+"However, other vendors have done different things. ESRI seems to follow a"
+" similar convention but prefixes all datum names with \"D\\_\" as well, "
+"giving names like \"D_WGS_1972\". Also they have lots of other "
+"differences for reasons that are not clear. For instance for what Cadcorp"
+" and OGR call \"Nouvelle_Triangulation_Francaise\", they call it "
+"\"D_NTF\". Oracle appears to use the raw names without cleanup. So for "
+"NTF they use \"NTF (Paris meridian)\"."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:119
+msgid ""
+"The short result of this is that it is almost impossible to recognise and"
+" compare datums between different Simple Features implementations, though"
+" I have had some success in translating ESRI datum names to match "
+"Cadcorp/OGR conventions, with some special casing."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:125
+msgid "Parameter Ordering"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:127
+msgid ""
+"It is worthwhile keeping in mind that the BNF grammars for WKT in the SF "
+"specs, and the CT spec imply specific orders for most items. For instance"
+" the BNF for the PROJCS item in the CT spec is"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:136
+msgid ""
+"This clearly states that the PROJECTION keyword follows the GEOGCS, "
+"followed by the UNIT, AXIS and AUTHORITY items. Providing them out of "
+"order is technially a violation of the spec. On the other hand, WKT "
+"consumers are encouraged to be flexible on ordering."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:142
+msgid "Units of PARAMETERs"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:144
+msgid ""
+"The linear PARAMETER values in a PROJCS must be in terms of the linear "
+"units for that PROJCS. I think the only linear units are the false "
+"easting and northing type values. Thus, in common cases like a state "
+"plane zone in feet, the false easting and northing will also be in feet."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:149
+msgid ""
+"The angular PARAMETER values in a PROJCS must be in terms of the angular "
+"units of the GEOGCS. If the GEOGCS is in gradians, for instance, then all"
+" the projection angles must also be in gradians!"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:154
+msgid "Units of PRIMEM"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:156
+msgid "What units should the prime meridian appear in?"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:158
+msgid ""
+"The CT 1.0 specification (7.3.14 PRIMEM) says *\"The units of the must be"
+" inferred from the context. If the PRIMEM clause occurs inside a GEOGCS, "
+"then the longitude units will match those of the geographic coordinate "
+"system.\"* Note: for a geocentric coordinate system, it says *\"If the "
+"PRIMEM clause occurs inside a GEOCCS, then the units will be in "
+"degrees\"*."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:164
+msgid ""
+"The SF-SQL spec (99-049) does not attempt to address the issue of units "
+"of the prime meridian."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:166
+msgid ""
+"Existing ESRI EPSG translation to WKT uses degrees for prime meridian, "
+"even when the GEOGCS is in gradians as shown in their translation of EPSG"
+" 4807:"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:178
+msgid ""
+"OGR implements the same interpretation as ESRI for its "
+"OGRSpatialReference class: the PRIMEM longitude is always in degrees. See"
+" `GDAL Ticket #4524 <https://trac.osgeo.org/gdal/ticket/4524>`__"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:196
+msgid ""
+"Cadcorp implements according to the CT 1.0 specification as shown in "
+"their translation of EPSG 4807:"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:215
+msgid ""
+"Oracle Spatial 8.1.7 uses the following definition for what I assume is "
+"supposed to be EPSG 4807. Interestingly it does not bother with using "
+"gradians, and it appears that the prime meridian is expressed in radians "
+"with very low precision!"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:229
+msgid "Sign of TOWGS84 Rotations"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:232
+msgid "Discussion"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:234
+msgid ""
+"In EPSG there are two methods of defining the 7 parameter bursa wolf "
+"parameters, 9606 (position vector 7-parameter) and 9607 (coordinate frame"
+" rotation). The only difference is that the sign of the rotation "
+"coefficients is reversed between them."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:239
+msgid ""
+"I (Frank Warmerdam) had somehow convinced myself that the TOWGS84 values "
+"in WKT were supposed to be done using the sense in 9606 (position vector "
+"7-parameter) and that if I read a 9607 I would need to switch the "
+"rotation signs before putting it into a TOWGS84 chunk in WKT."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:244
+msgid ""
+"However, I see in the WKT dump you (Martin from Cadcorp) sent me you are "
+"using the 9607 sense. For instance, this item appears to use 9607 values "
+"directly without switching the sign."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:259
+msgid ""
+"I read over the TOWGS84[] clause in the 1.0 CT spec, and it just talks "
+"about them being the Bursa Wolf transformation parameters (on page 22, "
+"7.3.18). I also scanned through to 12.3.15.2 and 12.3.27 and they are "
+"nonspecific as to the handedness of the TOWGS84 rotations."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:264
+msgid ""
+"I am seeking a clarification of whether TOWGS84 matches EPSG 9606 or EPSG"
+" 9607. Furthermore, I would like to see any future rev of the spec "
+"clarify this, referencing the EPSG method definitions."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:268
+msgid ""
+"Martin wrote back that he was uncertain on the correct signage and that "
+"the Adam had programmed the Cadcorp implementation imperically, according"
+" to what seemed to work for the test data available."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:272
+msgid ""
+"I am prepared to adhere to the Cadorp sign usage (as per EPSG 9607) if "
+"this can be clarified in the specification."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:276
+msgid "Current state of OGR implementation"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:278
+msgid ""
+"OGR imports from/exports to WKT assumes EPSG 9606 convention (position "
+"vector 7-parameter), as `proj.4 does "
+"<http://proj4.org/parameters.html#towgs84-datum-transformation-to-"
+"wgs84>`__."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:282
+msgid ""
+"When importing from EPSG parameters expressed with EPSG 9607, it does the"
+" appropriate conversion (negating the sign of the rotation terms)."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:286
+msgid "Longitudes Relative to PRIMEM?"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:288
+msgid ""
+"Another related question is whether longtiudinal projection parameters "
+"(ie. central meridian) are relative to the GEOGCS prime meridian or "
+"relative to greenwich. While the simplest approach is to treat all "
+"longitudes as relative to Greenwich, I somehow convinced myself at one "
+"point that the longitudes were intended to be relative to the prime "
+"meridian. However, a review of 7.3.11 (describing PARAMETER) in the CT "
+"1.0 spec provides no support for this opinion, and an inspection of EPSG "
+"25700 in Cadcorp also suggests that the central meridian is relative to "
+"greenwich, not the prime meridian."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:327
+msgid ""
+"Based on this, I am proceeding on the assumption that while parameters "
+"are in the units of the GEOGCS they are not relative the GEOGCS prime "
+"meridian."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:332
+msgid "Numerical Precision in WKT"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:334
+msgid ""
+"The specification does not address the precision to which values in WKT "
+"should be stored. Some implementations, such as Oracles apparently, use "
+"rather limited precision for parameters such as Scale Factor making it "
+"difficult to compare coordinate system descriptions or even to get "
+"comparible numerical results."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:340
+#, python-format
+msgid ""
+"The best practice is to preserve the original precision as specified in "
+"the source database, such as EPSG where possible. Given that many systems"
+" do not track precision, at least it is advisable to produce values with "
+"the equivalent of the C \"%.16g\" format, maintaining 16 digits of "
+"precision, capturing most of the precision of a double precision IEEE "
+"floating point value."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:348
+msgid "Other Notes"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:350
+msgid ""
+"ESRI seems to use Equidistant_Cylindrical for what I know as "
+"Equirectangular."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:355
+msgid "History"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:357
+msgid ""
+"2018: Even Rouault: make it clear that OGR implements EPSG 9606 "
+"convention for TOWGS84."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:359
+msgid ""
+"2018: Even Rouault: remove mention about CT 1.0 specification (7.3.14 "
+"PRIMEM) having an error, and explicitly mentions that OGR uses degrees "
+"for PRIMEM longitude."
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:362
+msgid "2018: Even Rouault: add hyperlinks"
+msgstr ""
+
+#: ../../source/tutorials/wktproblems.rst:363
+msgid ""
+"2007 or before: Originally written by `Frank Warmerdam "
+"<https://web.archive.org/web/20130728081442/http://pobox.com/~warmerdam>`__."
+msgstr ""
+
