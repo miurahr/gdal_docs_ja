@@ -38,10 +38,18 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Force computation if no</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043738Z" creationid="miurahr" creationdate="20201018T043730Z">
+        <seg>統計量がラスターに埋め込まれていない場合は、統計量の算出を行う</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Force computation of the actual min/max values for each band in the</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043606Z" creationid="miurahr" creationdate="20201018T043606Z">
-        <seg>データセットの各バンドの実際のmin/max値の計算を強制する。</seg>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043630Z" creationid="miurahr" creationdate="20201018T043606Z">
+        <seg>データセットの各バンドの実際のmin/max値の計算を強制する</seg>
       </tuv>
     </tu>
     <tu>
@@ -68,6 +76,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
         <seg>ラスターデータセットに関する情報をリストします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Read and display image statistics.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043801Z" creationid="miurahr" creationdate="20201018T043658Z">
+        <seg>ラスター統計量を読み取り、表示する。</seg>
       </tuv>
     </tu>
     <tu>
@@ -125,6 +141,14 @@ GDALについて?</seg>
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043627Z" creationid="miurahr" creationdate="20201018T043620Z">
+        <seg>。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>include:: ./substitutions.rst
 
 GDAL is a translator library for raster and vector geospatial data formats that is released under an X/MIT style Open Source :ref:`license` by the `Open Source Geospatial Foundation`_.</seg>
@@ -141,6 +165,14 @@ GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundatio
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
         <seg>は、ラスターおよびベクター地理データ形式の変換ライブラリで、&lt;g1&gt;X/MIT&lt;/g1&gt;スタイルの&lt;g2&gt;Open Source&lt;/g2&gt;ライセンスで、&lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;からリリースされています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>statistics are stored in an image.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043734Z" creationid="miurahr" creationdate="20201018T043734Z">
+        <seg>。</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->
