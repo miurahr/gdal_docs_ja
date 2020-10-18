@@ -1,46 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.1.2_2_10096:10098" segtype="sentence" srclang="EN-US"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.4.0_0_f1e32ca8" segtype="sentence" srclang="en-US"/>
   <body>
 <!-- Default translations -->
     <tu>
-      <tuv lang="EN-US">
+      <tuv lang="en-US">
         <seg>&lt;g1&gt;&lt;g2&gt;Select language&lt;/g2&gt;: [English]&lt;g3&gt;[Russian]&lt;/g3&gt;&lt;g4&gt;[Portuguese]&lt;/g4&gt;&lt;g5&gt;[French/Francais]&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
+      <tuv lang="ja" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
         <seg>&lt;g1&gt;&lt;g2&gt; 言語選択 &lt;/g2&gt;:[英語]&lt;g3&gt;[ロシア語]&lt;/g3&gt;&lt;g4&gt;[ポルトガル語]&lt;/g4&gt;&lt;g5&gt;フランス語&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
+      <tuv lang="en-US">
         <seg>&lt;x1/&gt; Building GDAL From Source</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20171009T123058Z" creationid="miurahr" creationdate="20171009T123058Z">
+      <tuv lang="ja" changeid="miurahr" changedate="20171009T123058Z" creationid="miurahr" creationdate="20171009T123058Z">
         <seg>&lt;x1/&gt;ソースからGDALをビルドする</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
+      <tuv lang="en-US">
         <seg>As a library, it presents a &lt;g4&gt; single raster abstract data model&lt;/g4&gt; and &lt;g5&gt; single vector abstract data model&lt;/g5&gt; to the calling application for all supported formats.</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
+      <tuv lang="ja" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
         <seg>ライブラリは、&lt;g4&gt;単一のラスター抽象データモデル&lt;/g4&gt;と&lt;g5&gt;単一のベクター抽象データモデル&lt;/g5&gt;を定義して、アプリケーションから全てのサポートされているデータ形式を利用できるようにします。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
+      <tuv lang="en-US">
         <seg>This topic now lives in the Wiki at: http://trac.osgeo.org/gdal/wiki/BuildHints</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
+      <tuv lang="ja" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
         <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
+      <tuv lang="en-US">
+        <seg>_about:
+
+================================================================================
+What is GDAL?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T042253Z" creationid="miurahr" creationdate="20201018T042253Z">
+        <seg>_about:
+
+================================================================================
+GDALについて?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>include:: ./substitutions.rst
+
+GDAL is a translator library for raster and vector geospatial data formats that is released under an X/MIT style Open Source :ref:`license` by the `Open Source Geospatial Foundation`_.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T042434Z" creationid="miurahr" creationdate="20201018T042434Z">
+        <seg>. : ./substitutions.rst が含まれます。
+
+GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundation`_ ) によって公開された、 X/MIT スタイルの オープン・ソース :ref:`ライセンス` の下で公開されたラスターおよびベクトル地理空間データフォーマットのための変換ライブラリです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>is a translator library for raster and vector geospatial data formats that is released under an &lt;g1&gt;X/MIT&lt;/g1&gt; style &lt;g2&gt; Open Source&lt;/g2&gt; license by the &lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;.</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
+      <tuv lang="ja" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
         <seg>は、ラスターおよびベクター地理データ形式の変換ライブラリで、&lt;g1&gt;X/MIT&lt;/g1&gt;スタイルの&lt;g2&gt;Open Source&lt;/g2&gt;ライセンスで、&lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;からリリースされています。</seg>
       </tuv>
     </tu>
