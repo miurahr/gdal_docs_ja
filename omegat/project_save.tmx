@@ -152,6 +152,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The description of the file is stored in a accompanying text file, extension RDC.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T225012Z" creationid="miurahr" creationdate="20201018T225012Z">
+        <seg>ファイルの記述は、添付される拡張子RDCのテキストファイルに格納されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The following command line parameters can appear in any order
 
 ..</seg>
@@ -160,6 +168,14 @@ Synopsis
         <seg>以下のコマンド行パラメーターは、任意の順序で指定できます。
 
 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The others data type are unsigned 8 bits integer with values from 0 to 255 or signed 16 bits integer with values from -32.768 to 32.767 or 32 bits single precision floating point.32 bits.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224938Z" creationid="miurahr" creationdate="20201018T224938Z">
+        <seg>その他のデータ・タイプは、 0 から 255 までの値を持つ符号なし 8 ビット整数、または -32.768 から 32.767 または 32 ビットの単精度浮動小数点 .32 ビットへの値を持つ 16 ビットの符号付き 16 ビット整数です。</seg>
       </tuv>
     </tu>
     <tu>
