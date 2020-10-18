@@ -38,10 +38,26 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Common Portability Library C API</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224524Z" creationid="miurahr" creationdate="20201018T224524Z">
+        <seg>共通ポータビリティー・ライブラリー C API</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Display the output in json format.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043533Z" creationid="miurahr" creationdate="20201018T043533Z">
         <seg>出力をjsonフォーマットで表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Driver short name</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224612Z" creationid="miurahr" creationdate="20201018T224612Z">
+        <seg>ドライバーの短縮名</seg>
       </tuv>
     </tu>
     <tu>
@@ -104,6 +120,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>RST -- Idrisi Raster Format</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224607Z" creationid="miurahr" creationdate="20201018T224607Z">
+        <seg>RST -- Idrisiラスタフォーマット</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Read and display image statistics.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043801Z" creationid="miurahr" creationdate="20201018T043658Z">
@@ -136,6 +160,22 @@ Synopsis
         <seg>以下のコマンド行パラメーターは、任意の順序で指定できます。
 
 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>There is just one band per files, except in the RGB24 data type where the Red, Green and Blue bands are store interleaved by pixels in the order Blue, Green and Red.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224922Z" creationid="miurahr" creationdate="20201018T224714Z">
+        <seg>ファイルごとに 1 つのバンドがあります。ただし、赤、緑、青の各バンドが、青、緑、赤の順にピクセルごとにインターリーブされている RGB24 データ型を除きます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>This format is basically a raw one.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T224623Z" creationid="miurahr" creationdate="20201018T224623Z">
+        <seg>このフォーマットは基本的にrawです。</seg>
       </tuv>
     </tu>
     <tu>
