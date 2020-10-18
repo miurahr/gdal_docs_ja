@@ -69,3 +69,10 @@ $ make gettext
 $ sphinx-intl update -l ja
 ```
 
+Generate translated documents
+-----------------------------
+
+```
+$ make -e SPHINXOPTS="-D language='ja'" html
+```
+
