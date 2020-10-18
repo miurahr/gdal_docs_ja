@@ -30,10 +30,83 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Display the output in json format.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043533Z" creationid="miurahr" creationdate="20201018T043533Z">
+        <seg>出力をjsonフォーマットで表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Force computation of the actual min/max values for each band in the</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043606Z" creationid="miurahr" creationdate="20201018T043606Z">
+        <seg>データセットの各バンドの実際のmin/max値の計算を強制する。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Index:: gdalinfo
+
+Synopsis
+--------
+
+..</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043339Z" creationid="miurahr" creationdate="20201018T043339Z">
+        <seg>Index:: gdalinfo
+
+概要
+--------
+
+..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Lists information about a raster dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
+        <seg>ラスターデータセットに関する情報をリストします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The following command line parameters can appear in any order
+
+..</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043510Z" creationid="miurahr" creationdate="20201018T043510Z">
+        <seg>以下のコマンド行パラメーターは、任意の順序で指定できます。
+
+..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>This topic now lives in the Wiki at: http://trac.osgeo.org/gdal/wiki/BuildHints</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
         <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>[-sd subdataset] [-oo NAME=VALUE]* [-if format]* datasetname
+
+Description
+-----------
+
+:program:`gdalinfo` program lists various information about a GDAL supported
+raster dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201018T043453Z" creationid="miurahr" creationdate="20201018T043453Z">
+        <seg>[-sd subdataset] [-oo NAME=VALUE]* [-if format]* datasetname
+
+説明
+----
+
+:program:`gdalinfo` プログラムは、GDALがサポートしているラスターデータセットに関する様々な情報を表示する。</seg>
       </tuv>
     </tu>
     <tu>
