@@ -38,6 +38,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Back in the early days of GDAL development, when cross-platform development as well as compatibility and standard conformance of compilers was a challenge (or PITA), CPL proved necessary for smooth portability of GDAL/OGR.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045610Z" creationid="miurahr" creationdate="20201019T045610Z">
+        <seg>GDAL 開発の初期段階において、クロスプラットフォーム開発とコンパイラの互換性と標準規格適合性が課題 (っていうか、すげぇ面倒くせぇ奴) であることから、 CPL は GDAL/OGRの円滑なポータビリティのために必要だと合意されました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Common Portability Library C API</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224524Z" creationid="miurahr" creationdate="20201018T224524Z">
