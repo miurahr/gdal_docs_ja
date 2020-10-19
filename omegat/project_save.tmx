@@ -78,6 +78,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>GDAL - Geospatial Data Abstraction Library</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000113Z" creationid="miurahr" creationdate="20201019T000113Z">
+        <seg>GDAL-空間データ抽象化ライブラリ</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>GDAL Grid Tutorial</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T231304Z" creationid="miurahr" creationdate="20201018T231304Z">
@@ -136,10 +144,26 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>It is sometimes pronounced "goo-doll" (a bit like goo-gle), while others pronounce it "gee-doll," and others pronounce it "gee-dall."</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000254Z" creationid="miurahr" creationdate="20201019T000254Z">
+        <seg>(Googleのように)「goo-doll」(グードール)と発音されることもありますが、その他の発音は「gey-doll」(ゲィドール)、他の発音は「gee-doll」(ギィードール)と発音します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Lists information about a raster dataset.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
         <seg>ラスターデータセットに関する情報をリストします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>OGR used to be a separate vector IO library inspired by OpenGIS Simple Features which was separated from GDAL.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000326Z" creationid="miurahr" creationdate="20201019T000326Z">
+        <seg>OGR は、 GDALから分離された OpenGIS Simple Features に着想を得た別のベクトル入出力ライブラリでした。</seg>
       </tuv>
     </tu>
     <tu>
@@ -228,10 +252,34 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>What does GDAL stand for?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000103Z" creationid="miurahr" creationdate="20201019T000103Z">
+        <seg>GDAL は何を意味するのですか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>What is GDAL?</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224246Z" creationid="miurahr" creationdate="20201018T224246Z">
         <seg>GDALとは何ですか?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>What is this OGR stuff?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000305Z" creationid="miurahr" creationdate="20201019T000305Z">
+        <seg>この OGR は何ですか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>With the GDAL 2.0 release, the GDAL and OGR components were integrated together.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000402Z" creationid="miurahr" creationdate="20201019T000402Z">
+        <seg>GDAL 2.0 リリースを使用すると、 GDAL および OGR コンポーネントが統合されました。</seg>
       </tuv>
     </tu>
     <tu>
