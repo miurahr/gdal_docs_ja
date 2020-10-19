@@ -8,66 +8,29 @@ We use OmegaT(https://omegat.org/) for computer aided translation.
 Tools required
 --------------
 
-* OmegaT version 4.0 or later  (https://omegat.org)
+* OmegaT version 4.0 or later  [ダウンロード](https://omegat.org/ja/download)
 
-* Okapi filter plugin (https://bintray.com/okapi/Distribution/OmegaT_Plugin)
-
-
-Preparation
-------------
-
-* Install OmegaT in your computer platform
-
-* Install Okapi pkugin for OmegaT
-
-  - Extract okapi plugin distribution
-
-  - Copy jar file into <HOME DIR>/.omegat/plugins/
-
-* Configure Okapi pkugin
-
-  - Launch OmegaT
-
-  - Open " 設定″ー”ファイルフィルター”
-
-  - Select "Doxygen filter (Okapi)" and push "Edit" button
-
-  - Add '*.dox' file as a target.
 
 
 Team translation
 -----------------
 
-* Download team translation project from Github.
+1. Download team translation project from Github.
 
-  - Open "Project" - "Download team project"
+  1. Launch OmegaT
 
-  - Enter URL: https://github.com/miurahr/gdal_docs_ja.git
+  2. Open "Project" - "Download team project"
 
-* Start translation.
+  3. Enter URL: https://github.com/miurahr/gdal_docs_ja.git
 
-Generate localization sources
------------------------------
+2. Start translation.
 
-* install doc tools
+3. Generate target document.
 
-```
-$ cd gdal/doc
-$ pip install -r requirements.txt
-$ pip install sphinx-intl
-```
+  * Open "Porject" > "Generate target document"
+  
+  * You will see PO files on target folder.
 
-* generate gettext files
-
-```
-$ make gettext
-```
-
-* generate message catalog
-
-```
-$ sphinx-intl update -l ja
-```
 
 Generate translated documents
 -----------------------------
@@ -76,3 +39,4 @@ Generate translated documents
 $ make -e SPHINXOPTS="-D language='ja'" html
 ```
 
+GDALへのパッチ提案と採択がまだですので、ドキュメントの生成は、少々おまちください。
