@@ -46,6 +46,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>CPL, or parts of it, is used by some projects external to GDAL (eg.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045638Z" creationid="miurahr" creationdate="20201019T045638Z">
+        <seg>CPLやその一部は、GDALの外のプロジェクトでも利用されています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Common Portability Library C API</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224524Z" creationid="miurahr" creationdate="20201018T224524Z">
