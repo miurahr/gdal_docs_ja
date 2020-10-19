@@ -110,6 +110,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>However, since OGR is not fully compliant with the OpenGIS Simple Feature specification and is not approved as a reference implementation of the spec the name was changed to OGR Simple Features Library.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000539Z" creationid="miurahr" creationdate="20201019T000539Z">
+        <seg>しかし、OGRはOpenGISのSimple Feature仕様に完全に準拠しておらず、仕様の参照実装として承認されていないため、名前はOGR Simple Features Libraryに変更されました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Index:: gdalinfo
 
 Synopsis
@@ -160,10 +168,26 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>OGR is also the prefix used everywhere in the source of the library for class names, filenames, etc.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000659Z" creationid="miurahr" creationdate="20201019T000659Z">
+        <seg>OGRは、クラス名、ファイル名などのライブラリのソースのあらゆる場所で使用されるプレフィックスです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>OGR used to be a separate vector IO library inspired by OpenGIS Simple Features which was separated from GDAL.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000326Z" creationid="miurahr" creationdate="20201019T000326Z">
         <seg>OGR は、 GDALから分離された OpenGIS Simple Features に着想を得た別のベクトル入出力ライブラリでした。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>OGR used to stand for OpenGIS Simple Features Reference Implementation.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000526Z" creationid="miurahr" creationdate="20201019T000457Z">
+        <seg>OGRは、OpenGIS Simple Features Reference実装を表していました。</seg>
       </tuv>
     </tu>
     <tu>
@@ -220,6 +244,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The only meaning of OGR in this name is historical.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000619Z" creationid="miurahr" creationdate="20201019T000619Z">
+        <seg>この名称での OGR の意味は唯一歴史的な意味だけです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The others data type are unsigned 8 bits integer with values from 0 to 255 or signed 16 bits integer with values from -32.768 to 32.767 or 32 bits single precision floating point.32 bits.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224938Z" creationid="miurahr" creationdate="20201018T224938Z">
@@ -256,6 +288,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000103Z" creationid="miurahr" creationdate="20201019T000103Z">
         <seg>GDAL は何を意味するのですか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>What does OGR stand for?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000415Z" creationid="miurahr" creationdate="20201019T000415Z">
+        <seg>OGR は何を意味していますか。</seg>
       </tuv>
     </tu>
     <tu>
