@@ -166,6 +166,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Index</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T050932Z" creationid="miurahr" creationdate="20201019T050932Z">
+        <seg>目次</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Index:: gdalinfo
 
 Synopsis
@@ -368,6 +376,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000736Z" creationid="miurahr" creationdate="20201019T000736Z">
         <seg>これをGDAL内部のクロスプラットフォーム標準ライブラリとして考えてください。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>This documentation is also available as a `PDF file &lt;gdal.pdf&gt;`_.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T050827Z" creationid="miurahr" creationdate="20201019T050827Z">
+        <seg>このドキュメントは、`PDF file &lt;gdal.pdf&gt;`_ とフォーマットでも利用できます。</seg>
       </tuv>
     </tu>
     <tu>
