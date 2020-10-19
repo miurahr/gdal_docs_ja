@@ -46,6 +46,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Both, 32-bit and 64-bit architectures are supported.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045918Z" creationid="miurahr" creationdate="20201019T045918Z">
+        <seg>32 ビットと 64 ビットの両方のアーキテクチャーがサポートされています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>CPL, or parts of it, is used by some projects external to GDAL (eg.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T045638Z" creationid="miurahr" creationdate="20201019T045638Z">
@@ -142,6 +150,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>In late 1998, Frank Warmerdam started to work as independent professional on the GDAL/OGR library.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045756Z" creationid="miurahr" creationdate="20201019T045756Z">
+        <seg>1998年末には、GDAL/OGRライブラリのために、Frank Shelfdamは独立したプロフェッショナルとして働くようになりました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Index:: gdalinfo
 
 Synopsis
@@ -168,6 +184,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Is GDAL/OGR proprietary software?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045801Z" creationid="miurahr" creationdate="20201019T045801Z">
+        <seg>GDAL/OGR 専有ソフトウェアですか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Is there a graphical user interface to GDAL/OGR?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045922Z" creationid="miurahr" creationdate="20201019T045922Z">
+        <seg>GDAL/OGRへのグラフィカル・ユーザー・インターフェースはありますか?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>It also comes with a variety of useful command line utilities for data translation and processing.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224412Z" creationid="miurahr" creationdate="20201018T224412Z">
@@ -188,6 +220,22 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
         <seg>ラスターデータセットに関する情報をリストします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>MITAB, libgeotiff).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045646Z" creationid="miurahr" creationdate="20201019T045646Z">
+        <seg>(例 MITAB, libgeotiff)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>No, GDAL/OGR is a Free and Open Source Software.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045830Z" creationid="miurahr" creationdate="20201019T045830Z">
+        <seg>いいえ、 GDAL/OGR は、フリーソフトウエアで、オープンソースソフトウェアです。</seg>
       </tuv>
     </tu>
     <tu>
@@ -232,10 +280,26 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>See :ref:`license`</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045840Z" creationid="miurahr" creationdate="20201019T045840Z">
+        <seg>参照 :ref:`license`</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>See :ref:`software_using_gdal`</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224504Z" creationid="miurahr" creationdate="20201018T224504Z">
         <seg>参照 :ref:`software_using_gdal`</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>See :ref:`software_using_gdal`:</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045927Z" creationid="miurahr" creationdate="20201019T045927Z">
+        <seg>参照 :ref:`software_using_gdal`:</seg>
       </tuv>
     </tu>
     <tu>
@@ -316,6 +380,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>What compiler can I use to build GDAL/OGR?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045936Z" creationid="miurahr" creationdate="20201019T045936Z">
+        <seg>GDAL/OGRを構築するために使用できるコンパイラは何ですか?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>What does CPL stand for?</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000705Z" creationid="miurahr" creationdate="20201019T000705Z">
@@ -356,10 +428,42 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>What license does GDAL/OGR use?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045834Z" creationid="miurahr" creationdate="20201019T045834Z">
+        <seg>GDAL/OGR が使用するライセンスは何ですか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>What operating systems does GDAL-OGR run on?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045845Z" creationid="miurahr" creationdate="20201019T045845Z">
+        <seg>GDAL-OGRはどのようなオペレーティングシステムで動作しますか?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>When was the GDAL project started?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045654Z" creationid="miurahr" creationdate="20201019T045654Z">
+        <seg>GDAL プロジェクトはいつ開始されましたか ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>With the GDAL 2.0 release, the GDAL and OGR components were integrated together.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000402Z" creationid="miurahr" creationdate="20201019T000402Z">
         <seg>GDAL 2.0 リリースを使用すると、 GDAL および OGR コンポーネントが統合されました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>You can use GDAL/OGR on all modern flavors of Unix: Linux, FreeBSD, Mac OS X; all supported versions of Microsoft Windows; mobile environements (Android and iOS).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T045914Z" creationid="miurahr" creationdate="20201019T045914Z">
+        <seg>GDAL/OGR は、 Linux 、 FreeBSD、 Mac OS X、 Microsoft Windowsのサポートされているすべてのバージョンと、モバイル環境 (Android および iOS)で使用できます。</seg>
       </tuv>
     </tu>
     <tu>
