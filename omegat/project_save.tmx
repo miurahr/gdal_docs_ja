@@ -46,6 +46,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Common Portability Library.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000719Z" creationid="miurahr" creationdate="20201019T000719Z">
+        <seg>共通ポータビリティー・ライブラリー。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Display the output in json format.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043533Z" creationid="miurahr" creationdate="20201018T043533Z">
@@ -268,6 +276,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Think of it as GDAL internal cross-platform standard library.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000736Z" creationid="miurahr" creationdate="20201019T000736Z">
+        <seg>これをGDAL内部のクロスプラットフォーム標準ライブラリとして考えてください。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>This format is basically a raw one.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224623Z" creationid="miurahr" creationdate="20201018T224623Z">
@@ -280,6 +296,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
         <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>What does CPL stand for?</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T000705Z" creationid="miurahr" creationdate="20201019T000705Z">
+        <seg>CPLは何を意味しますか。</seg>
       </tuv>
     </tu>
     <tu>
