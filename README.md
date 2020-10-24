@@ -4,6 +4,9 @@ GDAL(Geospatial Data Abstraction Library) document Japanese translation project
 Here is a repository for JA translation team to translate GDAL document in Japanese.
 We use OmegaT(https://omegat.org/) for computer aided translation.
 
+このリポジトリでは、フォークやPull-Requestのワークフローに対応しません。
+かならず、直接の書き込み権限
+
 
 Tools required
 --------------
