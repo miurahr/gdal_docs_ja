@@ -22,6 +22,22 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Adds a "-json" output option.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051631Z" creationid="miurahr" creationdate="20201019T051603Z">
+        <seg>"-json" 出力を追加するオプションです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Adds a "-xml" output option.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051616Z" creationid="miurahr" creationdate="20201019T051549Z">
+        <seg>"-xml" 出力を追加するオプションです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>As a library, it presents a &lt;g4&gt; single raster abstract data model&lt;/g4&gt; and &lt;g5&gt; single vector abstract data model&lt;/g5&gt; to the calling application for all supported formats.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
@@ -74,6 +90,22 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000719Z" creationid="miurahr" creationdate="20201019T000719Z">
         <seg>共通ポータビリティー・ライブラリー。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Default output will remain the same.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051719Z" creationid="miurahr" creationdate="20201019T051719Z">
+        <seg>デフォルトの出力は同じままです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Description</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051250Z" creationid="miurahr" creationdate="20201019T051248Z">
+        <seg>説明</seg>
       </tuv>
     </tu>
     <tu>
@@ -344,6 +376,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Synopsis</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051244Z" creationid="miurahr" creationdate="20201019T051244Z">
+        <seg>概要</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The Python autotest suite will be extended to test the new XML/JSON outputs and existing tests will be modified to check STDERR for diagnostic messages.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051820Z" creationid="miurahr" creationdate="20201019T051820Z">
+        <seg>Pythonの autotest スイートは、新しい XML/JSON 出力をテストするために拡張され、診断メッセージの STDERR を検査するために既存のテストが変更されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The `NEWS`_ page describes the September 2020 GDAL/OGR 3.1.3 release.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224440Z" creationid="miurahr" creationdate="20201018T224440Z">
@@ -380,6 +428,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The new XML output will only effect users who specify "-xml" or "-json" on the command line.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051743Z" creationid="miurahr" creationdate="20201019T051743Z">
+        <seg>新しいXML出力は、コマンドラインで「-xml」または「-json」を指定したユーザーのみで有効になります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The only meaning of OGR in this name is historical.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000619Z" creationid="miurahr" creationdate="20201019T000619Z">
@@ -412,6 +468,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>This change has no impact on backward compatibility at the C API/ABI and C++ API/ABI levels.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051715Z" creationid="miurahr" creationdate="20201019T051715Z">
+        <seg>この変更は、C API/ABIおよびC++API/ABIレベルでの下位互換性には影響しません。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>This documentation is also available as a `PDF file &lt;gdal.pdf&gt;`_.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T050827Z" creationid="miurahr" creationdate="20201019T050827Z">
@@ -428,10 +492,26 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>This program builds a shapefile with a record for each input raster file, an attribute containing the filename, and a polygon geometry outlining the raster.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T065024Z" creationid="miurahr" creationdate="20201019T065024Z">
+        <seg>このプログラムは、入力指定した各ラスター・ファイルについて、アウトラインのポリゴン、属性レコードにファイル名を格納したシェープファイルを作成します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>This topic now lives in the Wiki at: http://trac.osgeo.org/gdal/wiki/BuildHints</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
         <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>This utility script (available on Unix systems) can be used to determine various information about a GDAL installation.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201019T051409Z" creationid="miurahr" creationdate="20201019T051409Z">
+        <seg>このユーティリティスクリプト(Unixシステムで使用可能)を使用して、GDALインストールに関するさまざまな情報を判別できます。</seg>
       </tuv>
     </tu>
     <tu>
