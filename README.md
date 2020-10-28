@@ -5,7 +5,7 @@ Here is a repository for JA translation team to translate GDAL document in Japan
 We use OmegaT(https://omegat.org/) for computer aided translation.
 
 このリポジトリでは、フォークやPull-Requestのワークフローに対応しません。
-かならず、直接の書き込み権限
+かならず、直接の書き込み権限を付与して、本リポジトリへ直接アクセスするようにOmegaTを設定してくさい。
 
 
 Tools required
