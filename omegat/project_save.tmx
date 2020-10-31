@@ -1,243 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.4.0_0_f1e32ca8" segtype="sentence" srclang="en-US"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.3.2_0_6a661c5e" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>&lt;g1&gt;&lt;g2&gt;Select language&lt;/g2&gt;: [English]&lt;g3&gt;[Russian]&lt;/g3&gt;&lt;g4&gt;[Portuguese]&lt;/g4&gt;&lt;g5&gt;[French/Francais]&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
         <seg>&lt;g1&gt;&lt;g2&gt; 言語選択 &lt;/g2&gt;:[英語]&lt;g3&gt;[ロシア語]&lt;/g3&gt;&lt;g4&gt;[ポルトガル語]&lt;/g4&gt;&lt;g5&gt;フランス語&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>&lt;x1/&gt; Building GDAL From Source</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20171009T123058Z" creationid="miurahr" creationdate="20171009T123058Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T123058Z" creationid="miurahr" creationdate="20171009T123058Z">
         <seg>&lt;x1/&gt;ソースからGDALをビルドする</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Adds a "-json" output option.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051631Z" creationid="miurahr" creationdate="20201019T051603Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051631Z" creationid="miurahr" creationdate="20201019T051603Z">
         <seg>"-json" 出力を追加するオプションです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Adds a "-xml" output option.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051616Z" creationid="miurahr" creationdate="20201019T051549Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051616Z" creationid="miurahr" creationdate="20201019T051549Z">
         <seg>"-xml" 出力を追加するオプションです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>As a library, it presents a &lt;g4&gt; single raster abstract data model&lt;/g4&gt; and &lt;g5&gt; single vector abstract data model&lt;/g5&gt; to the calling application for all supported formats.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T115229Z" creationid="miurahr" creationdate="20171009T115229Z">
         <seg>ライブラリは、&lt;g4&gt;単一のラスター抽象データモデル&lt;/g4&gt;と&lt;g5&gt;単一のベクター抽象データモデル&lt;/g5&gt;を定義して、アプリケーションから全てのサポートされているデータ形式を利用できるようにします。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>As a library, it presents a single raster abstract data model and single vector abstract data model to the calling application for all supported formats.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224407Z" creationid="miurahr" creationdate="20201018T224407Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224407Z" creationid="miurahr" creationdate="20201018T224407Z">
         <seg>ライブラリは、単一のラスター抽象データモデルと単一のベクター抽象データモデルを定義して、アプリケーションから全てのサポートされているデータ形式を利用できるようにします。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Back in the early days of GDAL development, when cross-platform development as well as compatibility and standard conformance of compilers was a challenge (or PITA), CPL proved necessary for smooth portability of GDAL/OGR.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045610Z" creationid="miurahr" creationdate="20201019T045610Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045610Z" creationid="miurahr" creationdate="20201019T045610Z">
         <seg>GDAL 開発の初期段階において、クロスプラットフォーム開発とコンパイラの互換性と標準規格適合性が課題 (っていうか、すげぇ面倒くせぇ奴) であることから、 CPL は GDAL/OGRの円滑なポータビリティのために必要だと合意されました。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Both, 32-bit and 64-bit architectures are supported.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045918Z" creationid="miurahr" creationdate="20201019T045918Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045918Z" creationid="miurahr" creationdate="20201019T045918Z">
         <seg>32 ビットと 64 ビットの両方のアーキテクチャーがサポートされています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>By setting the environment variable IDRISIDIR pointing to the Idrisi main installation folder will enable GDAL to find more detailed information about geographical reference and projection in the REF files.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143257Z" creationid="miurahr" creationdate="20201025T143257Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143257Z" creationid="miurahr" creationdate="20201025T143257Z">
         <seg>Idrisiのメインインストールフォルダを指す環境変数IDRISIDIRを設定すると、GDALはREFファイル内の地理参照と投影に関する詳細情報を検索できるようになります。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>CPL, or parts of it, is used by some projects external to GDAL (eg.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045638Z" creationid="miurahr" creationdate="20201019T045638Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045638Z" creationid="miurahr" creationdate="20201019T045638Z">
         <seg>CPLやその一部は、GDALの外のプロジェクトでも利用されています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Common Portability Library C API</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224524Z" creationid="miurahr" creationdate="20201018T224524Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224524Z" creationid="miurahr" creationdate="20201018T224524Z">
         <seg>共通ポータビリティー・ライブラリー C API</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Common Portability Library.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000719Z" creationid="miurahr" creationdate="20201019T000719Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000719Z" creationid="miurahr" creationdate="20201019T000719Z">
         <seg>共通ポータビリティー・ライブラリー。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Default output will remain the same.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051719Z" creationid="miurahr" creationdate="20201019T051719Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051719Z" creationid="miurahr" creationdate="20201019T051719Z">
         <seg>デフォルトの出力は同じままです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Description</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051250Z" creationid="miurahr" creationdate="20201019T051248Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051250Z" creationid="miurahr" creationdate="20201019T051248Z">
         <seg>説明</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Determines various information about a GDAL installation.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051239Z" creationid="miurahr" creationdate="20201019T051239Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051239Z" creationid="miurahr" creationdate="20201019T051239Z">
         <seg>GDALインストールに関するさまざまな情報を判別します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Display the output in json format.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043533Z" creationid="miurahr" creationdate="20201018T043533Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043533Z" creationid="miurahr" creationdate="20201018T043533Z">
         <seg>出力をjsonフォーマットで表示します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Driver short name</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224612Z" creationid="miurahr" creationdate="20201018T224612Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224612Z" creationid="miurahr" creationdate="20201018T224612Z">
         <seg>ドライバーの短縮名</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>For geographical referencing identification, the RDC file contains information that points to a file that holds the geographic reference details.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143131Z" creationid="miurahr" creationdate="20201025T143131Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143131Z" creationid="miurahr" creationdate="20201025T143131Z">
         <seg>地理参照識別の場合、 RDC ファイルには、地理的参照の詳細を保持するファイルを指す情報が含まれています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Force computation if no</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043738Z" creationid="miurahr" creationdate="20201018T043730Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043738Z" creationid="miurahr" creationdate="20201018T043730Z">
         <seg>統計量がラスターに埋め込まれていない場合は、統計量の算出を行う</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Force computation of the actual min/max values for each band in the</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043630Z" creationid="miurahr" creationdate="20201018T043606Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043630Z" creationid="miurahr" creationdate="20201018T043606Z">
         <seg>データセットの各バンドの実際のmin/max値の計算を強制する</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>GDAL - Geospatial Data Abstraction Library</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000113Z" creationid="miurahr" creationdate="20201019T000113Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000113Z" creationid="miurahr" creationdate="20201019T000113Z">
         <seg>GDAL-空間データ抽象化ライブラリ</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>GDAL Grid Tutorial</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T231304Z" creationid="miurahr" creationdate="20201018T231304Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T231304Z" creationid="miurahr" creationdate="20201018T231304Z">
         <seg>GDALグリッドチュートリアル</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>GDAL is a translator library for raster and vector geospatial data formats that is released under an X/MIT style Open Source :ref:`license` by the `Open Source Geospatial Foundation`_.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224314Z" creationid="miurahr" creationdate="20201018T224314Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224314Z" creationid="miurahr" creationdate="20201018T224314Z">
         <seg>GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundation`_ ) によって公開された、 X/MIT スタイルの オープン・ソース :ref:`ライセンス` の下で公開されたラスターおよびベクトル地理空間データフォーマットのための変換ライブラリです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>GDAL/OGR can be compiled with a C++11 capable compiler.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T050725Z" creationid="miurahr" creationdate="20201019T050725Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T050725Z" creationid="miurahr" creationdate="20201019T050725Z">
         <seg>GDAL/OGRはC++11対応コンパイラを使用してコンパイルできます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Gridding is a process of creating a regular grid (or call it a raster image) from the scattered data.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T231409Z" creationid="miurahr" creationdate="20201018T231409Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T231409Z" creationid="miurahr" creationdate="20201018T231409Z">
         <seg>グリッドは、分散されたデータから通常のグリッドを作成するプロセスです(または、ラスタイメージと呼びます)。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>However, since OGR is not fully compliant with the OpenGIS Simple Feature specification and is not approved as a reference implementation of the spec the name was changed to OGR Simple Features Library.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000539Z" creationid="miurahr" creationdate="20201019T000539Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000539Z" creationid="miurahr" creationdate="20201019T000539Z">
         <seg>しかし、OGRはOpenGISのSimple Feature仕様に完全に準拠しておらず、仕様の参照実装として承認されていないため、名前はOGR Simple Features Libraryに変更されました。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>In general GDAL/OGR is licensed under an MIT/X style license with the following terms:</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051055Z" creationid="miurahr" creationdate="20201019T051055Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051055Z" creationid="miurahr" creationdate="20201019T051055Z">
         <seg>GDAL/OGR は全般的には、 MIT/X スタイルのライセンスの下で以下の条件を使用してライセンスされています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>In late 1998, Frank Warmerdam started to work as independent professional on the GDAL/OGR library.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045756Z" creationid="miurahr" creationdate="20201019T045756Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045756Z" creationid="miurahr" creationdate="20201019T045756Z">
         <seg>1998年末には、GDAL/OGRライブラリのために、Frank Shelfdamは独立したプロフェッショナルとして働くようになりました。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Index</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T050932Z" creationid="miurahr" creationdate="20201019T050932Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T050932Z" creationid="miurahr" creationdate="20201019T050932Z">
         <seg>目次</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Index:: gdalinfo
 
 Synopsis
@@ -245,7 +245,7 @@ Synopsis
 
 ..</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043339Z" creationid="miurahr" creationdate="20201018T043339Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043339Z" creationid="miurahr" creationdate="20201018T043339Z">
         <seg>Index:: gdalinfo
 
 概要
@@ -255,475 +255,483 @@ Synopsis
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Introduction to Gridding</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T231319Z" creationid="miurahr" creationdate="20201018T231319Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T231319Z" creationid="miurahr" creationdate="20201018T231319Z">
         <seg>グリディングの概要</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Is GDAL/OGR proprietary software?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045801Z" creationid="miurahr" creationdate="20201019T045801Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045801Z" creationid="miurahr" creationdate="20201019T045801Z">
         <seg>GDAL/OGR 専有ソフトウェアですか ?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Is there a graphical user interface to GDAL/OGR?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045922Z" creationid="miurahr" creationdate="20201019T045922Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045922Z" creationid="miurahr" creationdate="20201019T045922Z">
         <seg>GDAL/OGRへのグラフィカル・ユーザー・インターフェースはありますか?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>It also comes with a variety of useful command line utilities for data translation and processing.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224412Z" creationid="miurahr" creationdate="20201018T224412Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224412Z" creationid="miurahr" creationdate="20201018T224412Z">
         <seg>また、データ変換および処理に役立つコマンドラインユーティリティが豊富に用意されています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>It is sometimes pronounced "goo-doll" (a bit like goo-gle), while others pronounce it "gee-doll," and others pronounce it "gee-dall."</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000254Z" creationid="miurahr" creationdate="20201019T000254Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000254Z" creationid="miurahr" creationdate="20201019T000254Z">
         <seg>(Googleのように)「goo-doll」(グードール)と発音されることもありますが、その他の発音は「gey-doll」(ゲィドール)、他の発音は「gee-doll」(ギィードール)と発音します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>License</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T050941Z" creationid="miurahr" creationdate="20201019T050941Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T050941Z" creationid="miurahr" creationdate="20201019T050941Z">
         <seg>ライセンス</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Lists information about a raster dataset.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
         <seg>ラスターデータセットに関する情報をリストします。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>MITAB, libgeotiff).</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045646Z" creationid="miurahr" creationdate="20201019T045646Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045646Z" creationid="miurahr" creationdate="20201019T045646Z">
         <seg>(例 MITAB, libgeotiff)</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Magic Number - always "GRID1.2\0"</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143212Z" creationid="miurahr" creationdate="20201025T143212Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143212Z" creationid="miurahr" creationdate="20201025T143212Z">
         <seg>マジックナンバー-常に「GRID1.2\0」</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Mean value of a raster cells in this grid.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T144108Z" creationid="miurahr" creationdate="20201025T144108Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T144108Z" creationid="miurahr" creationdate="20201025T144108Z">
         <seg>このグリッド内のラスターセルの平均値。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>No, GDAL/OGR is a Free and Open Source Software.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045830Z" creationid="miurahr" creationdate="20201019T045830Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045830Z" creationid="miurahr" creationdate="20201019T045830Z">
         <seg>いいえ、 GDAL/OGR は、フリーソフトウエアで、オープンソースソフトウェアです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Note that exporting to RST in any other geographical reference system will generate a suggested REF content in the comment section of the RDC file.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143950Z" creationid="miurahr" creationdate="20201025T143950Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143950Z" creationid="miurahr" creationdate="20201025T143950Z">
         <seg>他のいずれかの地理参照システムで RST にエクスポートすると、 RDC ファイルのコメント・セクションに推奨される REF コンテンツが生成されることに注意してください。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Note that the RST driver recognizes the name convention used in Idrisi for UTM and State Plane geographic reference so it doesn't need to access the REF files.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143312Z" creationid="miurahr" creationdate="20201025T143312Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143312Z" creationid="miurahr" creationdate="20201025T143312Z">
         <seg>RST ドライバーは、 Idrisi で使用されている名前規則を UTM および状態平面の地理参照に認識するため、 REF ファイルにアクセスする必要はありません。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>OGR is also the prefix used everywhere in the source of the library for class names, filenames, etc.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000659Z" creationid="miurahr" creationdate="20201019T000659Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000659Z" creationid="miurahr" creationdate="20201019T000659Z">
         <seg>OGRは、クラス名、ファイル名などのライブラリのソースのあらゆる場所で使用されるプレフィックスです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>OGR used to be a separate vector IO library inspired by OpenGIS Simple Features which was separated from GDAL.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000326Z" creationid="miurahr" creationdate="20201019T000326Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000326Z" creationid="miurahr" creationdate="20201019T000326Z">
         <seg>OGR は、 GDALから分離された OpenGIS Simple Features に着想を得た別のベクトル入出力ライブラリでした。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>OGR used to stand for OpenGIS Simple Features Reference Implementation.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000526Z" creationid="miurahr" creationdate="20201019T000457Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000526Z" creationid="miurahr" creationdate="20201019T000457Z">
         <seg>OGRは、OpenGIS Simple Features Reference実装を表していました。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
+        <seg>Python API reference</seg>
+      </tuv>
+      <tuv lang="JA" changeid="yoichigmf " changedate="20201031T074718Z" creationid="yoichigmf " creationdate="20201031T074718Z">
+        <seg>Python API リファレンス</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>RST -- Idrisi Raster Format</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224607Z" creationid="miurahr" creationdate="20201018T224607Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224607Z" creationid="miurahr" creationdate="20201018T224607Z">
         <seg>RST -- Idrisiラスタフォーマット</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Read and display image statistics.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043801Z" creationid="miurahr" creationdate="20201018T043658Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043801Z" creationid="miurahr" creationdate="20201018T043658Z">
         <seg>ラスター統計量を読み取り、表示する。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>See :ref:`license`</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045840Z" creationid="miurahr" creationdate="20201019T045840Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045840Z" creationid="miurahr" creationdate="20201019T045840Z">
         <seg>参照 :ref:`license`</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>See :ref:`software_using_gdal`</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224504Z" creationid="miurahr" creationdate="20201018T224504Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224504Z" creationid="miurahr" creationdate="20201018T224504Z">
         <seg>参照 :ref:`software_using_gdal`</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>See :ref:`software_using_gdal`:</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045927Z" creationid="miurahr" creationdate="20201019T045927Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045927Z" creationid="miurahr" creationdate="20201019T045927Z">
         <seg>参照 :ref:`software_using_gdal`:</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>See Also</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T144047Z" creationid="miurahr" creationdate="20201025T144047Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T144047Z" creationid="miurahr" creationdate="20201025T144047Z">
         <seg>関連項目</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Synopsis</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051244Z" creationid="miurahr" creationdate="20201019T051244Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051244Z" creationid="miurahr" creationdate="20201019T051244Z">
         <seg>概要</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>That is the case for RDC file that specify "utm-30n" or "spc87ma1" in the "ref.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143415Z" creationid="miurahr" creationdate="20201025T143317Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143415Z" creationid="miurahr" creationdate="20201025T143317Z">
         <seg>これは、「ref.system」フィールドに「utm-30n」または「spc87ma1」を指定するRDCファイルの場合です</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The Python autotest suite will be extended to test the new XML/JSON outputs and existing tests will be modified to check STDERR for diagnostic messages.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051820Z" creationid="miurahr" creationdate="20201019T051820Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051820Z" creationid="miurahr" creationdate="20201019T051820Z">
         <seg>Pythonの autotest スイートは、新しい XML/JSON 出力をテストするために拡張され、診断メッセージの STDERR を検査するために既存のテストが変更されます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The RDC image description file doesn't include color table, or detailed geographic referencing information.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143111Z" creationid="miurahr" creationdate="20201025T143111Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143111Z" creationid="miurahr" creationdate="20201025T143111Z">
         <seg>RDCイメージ記述ファイルには、カラーテーブルや詳細な地理参照情報は含まれていません。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The `NEWS`_ page describes the September 2020 GDAL/OGR 3.1.3 release.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224440Z" creationid="miurahr" creationdate="20201018T224440Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224440Z" creationid="miurahr" creationdate="20201018T224440Z">
         <seg>`NEWS`_ ページには、2020年9月のGDAL/OGR3.1.3リリースが記載されています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The color table if present can be obtained by another accompanying file using the same base name as the RST file and SMP as extension.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143120Z" creationid="miurahr" creationdate="20201025T143120Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143120Z" creationid="miurahr" creationdate="20201025T143120Z">
         <seg>このカラー・テーブルは、 RST ファイルおよび SMP と同じ基本名を拡張子として使用して、別の付随するファイルによって入手できる場合に使用されます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The description of the file is stored in a accompanying text file, extension RDC.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T225012Z" creationid="miurahr" creationdate="20201018T225012Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T225012Z" creationid="miurahr" creationdate="20201018T225012Z">
         <seg>ファイルの記述は、添付される拡張子RDCのテキストファイルに格納されます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The following command line parameters can appear in any order
 
 ..</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043510Z" creationid="miurahr" creationdate="20201018T043510Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043510Z" creationid="miurahr" creationdate="20201018T043510Z">
         <seg>以下のコマンド行パラメーターは、任意の順序で指定できます。
 
 ..</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The full licensing terms are available in the `LICENSE.TXT`_ file.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051129Z" creationid="miurahr" creationdate="20201019T051129Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051129Z" creationid="miurahr" creationdate="20201019T051129Z">
         <seg>ライセンスの完全な条項は、`LICENSE.TXT`_ ファイルにあります。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The new XML output will only effect users who specify "-xml" or "-json" on the command line.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051743Z" creationid="miurahr" creationdate="20201019T051743Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051743Z" creationid="miurahr" creationdate="20201019T051743Z">
         <seg>新しいXML出力は、コマンドラインで「-xml」または「-json」を指定したユーザーのみで有効になります。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The only meaning of OGR in this name is historical.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000619Z" creationid="miurahr" creationdate="20201019T000619Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000619Z" creationid="miurahr" creationdate="20201019T000619Z">
         <seg>この名称での OGR の意味は唯一歴史的な意味だけです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>The others data type are unsigned 8 bits integer with values from 0 to 255 or signed 16 bits integer with values from -32.768 to 32.767 or 32 bits single precision floating point.32 bits.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224938Z" creationid="miurahr" creationdate="20201018T224938Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224938Z" creationid="miurahr" creationdate="20201018T224938Z">
         <seg>その他のデータ・タイプは、 0 から 255 までの値を持つ符号なし 8 ビット整数、または -32.768 から 32.767 または 32 ビットの単精度浮動小数点 .32 ビットへの値を持つ 16 ビットの符号付き 16 ビット整数です。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>There is just one band per files, except in the RGB24 data type where the Red, Green and Blue bands are store interleaved by pixels in the order Blue, Green and Red.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224922Z" creationid="miurahr" creationdate="20201018T224714Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224922Z" creationid="miurahr" creationdate="20201018T224714Z">
         <seg>ファイルごとに 1 つのバンドがあります。ただし、赤、緑、青の各バンドが、青、緑、赤の順にピクセルごとにインターリーブされている RGB24 データ型を除きます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Therefore the presence or absence of the Idrisi software in the running operation system will determine the way that this driver will work.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143243Z" creationid="miurahr" creationdate="20201025T143243Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143243Z" creationid="miurahr" creationdate="20201025T143243Z">
         <seg>したがって、実行中のオペレーティングシステムにIdrisiソフトウェアが存在するかどうかによって、このドライバの動作方法が決まります。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Think of it as GDAL internal cross-platform standard library.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000736Z" creationid="miurahr" creationdate="20201019T000736Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000736Z" creationid="miurahr" creationdate="20201019T000736Z">
         <seg>これをGDAL内部のクロスプラットフォーム標準ライブラリとして考えてください。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This change has no impact on backward compatibility at the C API/ABI and C++ API/ABI levels.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051715Z" creationid="miurahr" creationdate="20201019T051715Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051715Z" creationid="miurahr" creationdate="20201019T051715Z">
         <seg>この変更は、C API/ABIおよびC++API/ABIレベルでの下位互換性には影響しません。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This documentation is also available as a `PDF file &lt;gdal.pdf&gt;`_.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T050827Z" creationid="miurahr" creationdate="20201019T050827Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T050827Z" creationid="miurahr" creationdate="20201019T050827Z">
         <seg>このドキュメントは、`PDF file &lt;gdal.pdf&gt;`_ とフォーマットでも利用できます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This format is basically a raw one.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224623Z" creationid="miurahr" creationdate="20201018T224623Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224623Z" creationid="miurahr" creationdate="20201018T224623Z">
         <seg>このフォーマットは基本的にrawです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This is a binary dump of the first 308 bytes of a hdr.adf file.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143157Z" creationid="miurahr" creationdate="20201025T143157Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143157Z" creationid="miurahr" creationdate="20201025T143157Z">
         <seg>hdr.adfファイルの最初の308バイトのバイナリダンプです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This is a binary dump of the first 320 bytes of a w001001.adf file.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T144055Z" creationid="miurahr" creationdate="20201025T144055Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T144055Z" creationid="miurahr" creationdate="20201025T144055Z">
         <seg>これは、w001001.adfファイルの最初の320バイトのバイナリダンプです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This program builds a shapefile with a record for each input raster file, an attribute containing the filename, and a polygon geometry outlining the raster.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T065024Z" creationid="miurahr" creationdate="20201019T065024Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T065024Z" creationid="miurahr" creationdate="20201019T065024Z">
         <seg>このプログラムは、入力指定した各ラスター・ファイルについて、アウトラインのポリゴン、属性レコードにファイル名を格納したシェープファイルを作成します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This topic now lives in the Wiki at: http://trac.osgeo.org/gdal/wiki/BuildHints</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T123038Z" creationid="miurahr" creationdate="20171009T123038Z">
         <seg>現在、このトピックは、http://trac.osgeo.org/gdal/wiki/BuildHintsのWikiで更新されています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>This utility script (available on Unix systems) can be used to determine various information about a GDAL installation.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T051409Z" creationid="miurahr" creationdate="20201019T051409Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T051409Z" creationid="miurahr" creationdate="20201019T051409Z">
         <seg>このユーティリティスクリプト(Unixシステムで使用可能)を使用して、GDALインストールに関するさまざまな情報を判別できます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>Those files uses extension REF and  resides in the same folder as the RST image or more likely in the Idrisi installation folders.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143148Z" creationid="miurahr" creationdate="20201025T143148Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143148Z" creationid="miurahr" creationdate="20201025T143148Z">
         <seg>これらのファイルは、拡張子 REF を使用し、 Idrisi インストール・フォルダー内の RST イメージと同じフォルダーまたはそれ以上のファイルに常駐します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What compiler can I use to build GDAL/OGR?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045936Z" creationid="miurahr" creationdate="20201019T045936Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045936Z" creationid="miurahr" creationdate="20201019T045936Z">
         <seg>GDAL/OGRを構築するために使用できるコンパイラは何ですか?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What does CPL stand for?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000705Z" creationid="miurahr" creationdate="20201019T000705Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000705Z" creationid="miurahr" creationdate="20201019T000705Z">
         <seg>CPLは何を意味しますか。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What does GDAL stand for?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000103Z" creationid="miurahr" creationdate="20201019T000103Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000103Z" creationid="miurahr" creationdate="20201019T000103Z">
         <seg>GDAL は何を意味するのですか ?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What does OGR stand for?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000415Z" creationid="miurahr" creationdate="20201019T000415Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000415Z" creationid="miurahr" creationdate="20201019T000415Z">
         <seg>OGR は何を意味していますか。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What is GDAL?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T224246Z" creationid="miurahr" creationdate="20201018T224246Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T224246Z" creationid="miurahr" creationdate="20201018T224246Z">
         <seg>GDALとは何ですか?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What is this OGR stuff?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000305Z" creationid="miurahr" creationdate="20201019T000305Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000305Z" creationid="miurahr" creationdate="20201019T000305Z">
         <seg>この OGR は何ですか ?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What license does GDAL/OGR use?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045834Z" creationid="miurahr" creationdate="20201019T045834Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045834Z" creationid="miurahr" creationdate="20201019T045834Z">
         <seg>GDAL/OGR が使用するライセンスは何ですか ?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>What operating systems does GDAL-OGR run on?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045845Z" creationid="miurahr" creationdate="20201019T045845Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045845Z" creationid="miurahr" creationdate="20201019T045845Z">
         <seg>GDAL-OGRはどのようなオペレーティングシステムで動作しますか?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>When translating from or into BYN file to or from another formats the scale will afect the result profundly.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143230Z" creationid="miurahr" creationdate="20201025T143230Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143230Z" creationid="miurahr" creationdate="20201025T143230Z">
         <seg>BYNファイルから他の形式へ、または他の形式からBYNファイルに変換する場合、スケールは結果のprofundlyに影響します。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>When was the GDAL project started?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045654Z" creationid="miurahr" creationdate="20201019T045654Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045654Z" creationid="miurahr" creationdate="20201019T045654Z">
         <seg>GDAL プロジェクトはいつ開始されましたか ?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>With the GDAL 2.0 release, the GDAL and OGR components were integrated together.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T000402Z" creationid="miurahr" creationdate="20201019T000402Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T000402Z" creationid="miurahr" creationdate="20201019T000402Z">
         <seg>GDAL 2.0 リリースを使用すると、 GDAL および OGR コンポーネントが統合されました。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>You can use GDAL/OGR on all modern flavors of Unix: Linux, FreeBSD, Mac OS X; all supported versions of Microsoft Windows; mobile environements (Android and iOS).</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201019T045914Z" creationid="miurahr" creationdate="20201019T045914Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201019T045914Z" creationid="miurahr" creationdate="20201019T045914Z">
         <seg>GDAL/OGR は、 Linux 、 FreeBSD、 Mac OS X、 Microsoft Windowsのサポートされているすべてのバージョンと、モバイル環境 (Android および iOS)で使用できます。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>[-sd subdataset] [-oo NAME=VALUE]* [-if format]* datasetname
 
 Description
@@ -732,7 +740,7 @@ Description
 :program:`gdalinfo` program lists various information about a GDAL supported
 raster dataset.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043453Z" creationid="miurahr" creationdate="20201018T043453Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043453Z" creationid="miurahr" creationdate="20201018T043453Z">
         <seg>[-sd subdataset] [-oo NAME=VALUE]* [-if format]* datasetname
 
 説明
@@ -742,13 +750,13 @@ raster dataset.</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>_about:
 
 ================================================================================
 What is GDAL?</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T042253Z" creationid="miurahr" creationdate="20201018T042253Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T042253Z" creationid="miurahr" creationdate="20201018T042253Z">
         <seg>_about:
 
 ================================================================================
@@ -756,46 +764,46 @@ GDALについて?</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>dataset.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043627Z" creationid="miurahr" creationdate="20201018T043620Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043627Z" creationid="miurahr" creationdate="20201018T043620Z">
         <seg>。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>include:: ./substitutions.rst
 
 GDAL is a translator library for raster and vector geospatial data formats that is released under an X/MIT style Open Source :ref:`license` by the `Open Source Geospatial Foundation`_.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T042434Z" creationid="miurahr" creationdate="20201018T042434Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T042434Z" creationid="miurahr" creationdate="20201018T042434Z">
         <seg>. : ./substitutions.rst が含まれます。
 
 GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundation`_ ) によって公開された、 X/MIT スタイルの オープン・ソース :ref:`ライセンス` の下で公開されたラスターおよびベクトル地理空間データフォーマットのための変換ライブラリです。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>is a translator library for raster and vector geospatial data formats that is released under an &lt;g1&gt;X/MIT&lt;/g1&gt; style &lt;g2&gt; Open Source&lt;/g2&gt; license by the &lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20171009T115044Z" creationid="miurahr" creationdate="20171009T115044Z">
         <seg>は、ラスターおよびベクター地理データ形式の変換ライブラリで、&lt;g1&gt;X/MIT&lt;/g1&gt;スタイルの&lt;g2&gt;Open Source&lt;/g2&gt;ライセンスで、&lt;g3&gt;Open Source Geospatial Foundation&lt;/g3&gt;からリリースされています。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>statistics are stored in an image.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043734Z" creationid="miurahr" creationdate="20201018T043734Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201018T043734Z" creationid="miurahr" creationdate="20201018T043734Z">
         <seg>。</seg>
       </tuv>
     </tu>
     <tu>
-      <tuv lang="en-US">
+      <tuv lang="EN-US">
         <seg>system" field.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201025T143404Z" creationid="miurahr" creationdate="20201025T143325Z">
+      <tuv lang="JA" changeid="miurahr" changedate="20201025T143404Z" creationid="miurahr" creationdate="20201025T143325Z">
         <seg>。</seg>
       </tuv>
     </tu>
