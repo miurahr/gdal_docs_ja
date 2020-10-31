@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.3.2_0_6a661c5e" segtype="sentence" srclang="EN-US"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.3.2_0_6a661c5e0" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -184,8 +184,8 @@
       <tuv lang="EN-US">
         <seg>GDAL is a translator library for raster and vector geospatial data formats that is released under an X/MIT style Open Source :ref:`license` by the `Open Source Geospatial Foundation`_.</seg>
       </tuv>
-      <tuv lang="JA" changeid="miurahr" changedate="20201018T224314Z" creationid="miurahr" creationdate="20201018T224314Z">
-        <seg>GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundation`_ ) によって公開された、 X/MIT スタイルの オープン・ソース :ref:`ライセンス` の下で公開されたラスターおよびベクトル地理空間データフォーマットのための変換ライブラリです。</seg>
+      <tuv lang="JA" changeid="tohka (arita)" changedate="20201031T080426Z" creationid="miurahr" creationdate="20201018T224314Z">
+        <seg>GDAL は、 Open Source Geospatial Foundation( `Open Source Geospatial Foundation`_ ) によって公開された、 X/MIT スタイルの オープン・ソース :ref:`ライセンス` の下で公開されたラスターおよびベクター地理空間データフォーマットのための変換ライブラリです。</seg>
       </tuv>
     </tu>
     <tu>
