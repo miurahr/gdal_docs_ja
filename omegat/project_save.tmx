@@ -238,6 +238,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Grab a pseudo-color table from the first input image, and use it for the output.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013255Z" creationid="miurahr" creationdate="20201102T013255Z">
+        <seg>最初の入力イメージから擬似カラーテーブルを取得し、出力に使用します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Gridding is a process of creating a regular grid (or call it a raster image) from the scattered data.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T231409Z" creationid="miurahr" creationdate="20201018T231409Z">
@@ -468,6 +476,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013204Z" creationid="miurahr" creationdate="20201102T013204Z">
         <seg>出力ファイルに使用されるピクセルサイズ。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Place each input file into a separate band.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013249Z" creationid="miurahr" creationdate="20201102T013249Z">
+        <seg>各入力ファイルを個別のバンドに配置します。</seg>
       </tuv>
     </tu>
     <tu>
