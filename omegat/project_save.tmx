@@ -6,6 +6,14 @@
 <!-- Default translations -->
     <tu>
       <tuv lang="en-US">
+        <seg>(target aligned pixels) align the coordinates of the extent of the output file to the values of the -tr, such that the aligned extent includes the minimum extent.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013218Z" creationid="miurahr" creationdate="20201102T013218Z">
+        <seg>(ターゲットに位置合わせされたピクセル)は、出力ファイルの範囲の座標を-trの値に位置合わせし、位置合わせされた範囲に最小範囲が含まれるようにします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>&lt;g1&gt;&lt;g2&gt;Select language&lt;/g2&gt;: [English]&lt;g3&gt;[Russian]&lt;/g3&gt;&lt;g4&gt;[Portuguese]&lt;/g4&gt;&lt;g5&gt;[French/Francais]&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
@@ -34,6 +42,14 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051616Z" creationid="miurahr" creationdate="20201019T051549Z">
         <seg>"-xml" 出力を追加するオプションです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>All the images must be in the same coordinate system and have a matching number of bands, but they may be overlapping, and at different resolutions.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013143Z" creationid="miurahr" creationdate="20201102T013143Z">
+        <seg>すべてのイメージは同じ座標系にあり、一致する数のバンドを持っている必要がありますが、オーバーラップしていたり、解像度が異なっていたりする可能性があります。</seg>
       </tuv>
     </tu>
     <tu>
@@ -206,6 +222,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Generate verbose output of mosaicing operations as they are done.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013244Z" creationid="miurahr" creationdate="20201102T013244Z">
+        <seg>モザイク化操作の実行時に、詳細な出力を生成します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Generates directory with TMS tiles, KMLs and simple web viewers.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153416Z" creationid="miurahr" creationdate="20201101T153416Z">
@@ -226,6 +250,30 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000539Z" creationid="miurahr" creationdate="20201019T000539Z">
         <seg>しかし、OGRはOpenGISのSimple Feature仕様に完全に準拠しておらず、仕様の参照実装として承認されていないため、名前はOGR Simple Features Libraryに変更されました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>If not specified the aggregate extents of all input files will be used.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013239Z" creationid="miurahr" creationdate="20201102T013239Z">
+        <seg>指定しない場合、すべての入力ファイルを集約したエクステントが使用されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>If not specified the resolution of the first input file will be used.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013208Z" creationid="miurahr" creationdate="20201102T013208Z">
+        <seg>指定しない場合、最初の入力ファイルの解像度が使用されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>In areas of overlap, the last image will be copied over earlier ones.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013151Z" creationid="miurahr" creationdate="20201102T013151Z">
+        <seg>オーバーラップしている領域では、最後のイメージが前のイメージの上にコピーされます。</seg>
       </tuv>
     </tu>
     <tu>
@@ -360,6 +408,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Mosaics a set of images.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013055Z" creationid="miurahr" creationdate="20201102T013055Z">
+        <seg>一連のイメージをモザイク化します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>No, GDAL/OGR is a Free and Open Source Software.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T045830Z" creationid="miurahr" creationdate="20201019T045830Z">
@@ -404,6 +460,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000526Z" creationid="miurahr" creationdate="20201019T000457Z">
         <seg>OGRは、OpenGIS Simple Features Reference実装を表していました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Pixel size to be used for the output file.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013204Z" creationid="miurahr" creationdate="20201102T013204Z">
+        <seg>出力ファイルに使用されるピクセルサイズ。</seg>
       </tuv>
     </tu>
     <tu>
@@ -552,6 +616,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The extents of the output file.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013221Z" creationid="miurahr" creationdate="20201102T013221Z">
+        <seg>出力ファイルのエクステント。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The following command line parameters can appear in any order
 
 ..</seg>
@@ -584,6 +656,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153334Z" creationid="miurahr" creationdate="20201101T153334Z">
         <seg>GDALを使用するために必要なライブラリーおよびリンク・ディレクティブ。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The name of the output file, which will be created if it does not already exist (defaults to "out.tif").</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013200Z" creationid="miurahr" creationdate="20201102T013200Z">
+        <seg>出力ファイルの名前。出力ファイルが存在しない場合は作成されます(デフォルトは「out.tif」)。</seg>
       </tuv>
     </tu>
     <tu>
@@ -704,6 +784,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051409Z" creationid="miurahr" creationdate="20201019T051409Z">
         <seg>このユーティリティスクリプト(Unixシステムで使用可能)を使用して、GDALインストールに関するさまざまな情報を判別できます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>This utility will automatically mosaic a set of images.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201102T013130Z" creationid="miurahr" creationdate="20201102T013130Z">
+        <seg>このユーティリティは、一連のイメージを自動的にモザイク化します。</seg>
       </tuv>
     </tu>
     <tu>
