@@ -15,13 +15,21 @@
         <glossary_dir>__DEFAULT__</glossary_dir>
         <glossary_file>__DEFAULT__</glossary_file>
         <dictionary_dir>__DEFAULT__</dictionary_dir>
-        <source_lang>EN-US</source_lang>
-        <target_lang>JA</target_lang>
+        <source_lang>en-US</source_lang>
+        <target_lang>ja</target_lang>
         <source_tok>org.omegat.tokenizer.LuceneEnglishTokenizer</source_tok>
         <target_tok>org.omegat.tokenizer.LuceneJapaneseTokenizer</target_tok>
         <sentence_seg>true</sentence_seg>
         <support_default_translations>true</support_default_translations>
         <remove_tags>false</remove_tags>
         <external_command></external_command>
+        <repositories>
+            <repository type="git" url="https://github.com/miurahr/gdal_docs_ja">
+                <mapping local="/" repository="/"/>
+            </repository>
+            <repository type="svn" url="https://github.com/miurahr/gdal.git/branches/doc-intl/gdal/doc/locale/en/">
+                <mapping local="source/doc/" repository="/LC_MESSAGES/"/>
+            </repository>
+        </repositories>
     </project>
 </omegat>
