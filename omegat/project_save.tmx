@@ -118,6 +118,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Default is 256.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034538Z" creationid="miurahr" creationdate="20201103T034531Z">
+        <seg>既定値は256です。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Default output will remain the same.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051719Z" creationid="miurahr" creationdate="20201019T051719Z">
@@ -138,6 +146,14 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051239Z" creationid="miurahr" creationdate="20201019T051239Z">
         <seg>GDALインストールに関するさまざまな情報を判別します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Disable messages and status to stdout</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034518Z" creationid="miurahr" creationdate="20201103T034518Z">
+        <seg>stdoutへのメッセージとステータスの無効化</seg>
       </tuv>
     </tu>
     <tu>
@@ -222,10 +238,34 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Generate XYZ tiles (OSM Slippy Map standard) instead of TMS.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034443Z" creationid="miurahr" creationdate="20201103T034443Z">
+        <seg>TMSの代わりにXYZタイル(OSM Slippy Map標準)を生成します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Generate only missing files.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034457Z" creationid="miurahr" creationdate="20201103T034457Z">
+        <seg>見つからないファイルのみを生成します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Generate verbose output of mosaicing operations as they are done.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013244Z" creationid="miurahr" creationdate="20201102T013244Z">
         <seg>モザイク化操作の実行時に、詳細な出力を生成します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Generate verbose output of tile generation.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034513Z" creationid="miurahr" creationdate="20201103T034513Z">
+        <seg>タイル生成の詳細出力を生成します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -278,6 +318,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>If the input dataset had already an associate nodata value, it is overridden by the specified value.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034508Z" creationid="miurahr" creationdate="20201103T034508Z">
+        <seg>入力データセットにすでに関連付けられたnodata値がある場合、指定された値によって上書きされます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>In areas of overlap, the last image will be copied over earlier ones.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013151Z" creationid="miurahr" creationdate="20201102T013151Z">
@@ -298,6 +346,14 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T045756Z" creationid="miurahr" creationdate="20201019T045756Z">
         <seg>1998年末には、GDAL/OGRライブラリのために、Frank Shelfdamは独立したプロフェッショナルとして働くようになりました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>In the default mode (TMS), tiles at y=0 are the southern-most tiles, whereas in XYZ mode (used by OGC WMTS too), tiles at y=0 are the northern-most tiles.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034448Z" creationid="miurahr" creationdate="20201103T034448Z">
+        <seg>デフォルトモード(TMS)では、y=0のタイルが最南端のタイルです。一方、XYZモード(OGC WMTSでも使用)では、y=0のタイルが最北端のタイルです。</seg>
       </tuv>
     </tu>
     <tu>
@@ -324,6 +380,14 @@ Synopsis
 --------
 
 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Inputs with non-Byte data type (i.e. ``Int16``, ``UInt16``,...) will be clamped to the ``Byte`` data type, causing wrong results.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034233Z" creationid="miurahr" creationdate="20201103T034233Z">
+        <seg>非バイトデータ型の入力(すなわち、"Int16","UInt16",.)は"Byte"データ型にクランプされ、間違った結果を引き起こします。</seg>
       </tuv>
     </tu>
     <tu>
@@ -372,6 +436,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000254Z" creationid="miurahr" creationdate="20201019T000254Z">
         <seg>(Googleのように)「goo-doll」(グードール)と発音されることもありますが、その他の発音は「gey-doll」(ゲィドール)、他の発音は「gee-doll」(ギィードール)と発音します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>KML (Google Earth) options</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034548Z" creationid="miurahr" creationdate="20201103T034548Z">
+        <seg>KML(Google Earth)オプション</seg>
       </tuv>
     </tu>
     <tu>
@@ -448,6 +520,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Number of parallel processes to use for tiling, to speed-up the computation.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034522Z" creationid="miurahr" creationdate="20201103T034522Z">
+        <seg>計算を高速化するために、タイリングに使用する並列プロセスの数。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>OGR is also the prefix used everywhere in the source of the library for class names, filenames, etc.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000659Z" creationid="miurahr" creationdate="20201019T000659Z">
@@ -468,6 +548,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000526Z" creationid="miurahr" creationdate="20201019T000457Z">
         <seg>OGRは、OpenGIS Simple Features Reference実装を表していました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Options for generated Google Earth SuperOverlay metadata</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T041240Z" creationid="miurahr" creationdate="20201103T041240Z">
+        <seg>生成されたGoogle Earth SuperOverlayメタデータのオプション</seg>
       </tuv>
     </tu>
     <tu>
@@ -536,6 +624,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Resampling method (average, near, bilinear, cubic, cubicspline, lanczos, antialias, mode, max, min, med, q1, q3) - default 'average'.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034421Z" creationid="miurahr" creationdate="20201103T034344Z">
+        <seg>リサンプリング法(average、near、bilinear、cubic、cubicspline、lanczos、antialias、mode、max、min、med、q1、q3): 既定は、 ’average'。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Resume mode.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034455Z" creationid="miurahr" creationdate="20201103T034455Z">
+        <seg>レジュームモード。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>See :ref:`license`</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T045840Z" creationid="miurahr" creationdate="20201019T045840Z">
@@ -568,10 +672,34 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Show help message and exit.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034541Z" creationid="miurahr" creationdate="20201103T034541Z">
+        <seg>ヘルプメッセージを表示して終了します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Show program's version number and exit.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034544Z" creationid="miurahr" creationdate="20201103T034544Z">
+        <seg>プログラムのバージョン番号を表示して終了します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Simple web pages with viewers based on Google Maps, OpenLayers and Leaflet are generated as well - so anybody can comfortably explore your maps on-line and you do not need to install or configure any special software (like MapServer) and the map displays very fast in the web browser.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153443Z" creationid="miurahr" creationdate="20201101T153443Z">
         <seg>Google Maps、OpenLayers、LeafletをベースにしたシンプルなWebページも生成されるので、誰でも簡単にオンラインでマップを探索することができ、特別なソフトウェア(MapServerなど)をインストールしたり設定したりする必要がなく、Webブラウザに非常に高速に表示されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Starting with GDAL 3.2, additional profiles are available from tms_XXXX.json files placed in GDAL data directory (provided all zoom levels use same origin, tile dimensions, and resolution between consecutive zoom levels vary by a factor of two).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034323Z" creationid="miurahr" creationdate="20201103T034323Z">
+        <seg>GDAL3.2以降では、GDALデータディレクトリに置かれたtms_XXXX.jsonファイルから追加のプロファイルを使用できます(すべてのズームレベルが同じ原点を使用し、タイルの寸法が同じで、連続するズームレベル間の解像度が2倍変化する場合)。</seg>
       </tuv>
     </tu>
     <tu>
@@ -708,6 +836,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The spatial reference system used for the source input data.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034438Z" creationid="miurahr" creationdate="20201103T034438Z">
+        <seg>ソース入力データに使用される空間参照システム。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>There is just one band per files, except in the RGB24 data type where the Red, Green and Blue bands are store interleaved by pixels in the order Blue, Green and Red.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224922Z" creationid="miurahr" creationdate="20201018T224714Z">
@@ -820,6 +956,30 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Tile cutting profile (mercator, geodetic, raster) - default 'mercator' (Google Maps compatible).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034350Z" creationid="miurahr" creationdate="20201103T034315Z">
+        <seg>タイル切断プロファイル(メルカトル、測地、ラスター)-　既定は、メルカトル(Google Maps互換)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>To awoid this it is necessary to rescale input to the ``Byte`` data type using `gdal_translate` utility.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034235Z" creationid="miurahr" creationdate="20201103T034235Z">
+        <seg>非バイトデータ型の入力(すなわち、"Int16","UInt16",.)は"Byte"データ型にクランプされ、間違った結果を引き起こします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Value in the input dataset considered as transparent.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034501Z" creationid="miurahr" creationdate="20201103T034501Z">
+        <seg>透過と見なされる入力データセットの値。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>What compiler can I use to build GDAL/OGR?</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T045936Z" creationid="miurahr" creationdate="20201019T045936Z">
@@ -900,6 +1060,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Width and height in pixel of a tile.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034528Z" creationid="miurahr" creationdate="20201103T034528Z">
+        <seg>タイルの幅と高さ(ピクセル単位)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>With the GDAL 2.0 release, the GDAL and OGR components were integrated together.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000402Z" creationid="miurahr" creationdate="20201019T000402Z">
@@ -928,6 +1096,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153447Z" creationid="miurahr" creationdate="20201101T153447Z">
         <seg>生成されたディレクトリをWebサーバにアップロードするだけで済みます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Zoom levels to render (format:'2-5' or '10').</seg>
+      </tuv>
+      <tuv lang="ja" changeid="miurahr" changedate="20201103T034451Z" creationid="miurahr" creationdate="20201103T034451Z">
+        <seg>レンダリングするズームレベル(形式:'2-5'または'10')</seg>
       </tuv>
     </tu>
     <tu>
