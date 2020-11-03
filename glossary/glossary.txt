@@ -9,3 +9,5 @@ Projections	投影法
 Spatial Reference Systems	空間参照系
 Mailing List	メーリングリスト
 raster file	ラスター・ファイル
+tile cutting profile	タイル切断プロファイル
+spatial reference system	空間参照システム
