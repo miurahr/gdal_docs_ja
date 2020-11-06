@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="5.4.0_0_f1e32ca8c" segtype="sentence" srclang="en-US"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.3.2_0_6a661c5e0" segtype="sentence" srclang="en-US"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -30,6 +30,46 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>A 's' is appended for formats supporting subdatasets.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122426Z" creationid="tohka (arita)" creationdate="20201106T122426Z">
+        <seg>サブデータセットをサポートする形式には's'が追加されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>A 'v' is appended for formats supporting virtual IO (/vsimem, /vsigzip, /vsizip, etc).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122355Z" creationid="tohka (arita)" creationdate="20201106T122355Z">
+        <seg>仮想IO（/vsimem, /vsigzip, /vsizipなど）をサポートする形式には'v'が追加されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>A value of OFF will disable all debug messages.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124537Z" creationid="tohka (arita)" creationdate="20201106T124537Z">
+        <seg>値をOFFにするとすべてのデバッグメッセージが無効になります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>A value of ON will enable all debug messages.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124519Z" creationid="tohka (arita)" creationdate="20201106T124519Z">
+        <seg>値をONにするとすべてのデバッグメッセージが有効になります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Access an existing file to read it is generally quite simple.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125556Z" creationid="tohka (arita)" creationdate="20201106T125556Z">
+        <seg>既存のファイルを読み込むのは、一般に非常に簡単です。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Adds a "-json" output option.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051631Z" creationid="miurahr" creationdate="20201019T051603Z">
@@ -46,10 +86,26 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>All GDAL command line programs support the following common options.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122900Z" creationid="tohka (arita)" creationdate="20201106T120851Z">
+        <seg>すべてのGDALコマンドラインプログラムは以下の共通オプションに対応しています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>All the images must be in the same coordinate system and have a matching number of bands, but they may be overlapping, and at different resolutions.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013143Z" creationid="miurahr" creationdate="20201102T013143Z">
         <seg>すべてのイメージは同じ座標系にあり、一致する数のバンドを持っている必要がありますが、オーバーラップしていたり、解像度が異なっていたりする可能性があります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Another value will select only debug messages containing that string in the debug prefix code.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124653Z" creationid="tohka (arita)" creationdate="20201106T124653Z">
+        <seg>別の値を指定すると、接頭辞にその文字列を含むデバッグメッセージだけが有効になります。</seg>
       </tuv>
     </tu>
     <tu>
@@ -114,6 +170,22 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000719Z" creationid="miurahr" creationdate="20201019T000719Z">
         <seg>共通ポータビリティー・ライブラリー。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Common options for raster programs</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T120807Z" creationid="tohka (arita)" creationdate="20201106T120807Z">
+        <seg>ラスタープログラムで使える共通のオプション</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Control what debugging messages are emitted.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124457Z" creationid="tohka (arita)" creationdate="20201106T124457Z">
+        <seg>生成されるデバッグメッセージを制御します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -278,6 +350,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Gives a brief usage message for the generic GDAL command line options and exit.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125407Z" creationid="tohka (arita)" creationdate="20201106T125407Z">
+        <seg>GDALの一般的なコマンドラインオプションについて、簡単な使用方法を表示し終了します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Grab a pseudo-color table from the first input image, and use it for the output.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013255Z" creationid="miurahr" creationdate="20201102T013255Z">
@@ -290,6 +370,14 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T231409Z" creationid="miurahr" creationdate="20201018T231409Z">
         <seg>グリッドは、分散されたデータから通常のグリッドを作成するプロセスです(または、ラスタイメージと呼びます)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>However, creating a file is more complicated.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125719Z" creationid="tohka (arita)" creationdate="20201106T125719Z">
+        <seg>しかし、ファイルを作成することは単純ではありません。</seg>
       </tuv>
     </tu>
     <tu>
@@ -384,6 +472,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Individual drivers may be influenced by other :ref:`configuration options &lt;list_config_options&gt;`.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124434Z" creationid="tohka (arita)" creationdate="20201106T124434Z">
+        <seg>各ドライバは他の:ref:`設定オプション &lt;list_config_options&gt;`の影響を受けるかもしれません。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Inputs with non-Byte data type (i.e. ``Int16``, ``UInt16``,...) will be clamped to the ``Byte`` data type, causing wrong results.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034233Z" creationid="miurahr" creationdate="20201103T034233Z">
@@ -440,6 +536,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>It may be necessary to indicate the the format to create, various creation options affecting how it will be created and perhaps a coordinate system to be assigned.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125849Z" creationid="tohka (arita)" creationdate="20201106T125849Z">
+        <seg>作成する形式、作成方法に影響する様々なオプション、それに割り当てる座標系を指定する必要となる場合があります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Just indicate the name of the file or dataset on the command line.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125635Z" creationid="tohka (arita)" creationdate="20201106T125635Z">
+        <seg>コマンドラインでファイルまたはデータセットの名前を指定するだけです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>KML (Google Earth) options</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034548Z" creationid="miurahr" creationdate="20201103T034548Z">
@@ -452,6 +564,30 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T050941Z" creationid="miurahr" creationdate="20201019T050941Z">
         <seg>ライセンス</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Lines beginning with # will be ignored.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123436Z" creationid="tohka (arita)" creationdate="20201106T123436Z">
+        <seg>#から始まる行は無視されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>List all raster formats supported by this GDAL build (read-only and read-write) and exit.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122108Z" creationid="tohka (arita)" creationdate="20201106T121112Z">
+        <seg>このGDALビルドで対応しているすべてのラスター形式（読み取り専用及び読み書き可能）の一覧を表示し終了します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>List detailed information about a single format driver.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123015Z" creationid="tohka (arita)" creationdate="20201106T122850Z">
+        <seg>1つの形式ドライバに関する詳細情報を表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -480,6 +616,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Many of these options are handled similarly by different GDAL utilities, and are introduced here.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T130027Z" creationid="tohka (arita)" creationdate="20201106T130027Z">
+        <seg>これらのオプションの多くは、さまざまなGDALユーティリティによって同様に処理されます。ここで紹介します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Mean value of a raster cells in this grid.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201025T144108Z" creationid="miurahr" creationdate="20201025T144108Z">
@@ -492,6 +636,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013055Z" creationid="miurahr" creationdate="20201102T013055Z">
         <seg>一連のイメージをモザイク化します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Multi-word arguments may be kept together with double quotes.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123537Z" creationid="tohka (arita)" creationdate="20201106T123537Z">
+        <seg>複数の語からなる引数は二重引用符で囲むことができます。</seg>
       </tuv>
     </tu>
     <tu>
@@ -516,6 +668,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201025T143312Z" creationid="miurahr" creationdate="20201025T143312Z">
         <seg>RST ドライバーは、 Idrisi で使用されている名前規則を UTM および状態平面の地理参照に認識するため、 REF ファイルにアクセスする必要はありません。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Note: The valid formats for the output of gdalwarp are formats that support the Create() method (marked as rw+), not just the CreateCopy() method.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122735Z" creationid="tohka (arita)" creationdate="20201106T122735Z">
+        <seg>注：gdalwarpの出力として有効な形式は、CreateCopy()だけでなくCreate()（'rw+'と記載されている）をサポートする形式です。</seg>
       </tuv>
     </tu>
     <tu>
@@ -600,6 +760,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Read the named file and substitute the contents into the command line options list.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123421Z" creationid="tohka (arita)" creationdate="20201106T123421Z">
+        <seg>指定したファイルを読み込み、その内容をコマンドラインオプションに適用します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Report the version of GDAL and exit.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T120923Z" creationid="tohka (arita)" creationdate="20201106T120923Z">
+        <seg>GDALのバージョンを表示し終了します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Reports "yes" or "no" to standard output depending on whether OGR is built into GDAL.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153353Z" creationid="miurahr" creationdate="20201101T153353Z">
@@ -672,6 +848,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Select the format to create the new file as.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T130107Z" creationid="tohka (arita)" creationdate="20201106T130107Z">
+        <seg>作成する新しいファイルの形式を指定します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Sets the named configuration keyword to the given value, as opposed to setting them as environment variables.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123833Z" creationid="tohka (arita)" creationdate="20201106T123833Z">
+        <seg>指定した設定項目について、環境変数の値ではなく、記載した値を使用します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Show help message and exit.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034541Z" creationid="miurahr" creationdate="20201103T034541Z">
@@ -692,6 +884,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201101T153443Z" creationid="miurahr" creationdate="20201101T153443Z">
         <seg>Google Maps、OpenLayers、LeafletをベースにしたシンプルなWebページも生成されるので、誰でも簡単にオンラインでマップを探索することができ、特別なソフトウェア(MapServerなど)をインストールしたり設定したりする必要がなく、Webブラウザに非常に高速に表示されます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Some common configuration keywords are GDAL_CACHEMAX (memory used internally for caching in megabytes) and :decl_configoption:`GDAL_DATA` (path of the GDAL "data" directory).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124309Z" creationid="tohka (arita)" creationdate="20201106T124309Z">
+        <seg>一般的な設定項目としてGDAL_CACHEMAX（キャッシュとして内部で使用されるメモリ容量をメガバイト単位で設定）と:decl_configoption:`GDAL_DATA`（GDAL "data"フォルダのパスを設定）があります。</seg>
       </tuv>
     </tu>
     <tu>
@@ -776,6 +976,22 @@ Synopsis
         <seg>以下のコマンド行パラメーターは、任意の順序で指定できます。
 
 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The format should be the short name reported in the --formats list, such as GTiff.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123129Z" creationid="tohka (arita)" creationdate="20201106T123129Z">
+        <seg>指定する形式は、GTiffなど--formatsで表示される短い名前である必要があります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The format support is indicated as follows: 'ro' is read-only driver; 'rw' is read or write (i.e. supports CreateCopy); 'rw+' is read, write and update (i.e. supports Create).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122253Z" creationid="tohka (arita)" creationdate="20201106T122059Z">
+        <seg>形式のサポートは以下のように表示されます。'ro'は読み取り専用、'rw'は読み取り及び書き込み（すなわちCreateCopyをサポートします）、'rw+'は読み取り、書き込み及び更新（すなわちCreateをサポートします）。</seg>
       </tuv>
     </tu>
     <tu>
