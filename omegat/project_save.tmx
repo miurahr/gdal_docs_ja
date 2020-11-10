@@ -222,6 +222,22 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Currently the supported values are:</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140812Z" creationid="tohka (arita)" creationdate="20201110T140812Z">
+        <seg>現在サポートしている値は以下です。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Dataset open option (format specific).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141617Z" creationid="tohka (arita)" creationdate="20201110T141617Z">
+        <seg>データセットの入力オプションを指定します(ファイル形式によって異なります)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Default is 256.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034538Z" creationid="miurahr" creationdate="20201103T034531Z">
@@ -354,6 +370,14 @@
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T133811Z" creationid="tohka (arita)" creationdate="20201110T133724Z">
         <seg>強制的にデータセットの各バンドの最小値／最大値について実際の値を計算します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Force computation of the checksum for each band in the dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T135324Z" creationid="tohka (arita)" creationdate="20201110T135324Z">
+        <seg>強制的にデータセットの各バンドのチェックサムを計算します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -506,6 +530,14 @@
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T135711Z" creationid="tohka (arita)" creationdate="20201106T135711Z">
         <seg>指定しない場合、拡張子から推測された形式となります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>If the input dataset contains several subdatasets read and display a subdataset with specified ``n`` number (starting from 1).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141140Z" creationid="tohka (arita)" creationdate="20201110T141140Z">
+        <seg>入力データセットに複数のサブデータセットが含まれている場合、指定した``n``番目(1からはじまります)のサブデータセットを読み込み表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -688,6 +720,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>List all metadata domains available for the dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T135921Z" creationid="tohka (arita)" creationdate="20201110T135921Z">
+        <seg>データセットで利用可能な全メタデータドメインを表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>List all raster formats supported by this GDAL build (read-only and read-write) and exit.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T122108Z" creationid="tohka (arita)" creationdate="20201106T121112Z">
@@ -824,6 +864,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Only display the first file of the file list.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140611Z" creationid="tohka (arita)" creationdate="20201110T140611Z">
+        <seg>ファイルリストのうち最初のファイルのみを表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Only formats list as ``(rw)`` (read-write) can be written.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T135614Z" creationid="tohka (arita)" creationdate="20201106T135614Z">
@@ -880,10 +928,18 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Raster size (in pixels and lines).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141829Z" creationid="tohka (arita)" creationdate="20201110T141829Z">
+        <seg>ラスターの大きさ(横幅と行数)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Read and display image statistics.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043801Z" creationid="miurahr" creationdate="20201018T043658Z">
-        <seg>ラスター統計量を読み取り、表示する。</seg>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140018Z" creationid="miurahr" creationdate="20201018T043658Z">
+        <seg>ラスター統計量を読み取り、表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -892,6 +948,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123421Z" creationid="tohka (arita)" creationdate="20201106T123421Z">
         <seg>指定したファイルを読み込み、その内容をコマンドラインオプションに適用します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Report a PROJ.4 string corresponding to the file's coordinate system.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141437Z" creationid="tohka (arita)" creationdate="20201110T141437Z">
+        <seg>PROJ.4形式でファイルの座標系を表示します</seg>
       </tuv>
     </tu>
     <tu>
@@ -1072,6 +1136,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Suppress printing of color table.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T135259Z" creationid="tohka (arita)" creationdate="20201110T135259Z">
+        <seg>カラーテーブルの表示を抑制します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Suppress printing of raster attribute table.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T135241Z" creationid="tohka (arita)" creationdate="20201110T135241Z">
+        <seg>ラスター属性テーブルの表示を抑制します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Synopsis</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051244Z" creationid="miurahr" creationdate="20201019T051244Z">
@@ -1136,6 +1216,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The coordinate system for the file (in OGC WKT).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T142110Z" creationid="tohka (arita)" creationdate="20201110T142110Z">
+        <seg>ファイルの座標系(OGC WKT形式)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The description of the file is stored in a accompanying text file, extension RDC.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T225012Z" creationid="miurahr" creationdate="20201018T225012Z">
@@ -1172,6 +1260,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The format driver used to access the file.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141754Z" creationid="tohka (arita)" creationdate="20201110T141754Z">
+        <seg>ファイルにアクセスするために使用されたフォーマットドライバ。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The format should be the short name reported in the --formats list, such as GTiff.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T123129Z" creationid="tohka (arita)" creationdate="20201106T123129Z">
@@ -1200,6 +1296,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T051129Z" creationid="miurahr" creationdate="20201019T051129Z">
         <seg>ライセンスの完全な条項は、`LICENSE.TXT`_ ファイルにあります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The gdalinfo will report all of the following (if known):</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141654Z" creationid="tohka (arita)" creationdate="20201110T141654Z">
+        <seg>gdalinfoは、もしわかれば下記の情報を表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1364,6 +1468,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>This is an alternative of giving the full subdataset name.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T141301Z" creationid="tohka (arita)" creationdate="20201110T141301Z">
+        <seg>これはサブデータセットの完全な名前を指定するかわりの方法です。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>This program builds a shapefile with a record for each input raster file, an attribute containing the filename, and a polygon geometry outlining the raster.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T065024Z" creationid="miurahr" creationdate="20201019T065024Z">
@@ -1440,6 +1552,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034501Z" creationid="miurahr" creationdate="20201103T034501Z">
         <seg>透過と見なされる入力データセットの値。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>WKT format used to display the SRS.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140738Z" creationid="tohka (arita)" creationdate="20201110T140738Z">
+        <seg>WKT形式でSRSを表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1609,6 +1729,38 @@ GDALについて?</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142429Z" creationid="tohka (arita)" creationdate="20201106T142429Z">
         <seg>``Spatial References（URLから）``</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>``WKT2`` (latest WKT version, currently *WKT2_2018*)</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140837Z" creationid="tohka (arita)" creationdate="20201110T140837Z">
+        <seg>``WKT2`` (最新のWKTバージョン。現時点では*WKT2_2018*)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>``all`` Report metadata for all domains.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140333Z" creationid="tohka (arita)" creationdate="20201110T140333Z">
+        <seg>``all`` 全ドメインのメタデータを表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>``domain`` Report metadata for the specified domain.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140310Z" creationid="tohka (arita)" creationdate="20201110T140310Z">
+        <seg>``domain`` 指定したドメインのメタデータを表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>adds metadata using:</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T140549Z" creationid="tohka (arita)" creationdate="20201110T140549Z">
+        <seg>メタデータを追加します。</seg>
       </tuv>
     </tu>
     <tu>
