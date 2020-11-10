@@ -554,8 +554,8 @@ Synopsis
       <tuv lang="en-US">
         <seg>Inputs with non-Byte data type (i.e. ``Int16``, ``UInt16``,...) will be clamped to the ``Byte`` data type, causing wrong results.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201103T034233Z" creationid="miurahr" creationdate="20201103T034233Z">
-        <seg>非バイトデータ型の入力(すなわち、"Int16","UInt16",.)は"Byte"データ型にクランプされ、間違った結果を引き起こします。</seg>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T115700Z" creationid="miurahr" creationdate="20201103T034233Z">
+        <seg>非バイトデータ型の入力(すなわち、``Int16``,``UInt16``,.)は``Byte``データ型にクランプされ、間違った結果を引き起こします。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1342,8 +1342,8 @@ Synopsis
       <tuv lang="en-US">
         <seg>To awoid this it is necessary to rescale input to the ``Byte`` data type using `gdal_translate` utility.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201103T034235Z" creationid="miurahr" creationdate="20201103T034235Z">
-        <seg>非バイトデータ型の入力(すなわち、"Int16","UInt16",.)は"Byte"データ型にクランプされ、間違った結果を引き起こします。</seg>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T115716Z" creationid="miurahr" creationdate="20201103T034235Z">
+        <seg>非バイトデータ型の入力(すなわち、``Int16``,``UInt16``,.)は``Byte``データ型にクランプされ、間違った結果を引き起こします。</seg>
       </tuv>
     </tu>
     <tu>
