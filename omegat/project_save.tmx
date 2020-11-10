@@ -46,6 +46,22 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>A PROJ.4 definition string can be used as a coordinate system.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141231Z" creationid="tohka (arita)" creationdate="20201106T141231Z">
+        <seg>PROJ.4の定義書式は座標系として使用することができます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>A list of EPSG coordinate systems can be found in the GDAL data files :file:`gcs.csv` and :file:`pcs.csv`.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141144Z" creationid="tohka (arita)" creationdate="20201106T141144Z">
+        <seg>EPSGコードの一覧は、GDALデータファイルの:file:`gcs.csv`と:file:`pcs.csv`にあります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>A value of OFF will disable all debug messages.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T124537Z" creationid="tohka (arita)" creationdate="20201106T124537Z">
@@ -190,6 +206,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Coordinate systems (projected or geographic) can be selected based on their EPSG codes.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T140850Z" creationid="tohka (arita)" creationdate="20201106T140850Z">
+        <seg>EPSGコードにもとづき投影座標系または地理座標系を指定することができます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Default is 256.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034538Z" creationid="miurahr" creationdate="20201103T034531Z">
@@ -246,10 +270,50 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>ESRI uses a slight variation on OGC WKT format in their ArcGIS product (ArcGIS :file:`.prj` files), and these may be used in a similar manner o WKT files, but the filename should be prefixed with ``ESRI::``.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142245Z" creationid="tohka (arita)" creationdate="20201106T142245Z">
+        <seg>ESRIは、ArcGIS製品（ArcGIS:file:`.prj`ファイル）の中でOGC WKT形式を少し変えたものを使用しており、これらはWKTファイルと同様の方法で使用することができますが、ファイル名の前には``ESRI::``を付けなければなりません。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>For example http://spatialreference.org/ref/user/north-pacific-albers-conic-equal-area/.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142446Z" creationid="tohka (arita)" creationdate="20201106T142446Z">
+        <seg>たとえば http://spatialreference.org/ref/user/north-pacific-albers-conic-equal-area/ 。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>For example, `"ESRI::NAD 1927 StatePlane Wyoming West FIPS 4904.prj"`.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142400Z" creationid="tohka (arita)" creationdate="20201106T142400Z">
+        <seg>たとえば`"ESRI::NAD 1927 StatePlane Wyoming West FIPS 4904.prj"`</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>For geographical referencing identification, the RDC file contains information that points to a file that holds the geographic reference details.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201025T143131Z" creationid="miurahr" creationdate="20201025T143131Z">
         <seg>地理参照識別の場合、 RDC ファイルには、地理的参照の詳細を保持するファイルを指す情報が含まれています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>For instance :samp:`+proj=utm +zone=11 +datum=WGS84`.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141429Z" creationid="tohka (arita)" creationdate="20201106T141429Z">
+        <seg>たとえば:samp:`+proj=utm +zone=11 +datum=WGS84`。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>For instance, :samp:`EPSG:27700` is the British National Grid.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141042Z" creationid="tohka (arita)" creationdate="20201106T141042Z">
+        <seg>たとえば:samp:`EPSG:27700`はBritish National Gridのことです。</seg>
       </tuv>
     </tu>
     <tu>
@@ -888,6 +952,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Several utilities (e.g. :command:`gdal_translate` and :command:`gdalwarp`) include the ability to specify coordinate systems with command line options like :option:`-a_srs` (assign SRS to output), :option:`-s_srs` (source SRS) and :option:`-t_srs` (target SRS).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T140332Z" creationid="tohka (arita)" creationdate="20201106T140332Z">
+        <seg>:command:`gdal_translate`や:command:`gdalwarp`などのプログラムでは、オプションで座標系を指定する機能が含まれています。:option:`-a_srs`（出力に割り当てる(assign)座標系を指定）、:option:`-s_srs`（入力元(source)の座標系を指定）、:option:`-t_srs`（出力先(target)の座標系を指定）などがあります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Show help message and exit.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034541Z" creationid="miurahr" creationdate="20201103T034541Z">
@@ -936,10 +1008,26 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Take care to keep the proj.4 string together as a single argument to the command (usually by double quoting).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141401Z" creationid="tohka (arita)" creationdate="20201106T141401Z">
+        <seg>PROJ.4文字列は単一の引数とすることに注意してください（通常は二重引用符で囲みます）。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>That is the case for RDC file that specify "utm-30n" or "spc87ma1" in the "ref.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201025T143415Z" creationid="miurahr" creationdate="20201025T143317Z">
         <seg>これは、「ref.system」フィールドに「utm-30n」または「spc87ma1」を指定するRDCファイルの場合です</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The Open GIS Consortium has defined a textual format for describing coordinate systems as part of the Simple Features specifications.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141729Z" creationid="tohka (arita)" creationdate="20201106T141729Z">
+        <seg>Simple Featuresの仕様の一部としてOpen GISコンソーシアムが定義した座標系を記述するためのテキスト形式です。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1060,6 +1148,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>The name of a file containing a WKT coordinate system definition may be used a coordinate system argument, or the entire coordinate system itself may be used as a command line option (though escaping all the quotes in WKT is quite challenging).</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142022Z" creationid="tohka (arita)" creationdate="20201106T142022Z">
+        <seg>WKTの座標系定義を含むファイル名は、座標系の引数として使うこともできますし、座標系全体をコマンドラインオプションとして使うこともできます（ただしWKTの引用符をすべてエスケープするのはかなり難しいです）。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>The name of the output file, which will be created if it does not already exist (defaults to "out.tif").</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013200Z" creationid="miurahr" creationdate="20201102T013200Z">
@@ -1116,6 +1212,22 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>These common geographic (lat/long) coordinate systems can be used directly by these names.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T140635Z" creationid="tohka (arita)" creationdate="20201106T140635Z">
+        <seg>これらの共通の地理座標系（緯度、経度）は、このように直接名前で指定することができます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>These utilities allow the coordinate system (SRS = spatial reference system) to be assigned in a variety of formats.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T140506Z" creationid="tohka (arita)" creationdate="20201106T140506Z">
+        <seg>これらのプログラムを使用すると、座標系（SRS = spatial reference system）をさまざまな形式で割り当てることができます。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Think of it as GDAL internal cross-platform standard library.</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000736Z" creationid="miurahr" creationdate="20201019T000736Z">
@@ -1144,6 +1256,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T224623Z" creationid="miurahr" creationdate="20201018T224623Z">
         <seg>このフォーマットは基本的にrawです。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>This format is the internal working format for coordinate systems used in GDAL.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T141821Z" creationid="tohka (arita)" creationdate="20201106T141821Z">
+        <seg>この形式はGDAL内部で使用される座標系形式です。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1393,6 +1513,14 @@ What is GDAL?</seg>
 
 ================================================================================
 GDALについて?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>``Spatial References from URLs``</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T142429Z" creationid="tohka (arita)" creationdate="20201106T142429Z">
+        <seg>``Spatial References（URLから）``</seg>
       </tuv>
     </tu>
     <tu>
