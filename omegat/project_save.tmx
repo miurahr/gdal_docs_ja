@@ -14,6 +14,14 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>:program:`gdalinfo` program lists various information about a GDAL supported raster dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T132422Z" creationid="tohka (arita)" creationdate="20201110T132422Z">
+        <seg>:program:`gdalinfo` プログラムはGDALがサポートするラスターデータセットに関する様々な情報を一覧表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>&lt;g1&gt;&lt;g2&gt;Select language&lt;/g2&gt;: [English]&lt;g3&gt;[Russian]&lt;/g3&gt;&lt;g4&gt;[Portuguese]&lt;/g4&gt;&lt;g5&gt;[French/Francais]&lt;/g5&gt;&lt;/g1&gt;</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20171009T114918Z" creationid="miurahr" creationdate="20171009T114918Z">
@@ -326,10 +334,26 @@
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Force computation if no statistics are stored in an image.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T133845Z" creationid="tohka (arita)" creationdate="20201110T133845Z">
+        <seg>画像内に統計情報がない場合、強制的に計算します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Force computation of the actual min/max values for each band in the</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201018T043630Z" creationid="miurahr" creationdate="20201018T043606Z">
         <seg>データセットの各バンドの実際のmin/max値の計算を強制する</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Force computation of the actual min/max values for each band in the dataset.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T133811Z" creationid="tohka (arita)" creationdate="20201110T133724Z">
+        <seg>強制的にデータセットの各バンドの最小値／最大値について実際の値を計算します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -450,6 +474,14 @@
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201019T000539Z" creationid="miurahr" creationdate="20201019T000539Z">
         <seg>しかし、OGRはOpenGISのSimple Feature仕様に完全に準拠しておらず、仕様の参照実装として承認されていないため、名前はOGR Simple Features Libraryに変更されました。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>However, they may be computed based on overviews or a subset of all tiles.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134150Z" creationid="tohka (arita)" creationdate="20201110T134150Z">
+        <seg>しかしオーバービューもしくは全タイルの一部をもとに計算されるかもしれません。</seg>
       </tuv>
     </tu>
     <tu>
@@ -616,6 +648,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>It may be useful for datasets with huge amount of GCPs, such as L1B AVHRR or HDF4 MODIS which contain thousands of them.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134826Z" creationid="tohka (arita)" creationdate="20201110T134826Z">
+        <seg>数千個のGCPをもつL1B AVHRR形式やHDF4 MODIS形式のように、非常に多くのGCPをもつデータセットには有用かもしれません。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Just indicate the name of the file or dataset on the command line.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T125635Z" creationid="tohka (arita)" creationdate="20201106T125635Z">
@@ -666,8 +706,8 @@ Synopsis
       <tuv lang="en-US">
         <seg>Lists information about a raster dataset.</seg>
       </tuv>
-      <tuv lang="ja" changeid="miurahr" changedate="20201018T043323Z" creationid="miurahr" creationdate="20201018T043323Z">
-        <seg>ラスターデータセットに関する情報をリストします。</seg>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T132125Z" creationid="miurahr" creationdate="20201018T043323Z">
+        <seg>ラスターデータセットに関する情報を一覧表示します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -856,6 +896,14 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Report histogram information for all bands.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134326Z" creationid="tohka (arita)" creationdate="20201110T134326Z">
+        <seg>全バンドのヒストグラム情報を表示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Report the version of GDAL and exit.</seg>
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201106T120923Z" creationid="tohka (arita)" creationdate="20201106T120923Z">
@@ -992,10 +1040,34 @@ Synopsis
     </tu>
     <tu>
       <tuv lang="en-US">
+        <seg>Some datasets may contain a lot of metadata strings.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T135221Z" creationid="tohka (arita)" creationdate="20201110T135221Z">
+        <seg>いくつかのデータセットによっては多くのメタデータ文字列を含んでいる場合があります。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
         <seg>Starting with GDAL 3.2, additional profiles are available from tms_XXXX.json files placed in GDAL data directory (provided all zoom levels use same origin, tile dimensions, and resolution between consecutive zoom levels vary by a factor of two).</seg>
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201103T034323Z" creationid="miurahr" creationdate="20201103T034323Z">
         <seg>GDAL3.2以降では、GDALデータディレクトリに置かれたtms_XXXX.jsonファイルから追加のプロファイルを使用できます(すべてのズームレベルが同じ原点を使用し、タイルの寸法が同じで、連続するズームレベル間の解像度が2倍変化する場合)。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Suppress ground control points list printing.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134427Z" creationid="tohka (arita)" creationdate="20201110T134427Z">
+        <seg>GCP (Ground Control Point)の表示を抑制します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Suppress metadata printing.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134852Z" creationid="tohka (arita)" creationdate="20201110T134852Z">
+        <seg>メタデータの表示を抑制します。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1076,6 +1148,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="miurahr" changedate="20201102T013221Z" creationid="miurahr" creationdate="20201102T013221Z">
         <seg>出力ファイルのエクステント。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>The following command line parameters can appear in any order</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T132608Z" creationid="tohka (arita)" creationdate="20201110T132608Z">
+        <seg>以下のコマンドライン引数の順序は問いません。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1344,6 +1424,14 @@ Synopsis
       </tuv>
       <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T115716Z" creationid="miurahr" creationdate="20201103T034235Z">
         <seg>非バイトデータ型の入力(すなわち、``Int16``,``UInt16``,.)は``Byte``データ型にクランプされ、間違った結果を引き起こします。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="en-US">
+        <seg>Useful if you are in a hurry and don't want precise stats.</seg>
+      </tuv>
+      <tuv lang="ja" changeid="tohka (arita)" changedate="20201110T134306Z" creationid="tohka (arita)" creationdate="20201110T134306Z">
+        <seg>急いでおり、正確な統計値でなくてもよいのなら便利です。</seg>
       </tuv>
     </tu>
     <tu>
